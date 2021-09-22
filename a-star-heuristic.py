@@ -4,10 +4,10 @@ import timeit
 import board
 
 directions={}
-directions['N'] = [0,-1]
-directions['E'] = [1,0]
-directions['W'] = [-1,0]
-directions['S'] = [0,1] 
+directions['N'] = [-1,0]
+directions['E'] = [0,1]
+directions['W'] = [0,-1]
+directions['S'] = [1,0] 
 start_time=0
 
 #function with own heuristic
