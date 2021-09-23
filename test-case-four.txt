@@ -1,8 +1,8 @@
-OOOOOOOO
-OR OSSSO
-O  BB  O
-O B   OO
-O  OOOO
-O  O
-O  O
-OOOO
+########
+#@ #...#
+#  $$  #
+# $   ##
+#  ####
+#  #
+#  #
+####

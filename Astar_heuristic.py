@@ -73,7 +73,8 @@ def print_Map(filename):
 if len(sys.argv) < 2:
     print("Please provide textfile name as system argument \n python3 Astar_heuristic.py <filename>")
     exit(0)
-print(sys.argv[1])
+
+print_Map(sys.argv[1])
 
 # array store the moves that have been met
 visited_Moves = {}
@@ -130,7 +131,7 @@ def move(point_robot_move, direction_move, path, temp_box_list):
                 if counter == 0:
                     temp_pos.append(cur_path)
                     dis_estimate = heuristic(box_list, storage, cur_path, point_robot_move)
-                    temp_pos.append(dis_estimate)
+                    temp_pos.append(str(dis_estimate))
 
                     # put to queue follow the min heap with the min heuristic distance
                     heapq.heappush(queue, (temp_pos[-1][:], temp_pos[:-1]))
@@ -146,42 +147,52 @@ def move(point_robot_move, direction_move, path, temp_box_list):
                     print(total_time)
                     print("Total steps take: ")
                     print(len(cur_path))
+
+                    with open('C:/Users/Acer/Desktop/HK211/NMAI/Ass1/thamkhao/result.txt', 'w') as f:
+                        for i in cur_path:
+                            f.write(i)
+                
                     exit()
-    else:
-        temp_pos.append(point_robot_move)
-        box_list.sort()
-        for i in box_list:
-            temp_pos.append(i)
+        else:
+            temp_pos.append(point_robot_move)
+            box_list.sort()
+            for i in box_list:
+                temp_pos.append(i)
 
-         # check if the new state has been passed
-        idx = point_robot_move[0]*10 + point_robot_move[1]
-        counter = 0
-        
-        if idx in visited_Moves:
-            for k in visited_Moves[idx]:
-                if k == temp_pos:
-                    counter = counter + 1
-        # if this state hasn't been passed, add to queue
-        if counter == 0:
-            temp_pos.append(cur_path)
-            dis_estimate = heuristic(box_list, storage, cur_path, point_robot_move)
-            temp_pos.append(dis_estimate)
-
-            # put to queue follow the min heap with the min heuristic distance
-            heapq.heappush(queue, (temp_pos[-1][:], temp_pos[:-1]))
-
-        # check if goal is met
-        if set(map(tuple, box_list)) == set(map(tuple, storage)):
-            stop = timeit.default_timer()
-            total_time = stop - start_time
+            # check if the new state has been passed
+            idx = point_robot_move[0]*10 + point_robot_move[1]
+            counter = 0
             
-            print("Solution found")
-            print(cur_path)
-            print("Total time taken: ")
-            print(total_time)
-            print("Total steps take: ")
-            print(len(cur_path))
-            exit()
+            if idx in visited_Moves:
+                for k in visited_Moves[idx]:
+                    if k == temp_pos:
+                        counter = counter + 1
+            # if this state hasn't been passed, add to queue
+            if counter == 0:
+                temp_pos.append(cur_path)
+                dis_estimate = heuristic(box_list, storage, cur_path, point_robot_move)
+                temp_pos.append(str(dis_estimate))
+
+                # put to queue follow the min heap with the min heuristic distance
+                heapq.heappush(queue, (temp_pos[-1][:], temp_pos[:-1]))
+
+            # check if goal is met
+            if set(map(tuple, box_list)) == set(map(tuple, storage)):
+                stop = timeit.default_timer()
+                total_time = stop - start_time
+                
+                print("Solution found")
+                print(cur_path)
+                print("Total time taken: ")
+                print(total_time)
+                print("Total steps take: ")
+                print(len(cur_path))
+
+                with open('C:/Users/Acer/Desktop/HK211/NMAI/Ass1/thamkhao/result.txt', 'w') as f:
+                    for i in cur_path:
+                        f.write(i)
+
+                exit()
 
 # direction to move
 move_up = 'U'
@@ -209,10 +220,10 @@ def A_star_heuristic():
     temp_queue.append(path)
     
     # initial h(n)
-    temp_queue.append(0)
+    temp_queue.append(str(0))
 
     # put all items of temp queue to queue
-    queue.append(temp_queue)
+    heapq.heappush(queue, (temp_queue[-1][:], temp_queue[:-1]))
     count = 0
     while queue:    # if queue is empty, algorithm done
         
@@ -223,13 +234,16 @@ def A_star_heuristic():
         visited_moves_add = []
         
         # take the first item of the queue
-        position_list = queue.pop(0)
+        temp_list = heapq.heappop(queue)
+
+        # take the list consists of robot position, boxes position and path
+        position_list = temp_list[1]
         
         # take the position of robot
         robot_position = position_list[0]
-
+        
         # take the visited move of robot and boxes
-        visited_moves_add = position_list[:-2]
+        visited_moves_add = position_list[:-1]
         
         # Dictionary visited contain key: robot position
         # and value: corresponding [states] 
@@ -250,10 +264,10 @@ def A_star_heuristic():
             visited_Moves[idx].append(visited_moves_add)
 
         # take the path
-        temp_path = position_list[-2][:]
+        temp_path = position_list[-1][:]
 
         # take position of boxes
-        temp_box_list = position_list[1: -2]
+        temp_box_list = position_list[1: -1]
 
         # 4 possible directions to move [row, col]
         U = [x + y for x, y in zip(robot_position, directions['U'])]

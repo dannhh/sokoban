@@ -1,5 +1,5 @@
-OOOOOOOO
-O$  O  O
-O  BBB O
-OSS    O
-OOOOOOOO
+########
+#&  #  #
+#  $$$ #
+#..    #
+########
