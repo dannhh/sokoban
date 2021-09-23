@@ -3,22 +3,38 @@ import numpy as np
 from collections import deque
 import timeit
 
-wall = []
-player=[]
-storage=[]
-box=[]
+# =============================== INITIAL =====================================
+# four component of sokoban game
+wall   = []
+player = []
+goal   = []
+box    = []
+# Visited is stored as dict
+visited = {}
 
-directions={}
-directions['N'] = [-1,0]
-directions['E'] = [0,1]
-directions['W'] = [0,-1]
-directions['S'] = [1,0] 
-start_time=0
+# queue store as dequeue
+queue = deque()
 
-# reading the file
-# def print_char(filename):
-def print_char():
-    f = open("/home/daneiii/Documents/AI-sokoban/sokoban/test-case-four.txt", 'r')
+# direction
+directions = {
+    'U' : [-1, 0],
+    'R' : [0, 1],
+    'L' : [0, -1],
+    'D' : [1, 0]
+}
+
+# start_time to store time start
+start_time = 0
+
+# =============================== READ FILE ===================================
+# Require 2 argument: <file solution>.py + <file test>.txt
+if len(sys.argv) < 2:
+    print("\nMiss argument! Please provide: \n python(3) <filename>.py <filetest.txt>\n")
+    exit(0)
+    
+# Read the test case
+def print_char(filename):
+    f = open(filename, 'r')
     i = 0
     j = 0
     new = []
@@ -28,25 +44,25 @@ def print_char():
         if char: 
             temp.append(i)
             temp.append(j)
-            if char == "O":
+            if char == "#":
                 new.append(1)
-            elif char == "R":
+            elif char == "@":
                 new.append(0)
                 player.append(temp)
-            elif char == "S":
-                new.append(0)
-                storage.append(temp)
-            elif char == "B":
-                new.append(0)
-                box.append(temp)
             elif char == ".":
                 new.append(0)
-                box.append(temp)
-                storage.append(temp)
+                goal.append(temp)
             elif char == "$":
                 new.append(0)
+                box.append(temp)
+            elif char == "-":
+                new.append(0)
+                box.append(temp)
+                goal.append(temp)
+            elif char == "+":
+                new.append(0)
                 player.append(temp)
-                storage.append(temp)
+                goal.append(temp)
             if char == "\n":
                 j=0
                 wall.append(new)
@@ -59,30 +75,32 @@ def print_char():
         else:
             break
 
-# if len(sys.argv)<2:
-#     print("please provide textfile name as system argument \n python bfs.py <filename>")
-#     exit(0)
+# Read file here
+print_char(sys.argv[1])
 
-print_char()
-visited={}
-queue=deque()
+# Return if file test have wrong format
+if len(player) == 0 or len(box) == 0 or len(goal) == 0 or len(wall) == 0:
+    print('''\nMiss infomation: Your <test file> must follow this notation:
+ *Wall: O \n *Goal: S \n *Box: B \n *Player: R \n Box on goal: . \n Player on goal: $\n''')
+    exit(0)
 
-if len(player) == 0 or len(box) == 0 or len(storage) == 0 or len(wall) == 0:
-        print("please provide the textfile in write format wall :O \n storage : S \n box : B \n player : R \n box on storage : . \n player on storage : $ \n should include wall,storage,box,player")
-        exit(0)
-
-# check whether a goal state
+# =========================== MOVEMENT DEFINITION =============================
 
 # function for movement of a box
 def move(point,dir,path,temp_box_list):
+    # Store temp box list
     box_list = temp_box_list[:] 
     temp_append = []
-    path.append(dir)
-    cur_path = path
+    cur_path = path[:]
+    # Store current path
+    cur_path.append(dir)
 
+    # Current robot position is a box, so push the box if possible
     if point in box_list:
+        # Find index and move this box to new position
         ind = box_list.index(point)
         temp_box = [x + y for x, y in zip(point, directions[dir])]
+        # Check new possition of this box is valid
         if temp_box not in box_list and wall[temp_box[0]][temp_box[1]] == 0:
             box_list[ind]=[x + y for x, y in zip(point, directions[dir])]
             # Sort to avoid duplicate. Ex: [1,3,2] -> [1,2,3] same as [1,2,3]
@@ -97,13 +115,14 @@ def move(point,dir,path,temp_box_list):
                 for k in visited[idx]:
                     if(k == temp_append):
                         counter = counter + 1
-            # If this state havent passed, add (state+predicted distance)to queue
+
+            # If this state havent passed, add (state + predicted distance) to queue
             if counter==0:
                 temp_append.append(cur_path)
                 queue.appendleft(temp_append)
 
             # check if goal
-            if set(map(tuple,box_list))==set(map(tuple,storage)):
+            if set(map(tuple,box_list))==set(map(tuple,goal)):
                 stop = timeit.default_timer()
                 total_time=stop-start_time
                 print("solution found")
@@ -114,6 +133,7 @@ def move(point,dir,path,temp_box_list):
                 print(len(cur_path))
                 exit()
     else:
+        # Sort to avoid duplicate. Ex: [1,3,2] -> [1,2,3] same as [1,2,3]
         box_list.sort()
         temp_append.append(point)
         temp_append.append(box_list)
@@ -126,12 +146,12 @@ def move(point,dir,path,temp_box_list):
                 if(k == temp_append):
                     counter = counter + 1
         # If this state havent passed, add (state+predicted distance)to queue
-        if counter==0:
+        if counter == 0:
             temp_append.append(cur_path)
             queue.appendleft(temp_append)
 
-        # check if goal
-        if set(map(tuple,box_list))==set(map(tuple,storage)):
+        # check if goal is reach
+        if set(map(tuple,box_list))==set(map(tuple,goal)):
             stop = timeit.default_timer()
             total_time=stop-start_time
             print("solution found")
@@ -142,15 +162,11 @@ def move(point,dir,path,temp_box_list):
             print(len(cur_path))
             exit()
 
-
-#directions
-dir_N='N'
-dir_S='S'
-dir_E='E'
-dir_W='W'
-
+# ============================== DFS FUNCTION =================================
+# start counts time
 start_time = timeit.default_timer()
-#dfs function
+
+# dfs function
 def dfs():
     # State store current position of current player and box
     node=[]
@@ -190,21 +206,29 @@ def dfs():
             visited[idx] = []
             visited[idx].append(state)            
 
+        # current path and current box list
         current_path = node[-1][:]
         temp_box_list = node[1]
 
-        Up    = [x + y for x, y in zip(current_player, directions['N'])]
-        Down  = [x + y for x, y in zip(current_player, directions['S'])]
-        Right = [x + y for x, y in zip(current_player, directions['E'])]
-        Left  = [x + y for x, y in zip(current_player, directions['W'])]
+        # determine position of player after each possible move
+        U = [x + y for x, y in zip(current_player, directions['U'])]
+        D = [x + y for x, y in zip(current_player, directions['D'])]
+        R = [x + y for x, y in zip(current_player, directions['R'])]
+        L = [x + y for x, y in zip(current_player, directions['L'])]
         
-        if wall[Up[0]][Up[1]] == 0:
-            move(Up, dir_N, current_path, temp_box_list)
-        if wall[Down[0]][Down[1]] == 0:
-            move(Down, dir_S, current_path, temp_box_list)
-        if wall[Right[0]][Right[1]] == 0:
-            move(Right, dir_E, current_path, temp_box_list)
-        if wall[Left[0]][Left[1]] == 0:
-            move(Left, dir_W,current_path,temp_box_list)
+        # Check current player's position 
+        # Add a state to queue if satifies 
+        # 1. the player does not move into the wall 
+        # 2. the player does not push a box that is already close to the wall towards the wall
+        # 3. the player does not push 2 boxes at a time
+        # 4. Visited list does not contain this state
+        # Final, check if the goal status is reached or not
+        if wall[U[0]][U[1]] == 0:
+            move(U, 'U', current_path, temp_box_list)
+        if wall[D[0]][D[1]] == 0:
+            move(D, 'D', current_path, temp_box_list)
+        if wall[R[0]][R[1]] == 0:
+            move(R, 'R', current_path, temp_box_list)
+        if wall[L[0]][L[1]] == 0:
+            move(L, 'L',current_path,temp_box_list)
 dfs()
-
