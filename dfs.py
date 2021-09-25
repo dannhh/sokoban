@@ -138,17 +138,38 @@ def checkDeadLock (box_list, curr_box, dir):
             if [curr_box[0], curr_box[1]+1] in box_list or wall[curr_box[0]][curr_box[1]+1]: # RIGHT
                 if [curr_box[0]-1, curr_box[1]+1] in box_list or wall[curr_box[0]-1][curr_box[1]+1] == 1: # TOP-RIGHT
                     return True
+
     elif (dir == 'D'):        
-        if [curr_box[0]+1, curr_box[1]] in box_list: # BOT
-            if [curr_box[0], curr_box[1]-1] in box_list: # LEFT
-                if wall[curr_box[0]+1][curr_box[1]-1] == 1: # BOT-LEFT
+        if [curr_box[0]+1, curr_box[1]] in box_list or wall[curr_box[0]+1][curr_box[1]] == 1: # BOT
+
+            if [curr_box[0], curr_box[1]-1] in box_list or wall[curr_box[0]][curr_box[1]-1]: # LEFT
+                if [curr_box[0]+1, curr_box[1]-1] in box_list or wall[curr_box[0]+1][curr_box[1]-1] == 1: # BOT-LEFT
                     return True
-                if [curr_box[0]+1, curr_box[1]-1] in box_list:
+
+            if [curr_box[0], curr_box[1]+1] in box_list or wall[curr_box[0]][curr_box[1]+1]: # RIGHT
+                if [curr_box[0]+1, curr_box[1]+1] in box_list or wall[curr_box[0]+1][curr_box[1]+1] == 1: # BOT-RIGHT
                     return True
-            if [curr_box[0], curr_box[1]+1] in box_list: # RIGHT
-                if wall[curr_box[0]+1][curr_box[1]+1] == 1: # BOT-LEFT
+
+    elif (dir == 'R'):        
+        if [curr_box[0], curr_box[1]+1] in box_list or wall[curr_box[0]][curr_box[1]+1] == 1: # RIGHT
+
+            if [curr_box[0]-1, curr_box[1]] in box_list or wall[curr_box[0]-1][curr_box[1]]: # TOP
+                if [curr_box[0]-1, curr_box[1]+1] in box_list or wall[curr_box[0]-1][curr_box[1]+1] == 1: # RIGHT-TOP
                     return True
-                if [curr_box[0]+1, curr_box[1]+1] in box_list:
+
+            if [curr_box[0]+1, curr_box[1]] in box_list or wall[curr_box[0]+1][curr_box[1]]: # BOT
+                if [curr_box[0]+1, curr_box[1]+1] in box_list or wall[curr_box[0]+1][curr_box[1]+1] == 1: # RIGHT-BOT
+                    return True  
+
+    elif (dir == 'L'):        
+        if [curr_box[0], curr_box[1]-1] in box_list or wall[curr_box[0]][curr_box[1]-1] == 1: # LEFT
+
+            if [curr_box[0]-1, curr_box[1]] in box_list or wall[curr_box[0]-1][curr_box[1]]: # TOP
+                if [curr_box[0]-1, curr_box[1]-1] in box_list or wall[curr_box[0]-1][curr_box[1]-1] == 1: # LEFT-TOP
+                    return True
+
+            if [curr_box[0]+1, curr_box[1]] in box_list or wall[curr_box[0]+1][curr_box[1]]: # BOT
+                if [curr_box[0]+1, curr_box[1]-1] in box_list or wall[curr_box[0]+1][curr_box[1]-1] == 1: # LEFT-BOT
                     return True    
 
 
