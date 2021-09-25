@@ -55,7 +55,7 @@ def print_char(filename):
             elif char == "$":
                 new.append(0)
                 box.append(temp)
-            elif char == "-":
+            elif char == "*":
                 new.append(0)
                 box.append(temp)
                 goal.append(temp)
@@ -85,6 +85,72 @@ if len(player) == 0 or len(box) == 0 or len(goal) == 0 or len(wall) == 0:
     exit(0)
 
 # =========================== MOVEMENT DEFINITION =============================
+""" CHECK FOR DEADLOCK
+    # DEADLOCK CASE:
+    #  1. Box in corner
+    #  2. Cluster of four box
+    #  3. The same goes for the two boxes
+    #  4. The box at the 1 wall-side can be moved but never reach a goal.
+    #  5. Two boxes are between 2 walls and they block the ends
+    #  6. ...
+    #  In this dfs, we just check for:
+            CASE 1:
+                #$   $#   #$     $#
+                #$   $#    $#   #$ 
+            CASE 2:
+                ##   $$   #   # 
+                $$   ##  $$   $$
+                         #     #
+            CASE 3: $$
+                    $$
+            CASE 4: 
+                #$ 		$#   	 $$		$$  
+                $$		$$		 #$		$#
+"""
+# CHECK DEADLOCK: 
+def checkDeadLock (box_list, curr_box, dir):
+    for box in box_list:
+        if curr_box[0] != box[0] or curr_box[1] != box[1]:
+            # Not a deadlock if both boxes are on goal
+            if curr_box in goal and box in goal:
+                continue
+
+            # CHECK FOR CASE 1
+            if box[1] == curr_box[1]:
+                if wall[curr_box[0]][curr_box[1]-1]==1 or wall[curr_box[0]][curr_box[1]+1]==1:
+                    if (curr_box[0]+1) == box[0] or (curr_box[0]-1) == box[0]:
+                        if wall[box[0]][box[1]-1]==1 or wall[box[0]][box[1]+1]==1:
+                            return True
+            
+            # CHECK FOR CASE 2:
+            if box[0] == curr_box[0]: 
+                if wall[curr_box[0]-1][curr_box[1]]==1 or wall[curr_box[0]+1][curr_box[1]]==1:
+                    if (curr_box[1]+1) == box[1] or (curr_box[1]-1) == box[1]:
+                        if wall[box[0]-1][box[1]]==1 or wall[box[0]+1][box[1]]==1:
+                            return True
+    if (dir == 'U'):        
+        if [curr_box[0]-1, curr_box[1]] in box_list or wall[curr_box[0]-1][curr_box[1]] == 1: # TOP
+
+            if [curr_box[0], curr_box[1]-1] in box_list or wall[curr_box[0]][curr_box[1]-1]: # LEFT
+                if [curr_box[0]-1, curr_box[1]-1] in box_list or wall[curr_box[0]-1][curr_box[1]-1] == 1: # TOP-LEFT
+                    return True
+
+            if [curr_box[0], curr_box[1]+1] in box_list or wall[curr_box[0]][curr_box[1]+1]: # RIGHT
+                if [curr_box[0]-1, curr_box[1]+1] in box_list or wall[curr_box[0]-1][curr_box[1]+1] == 1: # TOP-RIGHT
+                    return True
+    elif (dir == 'D'):        
+        if [curr_box[0]+1, curr_box[1]] in box_list: # BOT
+            if [curr_box[0], curr_box[1]-1] in box_list: # LEFT
+                if wall[curr_box[0]+1][curr_box[1]-1] == 1: # BOT-LEFT
+                    return True
+                if [curr_box[0]+1, curr_box[1]-1] in box_list:
+                    return True
+            if [curr_box[0], curr_box[1]+1] in box_list: # RIGHT
+                if wall[curr_box[0]+1][curr_box[1]+1] == 1: # BOT-LEFT
+                    return True
+                if [curr_box[0]+1, curr_box[1]+1] in box_list:
+                    return True    
+
 
 # function for movement of a box
 def move(point,dir,path,temp_box_list):
@@ -104,34 +170,36 @@ def move(point,dir,path,temp_box_list):
         if temp_box not in box_list and wall[temp_box[0]][temp_box[1]] == 0:
             box_list[ind]=[x + y for x, y in zip(point, directions[dir])]
             # Sort to avoid duplicate. Ex: [1,3,2] -> [1,2,3] same as [1,2,3]
-            box_list.sort()
-            temp_append.append(point)
-            temp_append.append(box_list)
-            
-            # check if any status has passed
-            idx = point[0]*10 + point[1]
-            counter = 0
-            if idx in visited:
-                for k in visited[idx]:
-                    if(k == temp_append):
-                        counter = counter + 1
 
-            # If this state havent passed, add (state + predicted distance) to queue
-            if counter==0:
-                temp_append.append(cur_path)
-                queue.appendleft(temp_append)
+            if checkDeadLock(box_list, box_list[ind], dir) != True:
+                box_list.sort()
+                temp_append.append(point)
+                temp_append.append(box_list)
+                
+                # check if any status has passed
+                idx = point[0]*10 + point[1]
+                counter = 0
+                if idx in visited:
+                    for k in visited[idx]:
+                        if(k == temp_append):
+                            counter = counter + 1
 
-            # check if goal
-            if set(map(tuple,box_list))==set(map(tuple,goal)):
-                stop = timeit.default_timer()
-                total_time=stop-start_time
-                print("solution found")
-                print(cur_path)
-                print("total time taken: ")
-                print(total_time)
-                print("total steps take :")
-                print(len(cur_path))
-                exit()
+                # If this state havent passed, add (state + predicted distance) to queue
+                if counter == 0:
+                    temp_append.append(cur_path)
+                    queue.appendleft(temp_append)
+
+                # check if goal
+                if set(map(tuple,box_list))==set(map(tuple,goal)):
+                    stop = timeit.default_timer()
+                    total_time=stop-start_time
+                    print("solution found")
+                    print(cur_path)
+                    print("total time taken: ")
+                    print(total_time)
+                    print("total steps take :")
+                    print(len(cur_path))
+                    exit()
     else:
         # Sort to avoid duplicate. Ex: [1,3,2] -> [1,2,3] same as [1,2,3]
         box_list.sort()
