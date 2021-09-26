@@ -148,7 +148,7 @@ def move(point_robot_move, direction_move, path, temp_box_list):
                     print("Total steps take: ")
                     print(len(cur_path))
 
-                    with open('C:/Users/Acer/Desktop/HK211/NMAI/Ass1/thamkhao/result.txt', 'w') as f:
+                    with open('C:/Users/Acer/Desktop/HK211/NMAI/Ass1/thamkhao/result.txt', 'a') as f:
                         for i in cur_path:
                             f.write(i)
                 
@@ -188,7 +188,7 @@ def move(point_robot_move, direction_move, path, temp_box_list):
                 print("Total steps take: ")
                 print(len(cur_path))
 
-                with open('C:/Users/Acer/Desktop/HK211/NMAI/Ass1/thamkhao/result.txt', 'w') as f:
+                with open('C:/Users/Acer/Desktop/HK211/NMAI/Ass1/thamkhao/result.txt', 'a') as f:
                     for i in cur_path:
                         f.write(i)
 
