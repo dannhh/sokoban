@@ -38,15 +38,16 @@ def heuristic(box_ls,storage_ls,path,point_ls):
 
 # function for reading test-case file
 def print_Map(filename):
-    f = open(filename, 'r')					# open file with filename
-    i = 0										# variable run each line
-    j = 0										# variable run each character of each line
-    while True:									# loop until the end of file
-        character = f.read(1)					# variable character is assigned by each character in the file
-        temp = []								# temp is the co-ordinate on the Oxy
-        if character:							# if temp is not null
-            temp.append(i)						# append horizontal to temp
-            temp.append(j)						# append vertical to temp
+    f = open(filename, 'r')					
+    i = 0										
+    j = 0
+    new = []
+    while True:	
+        character = f.read(1)
+        temp = []
+        if character:
+            temp.append(i)
+            temp.append(j)						
             if character == "#":
                 walls.append(temp)
             if character == "@":
@@ -58,7 +59,7 @@ def print_Map(filename):
             if character == "*":
                 box.append(temp)
                 storage.append(temp)
-            if character == "&":
+            if character == "+":
                 robot.append(temp)
                 storage.append(temp)
             if character == "\n":
@@ -84,7 +85,7 @@ queue = []
 
 # textfile doesn't follow the format
 if len(robot) == 0 or len(box) == 0 or len(storage) == 0 or len(walls) == 0:
-    print("please provide the textfile in write format Walls : # \n storage : . \n box : $ \n robot : @ \n box on storage : * \n robot on storage : & \n should include walls,storage,box,robot")
+    print("please provide the textfile in write format Walls : # \n storage : . \n box : $ \n robot : @ \n box on storage : * \n robot on storage : + \n should include walls,storage,box,robot")
     exit(0)
 
 # function to move robot and boxes
