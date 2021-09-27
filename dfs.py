@@ -1,5 +1,4 @@
 import sys
-import numpy as np
 from collections import deque
 import timeit
 
@@ -28,13 +27,15 @@ start_time = 0
 
 # =============================== READ FILE ===================================
 # Require 2 argument: <file solution>.py + <file test>.txt
-if len(sys.argv) < 2:
-    print("\nMiss argument! Please provide: \n python(3) <filename>.py <filetest.txt>\n")
-    exit(0)
+# if len(sys.argv) < 2:
+#     print("\nMiss argument! Please provide: \n python(3) <filename>.py <filetest.txt>\n")
+#     exit(0)
     
 # Read the test case
-def print_char(filename):
-    f = open(filename, 'r')
+# def print_char(filename):
+#     f = open(filename, 'r')
+def print_char():
+    f = open("/home/daneiii/Documents/AI-sokoban/sokoban/test-case-one.txt", 'r')
     i = 0
     j = 0
     new = []
@@ -76,7 +77,8 @@ def print_char(filename):
             break
 
 # Read file here
-print_char(sys.argv[1])
+# print_char(sys.argv[1])
+print_char()
 
 # Return if file test have wrong format
 if len(player) == 0 or len(box) == 0 or len(goal) == 0 or len(wall) == 0:
@@ -87,12 +89,12 @@ if len(player) == 0 or len(box) == 0 or len(goal) == 0 or len(wall) == 0:
 # =========================== MOVEMENT DEFINITION =============================
 """ CHECK FOR DEADLOCK
     # DEADLOCK CASE:
-    #  1. Box in corner
-    #  2. Cluster of four box
-    #  3. The same goes for the two boxes
-    #  4. The box at the 1 wall-side can be moved but never reach a goal.
-    #  5. Two boxes are between 2 walls and they block the ends
+    #  1. Box in corner 
+    #  2. Cluster of four (at least one box)
+    #  4. The box at the 1 wall-side can be moved but never reach a goal <Not test in this code>
+    #  5. Two boxes are between 2 walls and they block the ends <Not test in this code>
     #  6. ...
+
     #  In this dfs, we just check for:
             CASE 1:
                 #$   $#   #$     $#
@@ -101,14 +103,19 @@ if len(player) == 0 or len(box) == 0 or len(goal) == 0 or len(wall) == 0:
                 ##   $$   #   # 
                 $$   ##  $$   $$
                          #     #
-            CASE 3: $$
-                    $$
+            CASE 3: 
+                $$
+                $$
             CASE 4: 
                 #$ 		$#   	 $$		$$  
                 $$		$$		 #$		$#
+            CASE 5: 
+                $#   ##
+                #S   #S    and it's rotations
 """
 # CHECK DEADLOCK: 
 def checkDeadLock (box_list, curr_box, dir):
+    temp_box_wtht_cur = []
     for box in box_list:
         if curr_box[0] != box[0] or curr_box[1] != box[1]:
             # Not a deadlock if both boxes are on goal
@@ -128,49 +135,77 @@ def checkDeadLock (box_list, curr_box, dir):
                     if (curr_box[1]+1) == box[1] or (curr_box[1]-1) == box[1]:
                         if wall[box[0]-1][box[1]]==1 or wall[box[0]+1][box[1]]==1:
                             return True
+            temp_box_wtht_cur.append(box)
+
+    # CHECK FOR CASE 3, 4, 5 (duplicated with case 1,2 in some(2) step)        
     if (dir == 'U'):        
-        if [curr_box[0]-1, curr_box[1]] in box_list or wall[curr_box[0]-1][curr_box[1]] == 1: # TOP
+        if [curr_box[0]-1, curr_box[1]] in temp_box_wtht_cur or wall[curr_box[0]-1][curr_box[1]] == 1: # TOP
 
-            if [curr_box[0], curr_box[1]-1] in box_list or wall[curr_box[0]][curr_box[1]-1]: # LEFT
-                if [curr_box[0]-1, curr_box[1]-1] in box_list or wall[curr_box[0]-1][curr_box[1]-1] == 1: # TOP-LEFT
-                    return True
+            if [curr_box[0], curr_box[1]-1] in temp_box_wtht_cur or wall[curr_box[0]][curr_box[1]-1]: # LEFT
+                if [curr_box[0]-1, curr_box[1]-1] in temp_box_wtht_cur or wall[curr_box[0]-1][curr_box[1]-1] == 1: # TOP-LEFT
+                    if ([curr_box[0]-1, curr_box[1]] not in goal and not wall[curr_box[0]-1][curr_box[1]] 
+                     or [curr_box[0], curr_box[1]-1] not in goal and not wall[curr_box[0]][curr_box[1]-1]
+                     or [curr_box[0]-1, curr_box[1]-1] not in goal and not wall[curr_box[0]-1][curr_box[1]-1]):     
+                        return True
 
-            if [curr_box[0], curr_box[1]+1] in box_list or wall[curr_box[0]][curr_box[1]+1]: # RIGHT
-                if [curr_box[0]-1, curr_box[1]+1] in box_list or wall[curr_box[0]-1][curr_box[1]+1] == 1: # TOP-RIGHT
-                    return True
+            if [curr_box[0], curr_box[1]+1] in temp_box_wtht_cur or wall[curr_box[0]][curr_box[1]+1]: # RIGHT
+                if [curr_box[0]-1, curr_box[1]+1] in temp_box_wtht_cur or wall[curr_box[0]-1][curr_box[1]+1] == 1: # TOP-RIGHT
+                    if ([curr_box[0]-1, curr_box[1]] not in goal and not wall[curr_box[0]-1][curr_box[1]] 
+                     or [curr_box[0], curr_box[1]+1] not in goal and not wall[curr_box[0]][curr_box[1]+1]
+                     or [curr_box[0]-1, curr_box[1]+1] not in goal and not wall[curr_box[0]-1][curr_box[1]+1]):     
+                        return True
 
     elif (dir == 'D'):        
         if [curr_box[0]+1, curr_box[1]] in box_list or wall[curr_box[0]+1][curr_box[1]] == 1: # BOT
 
             if [curr_box[0], curr_box[1]-1] in box_list or wall[curr_box[0]][curr_box[1]-1]: # LEFT
                 if [curr_box[0]+1, curr_box[1]-1] in box_list or wall[curr_box[0]+1][curr_box[1]-1] == 1: # BOT-LEFT
-                    return True
+                    if ([curr_box[0]+1, curr_box[1]] not in goal and not wall[curr_box[0]+1][curr_box[1]] 
+                     or [curr_box[0], curr_box[1]-1] not in goal and not wall[curr_box[0]][curr_box[1]-1]
+                     or [curr_box[0]+1, curr_box[1]-1] not in goal and not wall[curr_box[0]+1][curr_box[1]-1]):     
+                        return True
 
             if [curr_box[0], curr_box[1]+1] in box_list or wall[curr_box[0]][curr_box[1]+1]: # RIGHT
                 if [curr_box[0]+1, curr_box[1]+1] in box_list or wall[curr_box[0]+1][curr_box[1]+1] == 1: # BOT-RIGHT
-                    return True
+                    if ([curr_box[0]+1, curr_box[1]] not in goal and not wall[curr_box[0]+1][curr_box[1]] 
+                     or [curr_box[0], curr_box[1]+1] not in goal and not wall[curr_box[0]][curr_box[1]+1]
+                     or [curr_box[0]+1, curr_box[1]+1] not in goal and not wall[curr_box[0]+1][curr_box[1]+1]):     
+                        return True
 
     elif (dir == 'R'):        
-        if [curr_box[0], curr_box[1]+1] in box_list or wall[curr_box[0]][curr_box[1]+1] == 1: # RIGHT
+        if [curr_box[0], curr_box[1]+1] in temp_box_wtht_cur or wall[curr_box[0]][curr_box[1]+1] == 1: # RIGHT
 
-            if [curr_box[0]-1, curr_box[1]] in box_list or wall[curr_box[0]-1][curr_box[1]]: # TOP
-                if [curr_box[0]-1, curr_box[1]+1] in box_list or wall[curr_box[0]-1][curr_box[1]+1] == 1: # RIGHT-TOP
-                    return True
+            if [curr_box[0]-1, curr_box[1]] in temp_box_wtht_cur or wall[curr_box[0]-1][curr_box[1]]: # TOP
+                if [curr_box[0]-1, curr_box[1]+1] in temp_box_wtht_cur or wall[curr_box[0]-1][curr_box[1]+1] == 1: # RIGHT-TOP
+                    if ([curr_box[0], curr_box[1]+1] not in goal and not wall[curr_box[0]][curr_box[1]+1] 
+                     or [curr_box[0]-1, curr_box[1]] not in goal and not wall[curr_box[0]-1][curr_box[1]]
+                     or [curr_box[0]-1, curr_box[1]+1] not in goal and not wall[curr_box[0]-1][curr_box[1]+1]):     
+                        return True
 
-            if [curr_box[0]+1, curr_box[1]] in box_list or wall[curr_box[0]+1][curr_box[1]]: # BOT
-                if [curr_box[0]+1, curr_box[1]+1] in box_list or wall[curr_box[0]+1][curr_box[1]+1] == 1: # RIGHT-BOT
-                    return True  
+            if [curr_box[0]+1, curr_box[1]] in temp_box_wtht_cur or wall[curr_box[0]+1][curr_box[1]]: # BOT
+                if [curr_box[0]+1, curr_box[1]+1] in temp_box_wtht_cur or wall[curr_box[0]+1][curr_box[1]+1] == 1: # RIGHT-BOT
+                    if ([curr_box[0], curr_box[1]+1] not in goal and not wall[curr_box[0]][curr_box[1]+1] 
+                     or [curr_box[0]+1, curr_box[1]] not in goal and not wall[curr_box[0]+1][curr_box[1]]
+                     or [curr_box[0]+1, curr_box[1]+1] not in goal and not wall[curr_box[0]+1][curr_box[1]+1]):     
+                        return True
 
     elif (dir == 'L'):        
-        if [curr_box[0], curr_box[1]-1] in box_list or wall[curr_box[0]][curr_box[1]-1] == 1: # LEFT
+        if [curr_box[0], curr_box[1]-1] in temp_box_wtht_cur or wall[curr_box[0]][curr_box[1]-1] == 1: # LEFT
 
-            if [curr_box[0]-1, curr_box[1]] in box_list or wall[curr_box[0]-1][curr_box[1]]: # TOP
-                if [curr_box[0]-1, curr_box[1]-1] in box_list or wall[curr_box[0]-1][curr_box[1]-1] == 1: # LEFT-TOP
-                    return True
+            if [curr_box[0]-1, curr_box[1]] in temp_box_wtht_cur or wall[curr_box[0]-1][curr_box[1]]: # TOP
+                if [curr_box[0]-1, curr_box[1]-1] in temp_box_wtht_cur or wall[curr_box[0]-1][curr_box[1]-1] == 1: # LEFT-TOP
+                    if ([curr_box[0], curr_box[1]-1] not in goal and not wall[curr_box[0]][curr_box[1]-1] 
+                     or [curr_box[0]-1, curr_box[1]] not in goal and not wall[curr_box[0]-1][curr_box[1]]
+                     or [curr_box[0]-1, curr_box[1]-1] not in goal and not wall[curr_box[0]-1][curr_box[1]-1]):     
+                        return True
 
-            if [curr_box[0]+1, curr_box[1]] in box_list or wall[curr_box[0]+1][curr_box[1]]: # BOT
-                if [curr_box[0]+1, curr_box[1]-1] in box_list or wall[curr_box[0]+1][curr_box[1]-1] == 1: # LEFT-BOT
-                    return True    
+            if [curr_box[0]+1, curr_box[1]] in temp_box_wtht_cur or wall[curr_box[0]+1][curr_box[1]]: # BOT
+                if [curr_box[0]+1, curr_box[1]-1] in temp_box_wtht_cur or wall[curr_box[0]+1][curr_box[1]-1] == 1: # LEFT-BOT
+                    if ([curr_box[0], curr_box[1]-1] not in goal and not wall[curr_box[0]][curr_box[1]-1] 
+                     or [curr_box[0]+1, curr_box[1]] not in goal and not wall[curr_box[0]+1][curr_box[1]]
+                     or [curr_box[0]+1, curr_box[1]-1] not in goal and not wall[curr_box[0]+1][curr_box[1]-1]):     
+                        return True    
+    return False
 
 
 # function for movement of a box
@@ -190,10 +225,10 @@ def move(point,dir,path,temp_box_list):
         # Check new possition of this box is valid
         if temp_box not in box_list and wall[temp_box[0]][temp_box[1]] == 0:
             box_list[ind]=[x + y for x, y in zip(point, directions[dir])]
+            box_list.sort()
             # Sort to avoid duplicate. Ex: [1,3,2] -> [1,2,3] same as [1,2,3]
 
             if checkDeadLock(box_list, box_list[ind], dir) != True:
-                box_list.sort()
                 temp_append.append(point)
                 temp_append.append(box_list)
                 
@@ -209,18 +244,33 @@ def move(point,dir,path,temp_box_list):
                 if counter == 0:
                     temp_append.append(cur_path)
                     queue.appendleft(temp_append)
+            # temp_append.append(point)
+            # temp_append.append(box_list)
+            
+            # # check if any status has passed
+            # idx = point[0]*10 + point[1]
+            # counter = 0
+            # if idx in visited:
+            #     for k in visited[idx]:
+            #         if(k == temp_append):
+            #             counter = counter + 1
 
-                # check if goal
-                if set(map(tuple,box_list))==set(map(tuple,goal)):
-                    stop = timeit.default_timer()
-                    total_time=stop-start_time
-                    print("solution found")
-                    print(cur_path)
-                    print("total time taken: ")
-                    print(total_time)
-                    print("total steps take :")
-                    print(len(cur_path))
-                    exit()
+            # # If this state havent passed, add (state + predicted distance) to queue
+            # if counter == 0:
+            #     temp_append.append(cur_path)
+            #     queue.appendleft(temp_append)
+
+            # check if goal
+            if set(map(tuple,box_list))==set(map(tuple,goal)):
+                stop = timeit.default_timer()
+                total_time=stop-start_time
+                print("solution found")
+                print(cur_path)
+                print("total time taken: ")
+                print(total_time)
+                print("total steps take :")
+                print(len(cur_path))
+                exit()
     else:
         # Sort to avoid duplicate. Ex: [1,3,2] -> [1,2,3] same as [1,2,3]
         box_list.sort()
@@ -269,6 +319,7 @@ def dfs():
     count = 0
     while True:
         if len(queue) == 0:
+            print(current_path)
             print ("Can not find a solution")
             return
         count = count+1
@@ -319,5 +370,5 @@ def dfs():
         if wall[R[0]][R[1]] == 0:
             move(R, 'R', current_path, temp_box_list)
         if wall[L[0]][L[1]] == 0:
-            move(L, 'L',current_path,temp_box_list)
+            move(L, 'L', current_path, temp_box_list)
 dfs()
