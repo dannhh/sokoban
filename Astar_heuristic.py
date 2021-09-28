@@ -49,24 +49,33 @@ def print_Map(filename):
             temp.append(i)
             temp.append(j)						
             if character == "#":
-                walls.append(temp)
+                new.append(1)
             if character == "@":
                 robot.append(temp)
+                new.append(0)
             if character == ".":
                 storage.append(temp)
+                new.append(0)
             if character == "$":
                 box.append(temp)
+                new.append(0)
             if character == "*":
                 box.append(temp)
                 storage.append(temp)
+                new.append(0)
             if character == "+":
                 robot.append(temp)
                 storage.append(temp)
+                new.append(0)
             if character == "\n":
+                walls.append(new)
+                new = []
                 i += 1
                 j = 0
             else:
                 j += 1
+                if len(new) < j:
+                    new.append(0)
         else:
             break
 
@@ -88,6 +97,126 @@ if len(robot) == 0 or len(box) == 0 or len(storage) == 0 or len(walls) == 0:
     print("please provide the textfile in write format Walls : # \n storage : . \n box : $ \n robot : @ \n box on storage : * \n robot on storage : + \n should include walls,storage,box,robot")
     exit(0)
 
+""" CHECK FOR DEADLOCK
+    # DEADLOCK CASE:
+    #  1. Box in corner 
+    #  2. Cluster of four (at least one box)
+    #  4. The box at the 1 wall-side can be moved but never reach a goal <Not test in this code>
+    #  5. Two boxes are between 2 walls and they block the ends <Not test in this code>
+    #  6. ...
+
+    #  In this dfs, we just check for:
+            CASE 1:
+                #$   $#   #$     $#
+                #$   $#    $#   #$ 
+            CASE 2:
+                ##   $$   #   # 
+                $$   ##  $$   $$
+                         #     #
+            CASE 3: 
+                $$
+                $$
+            CASE 4: 
+                #$ 		$#   	 $$		$$  
+                $$		$$		 #$		$#
+            CASE 5: 
+                $#   ##
+                #S   #S    and it's rotations
+"""
+# CHECK DEADLOCK: 
+def checkDeadLock (box_list, curr_box, dir):
+    temp_box_wtht_cur = []
+    for box in box_list:
+        if curr_box[0] != box[0] or curr_box[1] != box[1]:
+            # Not a deadlock if both boxes are on goal
+            if curr_box in storage and box in storage:
+                continue
+
+            # CHECK FOR CASE 1
+            if box[1] == curr_box[1]:
+                if walls[curr_box[0]][curr_box[1]-1]==1 or walls[curr_box[0]][curr_box[1]+1]==1:
+                    if (curr_box[0]+1) == box[0] or (curr_box[0]-1) == box[0]:
+                        if walls[box[0]][box[1]-1]==1 or walls[box[0]][box[1]+1]==1:
+                            return True
+            
+            # CHECK FOR CASE 2:
+            if box[0] == curr_box[0]: 
+                if walls[curr_box[0]-1][curr_box[1]]==1 or walls[curr_box[0]+1][curr_box[1]]==1:
+                    if (curr_box[1]+1) == box[1] or (curr_box[1]-1) == box[1]:
+                        if walls[box[0]-1][box[1]]==1 or walls[box[0]+1][box[1]]==1:
+                            return True
+            temp_box_wtht_cur.append(box)
+
+    # CHECK FOR CASE 3, 4, 5 (duplicated with case 1,2 in some(2) step)        
+    if (dir == 'U'):        
+        if [curr_box[0]-1, curr_box[1]] in temp_box_wtht_cur or walls[curr_box[0]-1][curr_box[1]] == 1: # TOP
+
+            if [curr_box[0], curr_box[1]-1] in temp_box_wtht_cur or walls[curr_box[0]][curr_box[1]-1]: # LEFT
+                if [curr_box[0]-1, curr_box[1]-1] in temp_box_wtht_cur or walls[curr_box[0]-1][curr_box[1]-1] == 1: # TOP-LEFT
+                    if ([curr_box[0]-1, curr_box[1]] not in storage and not walls[curr_box[0]-1][curr_box[1]] 
+                     or [curr_box[0], curr_box[1]-1] not in storage and not walls[curr_box[0]][curr_box[1]-1]
+                     or [curr_box[0]-1, curr_box[1]-1] not in storage and not walls[curr_box[0]-1][curr_box[1]-1]):     
+                        return True
+
+            if [curr_box[0], curr_box[1]+1] in temp_box_wtht_cur or walls[curr_box[0]][curr_box[1]+1]: # RIGHT
+                if [curr_box[0]-1, curr_box[1]+1] in temp_box_wtht_cur or walls[curr_box[0]-1][curr_box[1]+1] == 1: # TOP-RIGHT
+                    if ([curr_box[0]-1, curr_box[1]] not in storage and not walls[curr_box[0]-1][curr_box[1]] 
+                     or [curr_box[0], curr_box[1]+1] not in storage and not walls[curr_box[0]][curr_box[1]+1]
+                     or [curr_box[0]-1, curr_box[1]+1] not in storage and not walls[curr_box[0]-1][curr_box[1]+1]):     
+                        return True
+
+    elif (dir == 'D'):        
+        if [curr_box[0]+1, curr_box[1]] in box_list or walls[curr_box[0]+1][curr_box[1]] == 1: # BOT
+
+            if [curr_box[0], curr_box[1]-1] in box_list or walls[curr_box[0]][curr_box[1]-1]: # LEFT
+                if [curr_box[0]+1, curr_box[1]-1] in box_list or walls[curr_box[0]+1][curr_box[1]-1] == 1: # BOT-LEFT
+                    if ([curr_box[0]+1, curr_box[1]] not in storage and not walls[curr_box[0]+1][curr_box[1]] 
+                     or [curr_box[0], curr_box[1]-1] not in storage and not walls[curr_box[0]][curr_box[1]-1]
+                     or [curr_box[0]+1, curr_box[1]-1] not in storage and not walls[curr_box[0]+1][curr_box[1]-1]):     
+                        return True
+
+            if [curr_box[0], curr_box[1]+1] in box_list or walls[curr_box[0]][curr_box[1]+1]: # RIGHT
+                if [curr_box[0]+1, curr_box[1]+1] in box_list or walls[curr_box[0]+1][curr_box[1]+1] == 1: # BOT-RIGHT
+                    if ([curr_box[0]+1, curr_box[1]] not in storage and not walls[curr_box[0]+1][curr_box[1]] 
+                     or [curr_box[0], curr_box[1]+1] not in storage and not walls[curr_box[0]][curr_box[1]+1]
+                     or [curr_box[0]+1, curr_box[1]+1] not in storage and not walls[curr_box[0]+1][curr_box[1]+1]):     
+                        return True
+
+    elif (dir == 'R'):        
+        if [curr_box[0], curr_box[1]+1] in temp_box_wtht_cur or walls[curr_box[0]][curr_box[1]+1] == 1: # RIGHT
+
+            if [curr_box[0]-1, curr_box[1]] in temp_box_wtht_cur or walls[curr_box[0]-1][curr_box[1]]: # TOP
+                if [curr_box[0]-1, curr_box[1]+1] in temp_box_wtht_cur or walls[curr_box[0]-1][curr_box[1]+1] == 1: # RIGHT-TOP
+                    if ([curr_box[0], curr_box[1]+1] not in storage and not walls[curr_box[0]][curr_box[1]+1] 
+                     or [curr_box[0]-1, curr_box[1]] not in storage and not walls[curr_box[0]-1][curr_box[1]]
+                     or [curr_box[0]-1, curr_box[1]+1] not in storage and not walls[curr_box[0]-1][curr_box[1]+1]):     
+                        return True
+
+            if [curr_box[0]+1, curr_box[1]] in temp_box_wtht_cur or walls[curr_box[0]+1][curr_box[1]]: # BOT
+                if [curr_box[0]+1, curr_box[1]+1] in temp_box_wtht_cur or walls[curr_box[0]+1][curr_box[1]+1] == 1: # RIGHT-BOT
+                    if ([curr_box[0], curr_box[1]+1] not in storage and not walls[curr_box[0]][curr_box[1]+1] 
+                     or [curr_box[0]+1, curr_box[1]] not in storage and not walls[curr_box[0]+1][curr_box[1]]
+                     or [curr_box[0]+1, curr_box[1]+1] not in storage and not walls[curr_box[0]+1][curr_box[1]+1]):     
+                        return True
+
+    elif (dir == 'L'):        
+        if [curr_box[0], curr_box[1]-1] in temp_box_wtht_cur or walls[curr_box[0]][curr_box[1]-1] == 1: # LEFT
+
+            if [curr_box[0]-1, curr_box[1]] in temp_box_wtht_cur or walls[curr_box[0]-1][curr_box[1]]: # TOP
+                if [curr_box[0]-1, curr_box[1]-1] in temp_box_wtht_cur or walls[curr_box[0]-1][curr_box[1]-1] == 1: # LEFT-TOP
+                    if ([curr_box[0], curr_box[1]-1] not in storage and not walls[curr_box[0]][curr_box[1]-1] 
+                     or [curr_box[0]-1, curr_box[1]] not in storage and not walls[curr_box[0]-1][curr_box[1]]
+                     or [curr_box[0]-1, curr_box[1]-1] not in storage and not walls[curr_box[0]-1][curr_box[1]-1]):     
+                        return True
+
+            if [curr_box[0]+1, curr_box[1]] in temp_box_wtht_cur or walls[curr_box[0]+1][curr_box[1]]: # BOT
+                if [curr_box[0]+1, curr_box[1]-1] in temp_box_wtht_cur or walls[curr_box[0]+1][curr_box[1]-1] == 1: # LEFT-BOT
+                    if ([curr_box[0], curr_box[1]-1] not in storage and not walls[curr_box[0]][curr_box[1]-1] 
+                     or [curr_box[0]+1, curr_box[1]] not in storage and not walls[curr_box[0]+1][curr_box[1]]
+                     or [curr_box[0]+1, curr_box[1]-1] not in storage and not walls[curr_box[0]+1][curr_box[1]-1]):     
+                        return True    
+    return False
+
 # function to move robot and boxes
 def move(point_robot_move, direction_move, path, temp_box_list):
     # list store position of boxes
@@ -99,21 +228,22 @@ def move(point_robot_move, direction_move, path, temp_box_list):
     # path from start to now
     cur_path = path[:]
     cur_path.append(direction_move) # add next move to path
-    if point_robot_move not in walls:
-        if point_robot_move in box_list:
-            # get index of the box that robot hit
-            idx = box_list.index(point_robot_move)
+    
+    if point_robot_move in box_list:
+        # get index of the box that robot hit
+        idx = box_list.index(point_robot_move)
+        
+        # get the new position if the robot move box 
+        temp_pos_of_box = [x + y for x, y in zip(point_robot_move, directions[direction_move])]
+        
+        if temp_pos_of_box not in walls and temp_pos_of_box not in box_list:
+            # update the position of the box in the list
+            box_list[idx] = temp_pos_of_box
             
-            # get the new position if the robot move box 
-            temp_pos_of_box = [x + y for x, y in zip(point_robot_move, directions[direction_move])]
-            
-            if temp_pos_of_box not in walls and temp_pos_of_box not in box_list:
-                # update the position of the box in the list
-                box_list[idx] = temp_pos_of_box
-                
-                # sort to avoid duplicate
-                box_list.sort()
+            # sort to avoid duplicate
+            box_list.sort()
 
+            if checkDeadLock(box_list, box_list[idx], direction_move) != True:
                 # add the new position of robot and boxes to temp_pos
                 temp_pos.append(point_robot_move)
                 for i in box_list:
@@ -127,7 +257,7 @@ def move(point_robot_move, direction_move, path, temp_box_list):
                     for k in visited_Moves[idx]:
                         if k == temp_pos:
                             counter = counter + 1
-                
+            
                 # if this state hasn't been passed, add to queue
                 if counter == 0:
                     temp_pos.append(cur_path)
@@ -136,46 +266,6 @@ def move(point_robot_move, direction_move, path, temp_box_list):
 
                     # put to queue follow the min heap with the min heuristic distance
                     heapq.heappush(queue, (temp_pos[-1][:], temp_pos[:-1]))
-
-                # check if goal is met
-                if set(map(tuple, box_list)) == set(map(tuple, storage)):
-                    stop = timeit.default_timer()
-                    total_time = stop - start_time
-                    
-                    print("Solution found")
-                    print(cur_path)
-                    print("Total time taken: ")
-                    print(total_time)
-                    print("Total steps take: ")
-                    print(len(cur_path))
-
-                    with open('C:/Users/Acer/Desktop/HK211/NMAI/Ass1/thamkhao/result.txt', 'a') as f:
-                        for i in cur_path:
-                            f.write(i)
-                
-                    exit()
-        else:
-            temp_pos.append(point_robot_move)
-            box_list.sort()
-            for i in box_list:
-                temp_pos.append(i)
-
-            # check if the new state has been passed
-            idx = point_robot_move[0]*10 + point_robot_move[1]
-            counter = 0
-            
-            if idx in visited_Moves:
-                for k in visited_Moves[idx]:
-                    if k == temp_pos:
-                        counter = counter + 1
-            # if this state hasn't been passed, add to queue
-            if counter == 0:
-                temp_pos.append(cur_path)
-                dis_estimate = heuristic(box_list, storage, cur_path, point_robot_move)
-                temp_pos.append(str(dis_estimate))
-
-                # put to queue follow the min heap with the min heuristic distance
-                heapq.heappush(queue, (temp_pos[-1][:], temp_pos[:-1]))
 
             # check if goal is met
             if set(map(tuple, box_list)) == set(map(tuple, storage)):
@@ -192,14 +282,49 @@ def move(point_robot_move, direction_move, path, temp_box_list):
                 with open('C:/Users/Acer/Desktop/HK211/NMAI/Ass1/thamkhao/result.txt', 'a') as f:
                     for i in cur_path:
                         f.write(i)
-
+            
                 exit()
+    else:
+        temp_pos.append(point_robot_move)
+        box_list.sort()
+        for i in box_list:
+            temp_pos.append(i)
 
-# direction to move
-move_up = 'U'
-move_down = 'D'
-move_left = 'L'
-move_right = 'R'
+        # check if the new state has been passed
+        idx = point_robot_move[0]*10 + point_robot_move[1]
+        counter = 0
+        
+        if idx in visited_Moves:
+            for k in visited_Moves[idx]:
+                if k == temp_pos:
+                    counter = counter + 1
+        # if this state hasn't been passed, add to queue
+        if counter == 0:
+            temp_pos.append(cur_path)
+            dis_estimate = heuristic(box_list, storage, cur_path, point_robot_move)
+            temp_pos.append(str(dis_estimate))
+
+            # put to queue follow the min heap with the min heuristic distance
+            heapq.heappush(queue, (temp_pos[-1][:], temp_pos[:-1]))
+
+        # check if goal is met
+        if set(map(tuple, box_list)) == set(map(tuple, storage)):
+            stop = timeit.default_timer()
+            total_time = stop - start_time
+            
+            print("Solution found")
+            print(cur_path)
+            print("Total time taken: ")
+            print(total_time)
+            print("Total steps take: ")
+            print(len(cur_path))
+
+            with open('C:/Users/Acer/Desktop/HK211/NMAI/Ass1/thamkhao/result.txt', 'a') as f:
+                for i in cur_path:
+                    f.write(i)
+
+            exit()
+
 
 # function for A* algorithm
 def A_star_heuristic():
@@ -276,10 +401,15 @@ def A_star_heuristic():
         R = [x + y for x, y in zip(robot_position, directions['R'])]
         L = [x + y for x, y in zip(robot_position, directions['L'])]
 
-        move(U, move_up, temp_path, temp_box_list)
-        move(D, move_down, temp_path, temp_box_list)
-        move(R, move_right, temp_path, temp_box_list)
-        move(L, move_left, temp_path, temp_box_list)
+
+        if walls[U[0]][U[1]] == 0:
+            move(U, 'U', temp_path, temp_box_list)
+        if walls[D[0]][D[1]] == 0:
+            move(D, 'D', temp_path, temp_box_list)
+        if walls[R[0]][R[1]] == 0:   
+            move(R, 'R', temp_path, temp_box_list)
+        if walls[L[0]][L[1]] == 0:
+            move(L, 'L', temp_path, temp_box_list)
         
         count=count+1
         
