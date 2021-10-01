@@ -23,18 +23,27 @@ start_time=0
 
 #function with own heuristic
 
-def heuristic(box_ls,storage_ls,path,point_ls):
-     distance=[]
-     p=point_ls[:]
-     for h in box_ls:
-         dis_h_p=sum(abs(np.subtract(h,p)))
-         dis_temp=[]
-         for s in storage_ls:
-             a=sum(abs(np.subtract(h,s)))+dis_h_p
-             dis_temp.append(a)
-         distance.append(min(dis_temp))
-     dis_value=sum(distance)+len(path)
-     return dis_value
+def heuristic(box_ls,storage_ls,path,robot_pos):
+    temp_storage = storage_ls[:]
+    storageLeft = len(storage_ls)
+    distance=[]
+    robotBoxDistance = 9999999
+    for h in box_ls:
+        dis_temp = 9999999
+        if robotBoxDistance > sum(abs(np.subtract(h, robot_pos))):
+            robotBoxDistance = sum(abs(np.subtract(h, robot_pos)))
+        temp_goal = []
+        for s in temp_storage:
+            a=sum(abs(np.subtract(h,s)))
+            if a < dis_temp:
+                dis_temp = a
+                temp_goal.append(s)
+            if a == 0:
+                storageLeft -= 1
+        distance.append(dis_temp)
+        temp_storage.pop(temp_storage.index(temp_goal[-1][:]))
+    dis_value = sum(distance) + len(path) + robotBoxDistance + storageLeft
+    return dis_value
 
 # function for reading test-case file
 def print_Map(filename):
@@ -236,7 +245,7 @@ def move(point_robot_move, direction_move, path, temp_box_list):
         # get the new position if the robot move box 
         temp_pos_of_box = [x + y for x, y in zip(point_robot_move, directions[direction_move])]
         
-        if temp_pos_of_box not in walls and temp_pos_of_box not in box_list:
+        if walls[temp_pos_of_box[0]][temp_pos_of_box[1]] == 0 and temp_pos_of_box not in box_list:
             # update the position of the box in the list
             box_list[idx] = temp_pos_of_box
             
@@ -279,7 +288,7 @@ def move(point_robot_move, direction_move, path, temp_box_list):
                 print("Total steps take: ")
                 print(len(cur_path))
 
-                with open('C:/Users/Acer/Desktop/HK211/NMAI/Ass1/thamkhao/result.txt', 'a') as f:
+                with open('C:/Users/Acer/Desktop/HK211/NMAI/Ass1/thamkhao/result.txt', 'w') as f:
                     for i in cur_path:
                         f.write(i)
             
@@ -319,7 +328,7 @@ def move(point_robot_move, direction_move, path, temp_box_list):
             print("Total steps take: ")
             print(len(cur_path))
 
-            with open('C:/Users/Acer/Desktop/HK211/NMAI/Ass1/thamkhao/result.txt', 'a') as f:
+            with open('C:/Users/Acer/Desktop/HK211/NMAI/Ass1/thamkhao/result.txt', 'w') as f:
                 for i in cur_path:
                     f.write(i)
 
