@@ -13,6 +13,7 @@ robot = []
 walls = []
 storage = []
 box = []
+width = 0
 
 # Direction for robot to move, U: up; D: down; L: left; R: right
 directions = {
@@ -22,8 +23,16 @@ directions = {
     'L': [0, -1]
 }
 
+# Check if a side of game have a goal
+valid_side = {
+    'U' : False,
+    'D' : False,
+    'R' : False,
+    'L' : False
+}
+
 # Starting time of game
-start_time = time.time()
+start_time = 0
 
 #function with own heuristic
 
@@ -130,6 +139,16 @@ if len(robot) == 0 or len(box) == 0 or len(storage) == 0 or len(walls) == 0:
                 $#   ##
                 #S   #S    and it's rotations
 """
+def check_if_goal_in_side():
+    for s in storage:
+        if s[0] == 1:
+            valid_side['U'] = True
+        if s[0] == len(walls)-2:
+            valid_side['D'] = True
+        if s[1] == 1:
+            valid_side['L'] = True
+        if s[1] == width-2:
+            valid_side['R'] = True
 # CHECK DEADLOCK: 
 def checkDeadLock (box_list, curr_box, dir):
     temp_box_wtht_cur = []
@@ -155,11 +174,15 @@ def checkDeadLock (box_list, curr_box, dir):
             temp_box_wtht_cur.append(box)
 
     # CHECK FOR CASE 3, 4, 5 (duplicated with case 1,2 in some(2) step)        
-    if (dir == 'U'):        
+    if (dir == 'U'):  
+        if curr_box[0] == 1 and valid_side['U'] == False:
+            return True
+      
         if [curr_box[0]-1, curr_box[1]] in temp_box_wtht_cur or walls[curr_box[0]-1][curr_box[1]] == 1: # TOP
 
             if [curr_box[0], curr_box[1]-1] in temp_box_wtht_cur or walls[curr_box[0]][curr_box[1]-1]: # LEFT
                 if [curr_box[0]-1, curr_box[1]-1] in temp_box_wtht_cur or walls[curr_box[0]-1][curr_box[1]-1] == 1: # TOP-LEFT
+                    # If boxes are in deadlock state but also in destination, they are not considered deadlock
                     if ([curr_box[0]-1, curr_box[1]] not in storage and not walls[curr_box[0]-1][curr_box[1]] 
                      or [curr_box[0], curr_box[1]-1] not in storage and not walls[curr_box[0]][curr_box[1]-1]
                      or [curr_box[0]-1, curr_box[1]-1] not in storage and not walls[curr_box[0]-1][curr_box[1]-1]):     
@@ -167,16 +190,20 @@ def checkDeadLock (box_list, curr_box, dir):
 
             if [curr_box[0], curr_box[1]+1] in temp_box_wtht_cur or walls[curr_box[0]][curr_box[1]+1]: # RIGHT
                 if [curr_box[0]-1, curr_box[1]+1] in temp_box_wtht_cur or walls[curr_box[0]-1][curr_box[1]+1] == 1: # TOP-RIGHT
+                    # If boxes are in deadlock state but also in destination, they are not considered deadlock
                     if ([curr_box[0]-1, curr_box[1]] not in storage and not walls[curr_box[0]-1][curr_box[1]] 
                      or [curr_box[0], curr_box[1]+1] not in storage and not walls[curr_box[0]][curr_box[1]+1]
                      or [curr_box[0]-1, curr_box[1]+1] not in storage and not walls[curr_box[0]-1][curr_box[1]+1]):     
                         return True
 
-    elif (dir == 'D'):        
+    elif (dir == 'D'):
+        if curr_box[0] == (len(walls) - 2) and valid_side['D'] == False:
+            return True       
         if [curr_box[0]+1, curr_box[1]] in box_list or walls[curr_box[0]+1][curr_box[1]] == 1: # BOT
 
             if [curr_box[0], curr_box[1]-1] in box_list or walls[curr_box[0]][curr_box[1]-1]: # LEFT
                 if [curr_box[0]+1, curr_box[1]-1] in box_list or walls[curr_box[0]+1][curr_box[1]-1] == 1: # BOT-LEFT
+                    # If boxes are in deadlock state but also in destination, they are not considered deadlock
                     if ([curr_box[0]+1, curr_box[1]] not in storage and not walls[curr_box[0]+1][curr_box[1]] 
                      or [curr_box[0], curr_box[1]-1] not in storage and not walls[curr_box[0]][curr_box[1]-1]
                      or [curr_box[0]+1, curr_box[1]-1] not in storage and not walls[curr_box[0]+1][curr_box[1]-1]):     
@@ -184,12 +211,15 @@ def checkDeadLock (box_list, curr_box, dir):
 
             if [curr_box[0], curr_box[1]+1] in box_list or walls[curr_box[0]][curr_box[1]+1]: # RIGHT
                 if [curr_box[0]+1, curr_box[1]+1] in box_list or walls[curr_box[0]+1][curr_box[1]+1] == 1: # BOT-RIGHT
+                    # If boxes are in deadlock state but also in destination, they are not considered deadlock
                     if ([curr_box[0]+1, curr_box[1]] not in storage and not walls[curr_box[0]+1][curr_box[1]] 
                      or [curr_box[0], curr_box[1]+1] not in storage and not walls[curr_box[0]][curr_box[1]+1]
                      or [curr_box[0]+1, curr_box[1]+1] not in storage and not walls[curr_box[0]+1][curr_box[1]+1]):     
                         return True
 
     elif (dir == 'R'):        
+        if curr_box[1] == (width - 2) and valid_side['R'] == False:
+            return True
         if [curr_box[0], curr_box[1]+1] in temp_box_wtht_cur or walls[curr_box[0]][curr_box[1]+1] == 1: # RIGHT
 
             if [curr_box[0]-1, curr_box[1]] in temp_box_wtht_cur or walls[curr_box[0]-1][curr_box[1]]: # TOP
@@ -206,7 +236,9 @@ def checkDeadLock (box_list, curr_box, dir):
                      or [curr_box[0]+1, curr_box[1]+1] not in storage and not walls[curr_box[0]+1][curr_box[1]+1]):     
                         return True
 
-    elif (dir == 'L'):        
+    elif (dir == 'L'):       
+        if curr_box[1] == 1 and valid_side['L'] == False:
+            return True 
         if [curr_box[0], curr_box[1]-1] in temp_box_wtht_cur or walls[curr_box[0]][curr_box[1]-1] == 1: # LEFT
 
             if [curr_box[0]-1, curr_box[1]] in temp_box_wtht_cur or walls[curr_box[0]-1][curr_box[1]]: # TOP
@@ -334,12 +366,13 @@ def move(point_robot_move, direction_move, path, temp_box_list):
 
             exit()
 
+# initialize start time
+start_time = time.time()
 
 # function for A* algorithm
 def A_star_heuristic():
     
-    # initialize start time
-    #start_time = timeit.default_timer()
+    check_if_goal_in_side()
     
     # temp queue to store
     temp_queue = []

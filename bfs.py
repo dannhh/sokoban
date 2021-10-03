@@ -398,4 +398,4 @@ def bfs():
             move(R, 'R', current_path, temp_box_list)
         if wall[L[0]][L[1]] == 0:
             move(L, 'L', current_path, temp_box_list)
-fs()
+bfs()
