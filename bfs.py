@@ -1,13 +1,17 @@
 import sys
+import psutil, os
 from collections import deque
 import timeit
 
+pid = os.getpid()
+ps = psutil.Process(pid)    
 # =============================== INITIAL =====================================
 # four component of sokoban game
 wall   = []
 player = []
 goal   = []
 box    = []
+width  = 0
 # Visited is stored as dict
 visited = {}
 
@@ -21,7 +25,13 @@ directions = {
     'L' : [0, -1],
     'D' : [1, 0]
 }
-
+# Check if a side of game have a goal
+valid_side = {
+    'U' : False,
+    'D' : False,
+    'R' : False,
+    'L' : False
+}
 # start_time to store time start
 start_time = 0
 
@@ -37,6 +47,7 @@ def print_char(filename):
     i = 0
     j = 0
     new = []
+    width = 0
     while True:
         char=f.read(1)		
         temp = []                
@@ -65,6 +76,8 @@ def print_char(filename):
             if char == "\n":
                 j=0
                 wall.append(new)
+                if(len(new) > width):
+                    width = len(new)
                 new = []
                 i=i+1
             else:               
@@ -110,6 +123,16 @@ if len(player) == 0 or len(box) == 0 or len(goal) == 0 or len(wall) == 0:
                 $#   ##
                 #S   #S    and it's rotations
 """
+def check_if_goal_in_side():
+    for g in goal:
+        if g[0] == 1:
+            valid_side['U'] = True
+        if g[0] == len(wall)-2:
+            valid_side['D'] = True
+        if g[1] == 1:
+            valid_side['L'] = True
+        if g[1] == width-2:
+            valid_side['R'] = True
 # CHECK DEADLOCK: 
 def checkDeadLock (box_list, curr_box, dir):
     temp_box_wtht_cur = []
@@ -135,7 +158,10 @@ def checkDeadLock (box_list, curr_box, dir):
             temp_box_wtht_cur.append(box)
 
     # CHECK FOR CASE 3, 4, 5 (duplicated with case 1,2 in some(2) step)        
-    if (dir == 'U'):        
+    if (dir == 'U'):     
+        if curr_box[0] == 1 and valid_side['U'] == False: 
+            return True
+  
         if [curr_box[0]-1, curr_box[1]] in temp_box_wtht_cur or wall[curr_box[0]-1][curr_box[1]] == 1: # TOP
 
             if [curr_box[0], curr_box[1]-1] in temp_box_wtht_cur or wall[curr_box[0]][curr_box[1]-1]: # LEFT
@@ -154,7 +180,9 @@ def checkDeadLock (box_list, curr_box, dir):
                      or [curr_box[0]-1, curr_box[1]+1] not in goal and not wall[curr_box[0]-1][curr_box[1]+1]):     
                         return True
 
-    elif (dir == 'D'):        
+    elif (dir == 'D'):
+        if curr_box[0] == (len(wall)-2) and valid_side['D'] == False:
+            return True      
         if [curr_box[0]+1, curr_box[1]] in temp_box_wtht_cur or wall[curr_box[0]+1][curr_box[1]] == 1: # BOT
 
             if [curr_box[0], curr_box[1]-1] in temp_box_wtht_cur or wall[curr_box[0]][curr_box[1]-1]: # LEFT
@@ -173,7 +201,9 @@ def checkDeadLock (box_list, curr_box, dir):
                      or [curr_box[0]+1, curr_box[1]+1] not in goal and not wall[curr_box[0]+1][curr_box[1]+1]):     
                         return True
 
-    elif (dir == 'R'):        
+    elif (dir == 'R'): 
+        if curr_box[1] == (width-2) and valid_side['R'] == False:
+            return True       
         if [curr_box[0], curr_box[1]+1] in temp_box_wtht_cur or wall[curr_box[0]][curr_box[1]+1] == 1: # RIGHT
 
             if [curr_box[0]-1, curr_box[1]] in temp_box_wtht_cur or wall[curr_box[0]-1][curr_box[1]]: # TOP
@@ -192,7 +222,9 @@ def checkDeadLock (box_list, curr_box, dir):
                      or [curr_box[0]+1, curr_box[1]+1] not in goal and not wall[curr_box[0]+1][curr_box[1]+1]):     
                         return True
 
-    elif (dir == 'L'):        
+    elif (dir == 'L'):  
+        if curr_box[1] == 1 and valid_side['L'] == False:
+            return True      
         if [curr_box[0], curr_box[1]-1] in temp_box_wtht_cur or wall[curr_box[0]][curr_box[1]-1] == 1: # LEFT
 
             if [curr_box[0]-1, curr_box[1]] in temp_box_wtht_cur or wall[curr_box[0]-1][curr_box[1]]: # TOP
@@ -260,6 +292,8 @@ def move(point,dir,path,temp_box_list):
                 print(total_time)
                 print("total steps taken: ")
                 print(len(cur_path))
+                print("total space taken: ")
+                print(ps.memory_info()[0]/(1024*1024)) 
                 exit()
     else:
         # Sort to avoid duplicate. Ex: [1,3,2] -> [1,2,3] same as [1,2,3]
@@ -289,14 +323,17 @@ def move(point,dir,path,temp_box_list):
             print(total_time)
             print("total steps take :")
             print(len(cur_path))
+            print("total space taken: ")
+            print(ps.memory_info()[0]/(1024*1024))
             exit()
 
-# ============================== DFS FUNCTION =================================
+# ============================== BFS FUNCTION =================================
 # start counts time
 start_time = timeit.default_timer()
 
-# dfs function
-def dfs():
+# bfs function
+def bfs():
+    check_if_goal_in_side()
     # State store current position of current player and box
     node=[]
     node.append(player[0])
@@ -361,4 +398,4 @@ def dfs():
             move(R, 'R', current_path, temp_box_list)
         if wall[L[0]][L[1]] == 0:
             move(L, 'L', current_path, temp_box_list)
-dfs()
+fs()
