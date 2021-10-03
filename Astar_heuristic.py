@@ -1,17 +1,21 @@
 import sys
-import numpy as np
-from collections import deque
-import timeit
+import time
 import heapq
+import psutil
+import os
+
+# use to take memory used
+pid = os.getpid()
+ps = psutil.Process(pid)
 
 # array to store robot, walls, storages and boxes
-robot=[]
-walls=[]
-storage=[]
-box=[]
+robot = []
+walls = []
+storage = []
+box = []
 
 # Direction for robot to move, U: up; D: down; L: left; R: right
-directions={
+directions = {
     'U': [-1, 0],
     'R': [0, 1],
     'D': [1, 0],
@@ -19,31 +23,25 @@ directions={
 }
 
 # Starting time of game
-start_time=0
+start_time = time.time()
 
 #function with own heuristic
 
-def heuristic(box_ls,storage_ls,path,robot_pos):
+def heuristic(box_ls,storage_ls,path):
     temp_storage = storage_ls[:]
-    storageLeft = len(storage_ls)
-    distance=[]
-    robotBoxDistance = 9999999
+    distance = 0
     for h in box_ls:
         dis_temp = 9999999
-        if robotBoxDistance > sum(abs(np.subtract(h, robot_pos))):
-            robotBoxDistance = sum(abs(np.subtract(h, robot_pos)))
         temp_goal = []
         for s in temp_storage:
-            a=sum(abs(np.subtract(h,s)))
+            a = abs(h[1] - s[1]) + abs(h[0] - s[0])
             if a < dis_temp:
                 dis_temp = a
                 temp_goal.append(s)
-            if a == 0:
-                storageLeft -= 1
-        distance.append(dis_temp)
+        distance += dis_temp
         temp_storage.pop(temp_storage.index(temp_goal[-1][:]))
-    dis_value = sum(distance) + len(path) + robotBoxDistance + storageLeft
-    return dis_value
+    distance += len(path)
+    return distance
 
 # function for reading test-case file
 def print_Map(filename):
@@ -270,7 +268,7 @@ def move(point_robot_move, direction_move, path, temp_box_list):
                 # if this state hasn't been passed, add to queue
                 if counter == 0:
                     temp_pos.append(cur_path)
-                    dis_estimate = heuristic(box_list, storage, cur_path, point_robot_move)
+                    dis_estimate = heuristic(box_list, storage, cur_path)
                     temp_pos.append(str(dis_estimate))
 
                     # put to queue follow the min heap with the min heuristic distance
@@ -278,7 +276,7 @@ def move(point_robot_move, direction_move, path, temp_box_list):
 
             # check if goal is met
             if set(map(tuple, box_list)) == set(map(tuple, storage)):
-                stop = timeit.default_timer()
+                stop = time.time()
                 total_time = stop - start_time
                 
                 print("Solution found")
@@ -287,10 +285,12 @@ def move(point_robot_move, direction_move, path, temp_box_list):
                 print(total_time)
                 print("Total steps take: ")
                 print(len(cur_path))
+                print("Total space taken: ")
+                print(ps.memory_info()[0]/(1024*1024))
 
-                with open('C:/Users/Acer/Desktop/HK211/NMAI/Ass1/thamkhao/result.txt', 'w') as f:
-                    for i in cur_path:
-                        f.write(i)
+                #with open('C:/Users/Acer/Desktop/HK211/NMAI/Ass1/thamkhao/result.txt', 'w') as f:
+                #    for i in cur_path:
+                #        f.write(i)
             
                 exit()
     else:
@@ -310,7 +310,7 @@ def move(point_robot_move, direction_move, path, temp_box_list):
         # if this state hasn't been passed, add to queue
         if counter == 0:
             temp_pos.append(cur_path)
-            dis_estimate = heuristic(box_list, storage, cur_path, point_robot_move)
+            dis_estimate = heuristic(box_list, storage, cur_path)
             temp_pos.append(str(dis_estimate))
 
             # put to queue follow the min heap with the min heuristic distance
@@ -318,7 +318,7 @@ def move(point_robot_move, direction_move, path, temp_box_list):
 
         # check if goal is met
         if set(map(tuple, box_list)) == set(map(tuple, storage)):
-            stop = timeit.default_timer()
+            stop = time.time()
             total_time = stop - start_time
             
             print("Solution found")
@@ -328,9 +328,9 @@ def move(point_robot_move, direction_move, path, temp_box_list):
             print("Total steps take: ")
             print(len(cur_path))
 
-            with open('C:/Users/Acer/Desktop/HK211/NMAI/Ass1/thamkhao/result.txt', 'w') as f:
-                for i in cur_path:
-                    f.write(i)
+            #with open('C:/Users/Acer/Desktop/HK211/NMAI/Ass1/thamkhao/result.txt', 'w') as f:
+            #    for i in cur_path:
+            #        f.write(i)
 
             exit()
 
@@ -339,7 +339,7 @@ def move(point_robot_move, direction_move, path, temp_box_list):
 def A_star_heuristic():
     
     # initialize start time
-    start_time = timeit.default_timer()
+    #start_time = timeit.default_timer()
     
     # temp queue to store
     temp_queue = []
