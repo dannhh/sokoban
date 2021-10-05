@@ -335,6 +335,7 @@ start_time = timeit.default_timer()
 def bfs():
     check_if_goal_in_side()
     # State store current position of current player and box
+    print(wall)
     node=[]
     node.append(player[0])
     node.append(box)    

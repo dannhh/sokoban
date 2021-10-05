@@ -4,6 +4,7 @@ import heapq
 import psutil
 import os
 
+#--------------------------------INITIAL--------------------------------#
 # use to take memory used
 pid = os.getpid()
 ps = psutil.Process(pid)
@@ -34,8 +35,93 @@ valid_side = {
 # Starting time of game
 start_time = 0
 
-#function with own heuristic
+# array store the moves that have been met
+visited_Moves = {}
 
+# queue to put each state to check
+queue = []
+
+# variable to check when all boxes are in storages
+check = False
+
+#--------------------------------READ TESTCASE FILE, WRITE RESULT AND FUNCTION TO RUN--------------------------------#
+# function to read testcase file
+def read_file(filename):
+    fulltest = []
+    each_test = []
+    level = []
+    f = open(filename, 'r')
+    for line in f:
+        if line == "end":
+            break
+        if len(line) == 1:
+            fulltest.append(each_test)
+            each_test = []
+        elif (line[0] == "L"):
+            level.append(line)
+        else:
+            temp = []
+            for c in line:
+                if (c != '\n'):
+                    temp.append(c)
+            each_test.append(temp)
+    f.close()
+    return fulltest, level
+
+# function to write result
+def write_file(filename, cur_path, total_time, total_step, space_taken, total_state, level):
+    string_to_write = level
+    string_to_write += "Path: " + str(cur_path) + "\n"
+    string_to_write += "Total time taken: " + str(total_time) + "\n"
+    string_to_write += "Total steps: " + str(total_step) + "\n"
+    string_to_write += "Total space taken: " + str(space_taken) + "\n"
+    string_to_write += "Total state visited: " + str(total_state) + "\n"
+    string_to_write += "******************************************\n"
+    f = open(filename, 'a')
+    f.write(string_to_write)
+    f.close()
+
+# main function to run
+def run(fileread, filewrite):
+    fulltest, list_level = read_file(fileread)
+    count = 0
+    while count != 40:
+        print("Solving testcase " + str(count + 1) + "..........")
+        level = list_level.pop(0)
+        matrix = fulltest.pop(0)
+        global start_time
+        start_time = time.time()
+        cur_path, total_time, total_step, space_taken, total_state = A_star_heuristic(matrix)
+        if cur_path == []:
+            file = open(filewrite, 'a')
+            file.write("Testcase is fail\n")
+            file.close()
+            write_file(filewrite, cur_path, total_time, total_step, space_taken, total_state, level)
+        else:
+            write_file(filewrite, cur_path, total_time, total_step, space_taken, total_state, level)
+        print("Done")
+        count += 1
+
+        # reassign the state of the game
+        global robot
+        robot = []
+        global walls
+        walls = []
+        global storage
+        storage = []
+        global box
+        box = []
+        global width
+        width = 0
+        global visited_Moves
+        visited_Moves = {}
+        global queue
+        queue = []
+        global check
+        check = False
+    return count
+
+#function with own heuristic
 def heuristic(box_ls,storage_ls,path):
     temp_storage = storage_ls[:]
     distance = 0
@@ -52,14 +138,13 @@ def heuristic(box_ls,storage_ls,path):
     distance += len(path)
     return distance
 
-# function for reading test-case file
-def print_Map(filename):
-    f = open(filename, 'r')					
+# function to store the map to state variables
+def print_Map(matrix):				
     i = 0										
     j = 0
     new = []
-    while True:	
-        character = f.read(1)
+    while i < len(matrix):	
+        character = matrix[i][j]
         temp = []
         if character:
             temp.append(i)
@@ -83,7 +168,7 @@ def print_Map(filename):
                 robot.append(temp)
                 storage.append(temp)
                 new.append(0)
-            if character == "\n":
+            if j == len(matrix[i]) - 1:
                 walls.append(new)
                 new = []
                 i += 1
@@ -96,23 +181,16 @@ def print_Map(filename):
             break
 
 # User run file but don't provide textfile as system argument
-if len(sys.argv) < 2:
-    print("Please provide textfile name as system argument \n python3 Astar_heuristic.py <filename>")
+if len(sys.argv) < 3:
+    print("Please provide textfile name as system argument \n python3 Astar_heuristic.py <filename> <filename>")
     exit(0)
-
-print_Map(sys.argv[1])
-
-# array store the moves that have been met
-visited_Moves = {}
-
-# queue to put each state to check
-queue = []
 
 # textfile doesn't follow the format
-if len(robot) == 0 or len(box) == 0 or len(storage) == 0 or len(walls) == 0:
-    print("please provide the textfile in write format Walls : # \n storage : . \n box : $ \n robot : @ \n box on storage : * \n robot on storage : + \n should include walls,storage,box,robot")
-    exit(0)
+#if len(robot) == 0 or len(box) == 0 or len(storage) == 0 or len(walls) == 0:
+#    print("please provide the textfile in write format Walls : # \n storage : . \n box : $ \n robot : @ \n box on storage : * \n robot on storage : + \n should include walls,storage,box,robot")
+#    exit(0)
 
+#--------------------------------DEADLOCK DETECTION--------------------------------#
 """ CHECK FOR DEADLOCK
     # DEADLOCK CASE:
     #  1. Box in corner 
@@ -256,8 +334,10 @@ def checkDeadLock (box_list, curr_box, dir):
                         return True    
     return False
 
+#--------------------------------MOVE FUNCTION--------------------------------#
 # function to move robot and boxes
 def move(point_robot_move, direction_move, path, temp_box_list):
+    global check
     # list store position of boxes
     box_list = temp_box_list[:]
     
@@ -310,21 +390,17 @@ def move(point_robot_move, direction_move, path, temp_box_list):
             if set(map(tuple, box_list)) == set(map(tuple, storage)):
                 stop = time.time()
                 total_time = stop - start_time
-                
-                print("Solution found")
-                print(cur_path)
-                print("Total time taken: ")
-                print(total_time)
-                print("Total steps take: ")
-                print(len(cur_path))
-                print("Total space taken: ")
-                print(ps.memory_info()[0]/(1024*1024))
-
-                #with open('C:/Users/Acer/Desktop/HK211/NMAI/Ass1/thamkhao/result.txt', 'w') as f:
-                #    for i in cur_path:
-                #        f.write(i)
+                check = True
+                #print("Solution found")
+                #print(cur_path)
+                #print("Total time taken: ")
+                #print(total_time)
+                #print("Total steps take: ")
+                #print(len(cur_path))
+                ##print("Total space taken: ")
+                #print(ps.memory_info()[0]/(1024*1024))
             
-                exit()
+                return cur_path, total_time, len(cur_path), ps.memory_info()[0]/(1024*1024)
     else:
         temp_pos.append(point_robot_move)
         box_list.sort()
@@ -353,27 +429,25 @@ def move(point_robot_move, direction_move, path, temp_box_list):
             stop = time.time()
             total_time = stop - start_time
             
-            print("Solution found")
-            print(cur_path)
-            print("Total time taken: ")
-            print(total_time)
-            print("Total steps take: ")
-            print(len(cur_path))
+            check = True
+            #print("Solution found")
+            #rint(cur_path)
+            #print("Total time taken: ")
+            #print(total_time)
+            #print("Total steps take: ")
+            #print(len(cur_path))
 
-            #with open('C:/Users/Acer/Desktop/HK211/NMAI/Ass1/thamkhao/result.txt', 'w') as f:
-            #    for i in cur_path:
-            #        f.write(i)
-
-            exit()
-
+            return cur_path, total_time, len(cur_path), ps.memory_info()[0]/(1024*1024)
+    return 0,0,0,0
 # initialize start time
 start_time = time.time()
 
+#--------------------------------A* ALGORITHM--------------------------------#
 # function for A* algorithm
-def A_star_heuristic():
-    
+def A_star_heuristic(matrix):
+
+    print_Map(matrix)
     check_if_goal_in_side()
-    
     # temp queue to store
     temp_queue = []
     
@@ -445,18 +519,29 @@ def A_star_heuristic():
 
 
         if walls[U[0]][U[1]] == 0:
-            move(U, 'U', temp_path, temp_box_list)
+            cur_path, total_time, total_step, space_taken = move(U, 'U', temp_path, temp_box_list)
+            count=count+1
+            if check == True:
+                break
         if walls[D[0]][D[1]] == 0:
-            move(D, 'D', temp_path, temp_box_list)
+            cur_path, total_time, total_step, space_taken = move(D, 'D', temp_path, temp_box_list)
+            count=count+1
+            if check == True:
+                break
         if walls[R[0]][R[1]] == 0:   
-            move(R, 'R', temp_path, temp_box_list)
+            cur_path, total_time, total_step, space_taken = move(R, 'R', temp_path, temp_box_list)
+            count=count+1
+            if check == True:
+                break
         if walls[L[0]][L[1]] == 0:
-            move(L, 'L', temp_path, temp_box_list)
-        
-        count=count+1
-        
-        if not queue:
-            print("Solution not found")
-            exit()
+            cur_path, total_time, total_step, space_taken = move(L, 'L', temp_path, temp_box_list)
+            count=count+1
+            if check == True:
+                break
 
-A_star_heuristic()
+        
+        
+    return cur_path, total_time, total_step, space_taken, count
+
+#--------------------------------RUN THE GAME WITH TWO INPUT FILES--------------------------------#
+run(sys.argv[1], sys.argv[2])
