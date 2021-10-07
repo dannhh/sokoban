@@ -82,7 +82,7 @@ def write_file(filename, cur_path, total_time, total_step, space_taken, total_st
     string_to_write += "Total time taken: " + str(total_time) + "\n"
     string_to_write += "Total steps: " + str(total_step) + "\n"
     string_to_write += "Total space taken: " + str(space_taken) + "\n"
-    string_to_write += "Total state visited: " + str(total_state) + "\n"
+    string_to_write += "Total state created: " + str(total_state) + "\n"
     string_to_write += "******************************************\n"
     f = open(filename, 'a')
     f.write(string_to_write)
