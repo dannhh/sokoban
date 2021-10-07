@@ -389,14 +389,6 @@ while True:
 
 	for event in pygame.event.get():
 		if event.type == pygame.KEYDOWN:
-			#if event.key == pygame.K_LEFT:
-			#	movePlayer("L",myLevel)
-			#elif event.key == pygame.K_RIGHT:
-			#	movePlayer("R",myLevel)
-			#elif event.key == pygame.K_DOWN:
-			#	movePlayer("D",myLevel)
-			#elif event.key == pygame.K_UP:
-			#	movePlayer("U",myLevel)
 			f = open('C:/Users/Acer/Desktop/HK211/NMAI/Ass1/thamkhao/result.txt', 'r')
 			while True:
 				char=f.read(1)
@@ -412,13 +404,6 @@ while True:
 				else: 
 					break
 				time.sleep(0.5)
-			#if event.key == pygame.K_u:
-			#	drawLevel(myLevel.getLastMatrix())
-			#elif event.key == pygame.K_r:
-			#	initLevel(level_set,current_level)
-			#elif event.key == pygame.K_ESCAPE:
-			#	pygame.quit()
-			#	sys.exit()
 		elif event.type == pygame.QUIT:
 			pygame.quit()
 			sys.exit()

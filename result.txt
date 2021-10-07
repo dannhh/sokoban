@@ -1,280 +1,280 @@
 Level 1
 Path: ['U', 'U', 'L', 'U', 'U', 'R', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'L', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'U', 'R']
-Total time taken: 0.004075288772583008
+Total time taken: 0.012000560760498047
 Total steps: 37
-Total space taken: 21.2890625
+Total space taken: 21.296875
 Total state visited: 727
 ******************************************
 Level 2
 Path: ['R', 'R', 'U', 'U', 'L', 'L', 'L', 'U', 'U', 'R', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'D', 'L', 'L', 'U', 'D', 'R', 'R', 'U', 'U', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'D']
-Total time taken: 0.015024185180664062
+Total time taken: 0.013042688369750977
 Total steps: 60
-Total space taken: 21.48828125
-Total state visited: 2202
+Total space taken: 21.46484375
+Total state visited: 2066
 ******************************************
 Level 3
 Path: ['R', 'R', 'U', 'U', 'L', 'L', 'L', 'U', 'U', 'R', 'L', 'D', 'D', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'D', 'R', 'R', 'U', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'R', 'U', 'U', 'L', 'U', 'U', 'L', 'L', 'D', 'L', 'L', 'D', 'D', 'R', 'D', 'D', 'R', 'R', 'U', 'U', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'L']
-Total time taken: 0.0970454216003418
+Total time taken: 0.03399848937988281
 Total steps: 69
-Total space taken: 21.89453125
-Total state visited: 9347
+Total space taken: 21.57421875
+Total state visited: 4196
 ******************************************
 Level 4
 Path: ['U', 'U', 'U', 'R', 'U', 'R', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'D', 'D', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'R', 'R', 'U', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'U', 'U', 'D', 'R', 'R', 'R', 'U', 'U', 'U', 'L', 'L', 'L', 'L', 'D', 'R']
-Total time taken: 0.01704883575439453
+Total time taken: 0.011039972305297852
 Total steps: 71
-Total space taken: 21.87890625
-Total state visited: 3237
+Total space taken: 21.57421875
+Total state visited: 2306
 ******************************************
 Level 5
 Path: ['U', 'U', 'U', 'R', 'U', 'R', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'D', 'D', 'U', 'U', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'R', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'R', 'R', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'D', 'D', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'U', 'U', 'D', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'R', 'R', 'U', 'U', 'U', 'L', 'L', 'L', 'L', 'D', 'R', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'U', 'U']
-Total time taken: 0.3750300407409668
+Total time taken: 0.1421055793762207
 Total steps: 104
-Total space taken: 22.609375
-Total state visited: 27911
+Total space taken: 22.13671875
+Total state visited: 15105
 ******************************************
 Level 6
 Path: ['L', 'U', 'R', 'U', 'U', 'R', 'U', 'R', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'R', 'R', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'D', 'D', 'U', 'U', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'R', 'L', 'D', 'L', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'U', 'U', 'D', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'R', 'R', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'L', 'L', 'L', 'L', 'D', 'R', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'R', 'U', 'L', 'L', 'L', 'R', 'R', 'D', 'D', 'D', 'L', 'L', 'L', 'U', 'U', 'L', 'U', 'R', 'R', 'L', 'D', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'U', 'U']
-Total time taken: 8.024977445602417
+Total time taken: 1.1495122909545898
 Total steps: 118
-Total space taken: 27.80859375
-Total state visited: 127774
+Total space taken: 24.40625
+Total state visited: 50127
 ******************************************
 Level 7
 Path: ['L', 'U', 'L', 'L', 'U', 'R', 'R', 'R', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'L', 'L', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'L', 'L', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'D', 'L', 'R', 'D', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'U']
-Total time taken: 0.11699414253234863
+Total time taken: 0.07804179191589355
 Total steps: 61
-Total space taken: 26.640625
-Total state visited: 10547
+Total space taken: 23.80859375
+Total state visited: 8589
 ******************************************
 Level 8
 Path: ['L', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'L', 'L', 'U', 'R', 'R', 'R', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'L', 'D', 'R', 'U', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'U', 'U', 'R', 'U', 'L', 'L', 'L', 'D', 'L', 'U', 'R', 'R', 'R', 'D', 'D', 'D', 'D', 'L', 'L', 'U', 'U']
-Total time taken: 1.0203890800476074
+Total time taken: 0.6183531284332275
 Total steps: 93
-Total space taken: 26.890625
-Total state visited: 36370
+Total space taken: 24.046875
+Total state visited: 28358
 ******************************************
 Level 9
 Path: ['L', 'D', 'D', 'L', 'D', 'L', 'L', 'U', 'U', 'U', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'U', 'R', 'R', 'D', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'U', 'U', 'R', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'U', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'L', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'L', 'U', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'U', 'L', 'D']
-Total time taken: 0.2599928379058838
+Total time taken: 0.11393165588378906
 Total steps: 89
-Total space taken: 25.83984375
-Total state visited: 31513
+Total space taken: 23.828125
+Total state visited: 14819
 ******************************************
 Level 10
 Path: ['R', 'D', 'D', 'L', 'L', 'U', 'L', 'U', 'R', 'L', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'U', 'U', 'U', 'L', 'L', 'D', 'U', 'R', 'R', 'D', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'U', 'U', 'R', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'U', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'R', 'U', 'U', 'R', 'R', 'D', 'D', 'R', 'R', 'D', 'D', 'L', 'L', 'R', 'R', 'U', 'U', 'L', 'L', 'D']
-Total time taken: 0.6180505752563477
+Total time taken: 0.17200255393981934
 Total steps: 102
-Total space taken: 25.83203125
-Total state visited: 38452
+Total space taken: 23.8984375
+Total state visited: 14099
 ******************************************
 Level 11
 Path: ['D', 'L', 'U', 'L', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'R', 'R', 'D', 'R', 'R', 'D', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'R', 'L', 'D', 'D', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'R', 'R', 'D', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'L']
-Total time taken: 0.23399639129638672
+Total time taken: 0.15600204467773438
 Total steps: 74
-Total space taken: 25.875
-Total state visited: 17132
+Total space taken: 23.86328125
+Total state visited: 13078
 ******************************************
 Level 12
 Path: ['D', 'L', 'U', 'L', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'D', 'L', 'L', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'R', 'R', 'D', 'L', 'U', 'L', 'L', 'L', 'U', 'D', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'R', 'L', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'L', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'R', 'R', 'D', 'L', 'D', 'D', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'U', 'U', 'L', 'R', 'D', 'D', 'D', 'L', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'U', 'U']
-Total time taken: 11.589282751083374
+Total time taken: 3.805016040802002
 Total steps: 122
-Total space taken: 28.8359375
-Total state visited: 120353
+Total space taken: 26.875
+Total state visited: 83226
 ******************************************
 Level 13
 Path: ['R', 'R', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'R', 'D', 'L', 'L', 'L', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'D', 'L', 'D', 'L', 'U', 'U', 'U', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'R', 'R', 'R', 'U', 'U', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'R', 'D', 'L', 'L', 'L', 'L', 'D', 'L', 'U', 'U', 'D', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'U', 'L', 'L']
-Total time taken: 0.8180365562438965
+Total time taken: 0.29204273223876953
 Total steps: 80
-Total space taken: 28.21484375
-Total state visited: 25341
+Total space taken: 26.2421875
+Total state visited: 21689
 ******************************************
 Level 14
 Path: ['R', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'D', 'L', 'D', 'L', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'D', 'R', 'D', 'L', 'L', 'L', 'U', 'U', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'R', 'R', 'R', 'D', 'D', 'L', 'D', 'L', 'U', 'U', 'U', 'R', 'R', 'U', 'U', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'R', 'D', 'L', 'L', 'L', 'R', 'R', 'U', 'U', 'L', 'R', 'U', 'U', 'L', 'L', 'L', 'L', 'D', 'L', 'D', 'R', 'U', 'U', 'R', 'R', 'D', 'D', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'D', 'L', 'U', 'U', 'D', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'R', 'R', 'U', 'U', 'L', 'L', 'D']
-Total time taken: 24.97003984451294
+Total time taken: 13.123011827468872
 Total steps: 149
-Total space taken: 32.69921875
-Total state visited: 191712
+Total space taken: 31.3203125
+Total state visited: 148029
 ******************************************
 Level 15
 Path: ['U', 'U', 'L', 'U', 'R', 'R', 'D', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'R', 'D', 'L', 'L', 'L', 'D', 'L', 'U', 'U', 'U', 'R', 'U', 'R', 'U', 'R', 'D', 'D', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'L', 'D', 'L', 'L', 'L', 'U', 'U', 'L', 'U', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'R', 'D', 'L', 'L', 'L', 'D', 'L', 'U', 'U', 'D', 'R', 'R', 'R', 'U', 'U', 'U', 'L', 'L', 'L', 'L', 'D', 'R']
-Total time taken: 0.27104783058166504
+Total time taken: 0.14400076866149902
 Total steps: 82
-Total space taken: 29.70703125
-Total state visited: 20353
+Total space taken: 28.90234375
+Total state visited: 15245
 ******************************************
 Level 16
 Path: ['R', 'R', 'U', 'R', 'R', 'D', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'U', 'U', 'R', 'U', 'R', 'U', 'R', 'D', 'D', 'D', 'L', 'D', 'L', 'R', 'U', 'R', 'R', 'D', 'L', 'L', 'R', 'U', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'U', 'U', 'L', 'U', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'L', 'D', 'L', 'D', 'L', 'U', 'U', 'D', 'R', 'R', 'U', 'R', 'U', 'U', 'L', 'L', 'L', 'L', 'D', 'R', 'D', 'D', 'R', 'R', 'U', 'R', 'R', 'D', 'L', 'L', 'L', 'D', 'L', 'U', 'U', 'U', 'L', 'U', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'U', 'L', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'L']
-Total time taken: 3.0150389671325684
+Total time taken: 1.2319965362548828
 Total steps: 114
-Total space taken: 29.3125
-Total state visited: 68836
+Total space taken: 29.00390625
+Total state visited: 49974
 ******************************************
 Level 17
 Path: ['L', 'D', 'L', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'U', 'R', 'U', 'D', 'L', 'L', 'U', 'R', 'U', 'R', 'L', 'D', 'D', 'R', 'U', 'R', 'U', 'D', 'L', 'L', 'U', 'R', 'U', 'R', 'R', 'D', 'L', 'U', 'L', 'D', 'R', 'R', 'U', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'L', 'D', 'L', 'D', 'L', 'U', 'L', 'D', 'R', 'U', 'U', 'R', 'D', 'R', 'U']
-Total time taken: 1.1679978370666504
+Total time taken: 0.6750447750091553
 Total steps: 65
-Total space taken: 29.3984375
-Total state visited: 65105
+Total space taken: 28.484375
+Total state visited: 53928
 ******************************************
 Level 18
 Path: ['L', 'L', 'L', 'D', 'L', 'D', 'L', 'D', 'D', 'R', 'U', 'R', 'U', 'R', 'U', 'D', 'L', 'D', 'L', 'L', 'U', 'R', 'U', 'R', 'U', 'R', 'R', 'R', 'L', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'U', 'R', 'U', 'D', 'L', 'L', 'U', 'R', 'U', 'R', 'R', 'D', 'L', 'U', 'L', 'D', 'R', 'D', 'L', 'U', 'L', 'D', 'R', 'R', 'U', 'R', 'U', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'L', 'U', 'L', 'L', 'U', 'L', 'D', 'R', 'D', 'L', 'R', 'U', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'L', 'L', 'R', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'U', 'D', 'L', 'D', 'L', 'L', 'U', 'R']
-Total time taken: 223.495187997818
+Total time taken: 34.602014780044556
 Total steps: 110
-Total space taken: 34.96484375
-Total state visited: 660934
+Total space taken: 30.3359375
+Total state visited: 389341
 ******************************************
 Level 19
 Path: ['L', 'L', 'U', 'U', 'U', 'R', 'U', 'L', 'D', 'D', 'D', 'D', 'L', 'L', 'U', 'R', 'D', 'R', 'U', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'D', 'L', 'D', 'R', 'R', 'L', 'U', 'U', 'U', 'R', 'R', 'U', 'L', 'L', 'D', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'D', 'R', 'D', 'L', 'R', 'D', 'R', 'R', 'U', 'L']
-Total time taken: 2.037001371383667
+Total time taken: 0.5620274543762207
 Total steps: 72
-Total space taken: 34.24609375
-Total state visited: 49115
+Total space taken: 30.09375
+Total state visited: 41523
 ******************************************
 Level 20
 Path: ['L', 'L', 'U', 'U', 'U', 'R', 'U', 'L', 'D', 'D', 'D', 'D', 'L', 'L', 'U', 'R', 'D', 'R', 'U', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'D', 'D', 'D', 'L', 'D', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'U', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'D', 'R', 'R', 'L', 'U', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'U', 'R', 'R', 'U', 'L', 'L', 'D', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'R', 'R', 'D', 'D', 'R', 'D', 'L', 'U', 'U', 'U', 'U', 'R', 'R', 'D', 'L', 'U', 'L', 'D', 'D', 'D', 'R', 'D', 'D', 'R', 'R', 'U', 'L']
-Total time taken: 110.24099636077881
+Total time taken: 16.304980993270874
 Total steps: 120
-Total space taken: 37.0859375
-Total state visited: 355593
+Total space taken: 31.5
+Total state visited: 275245
 ******************************************
 Level 21
 Path: ['R', 'R', 'U', 'U', 'U', 'R', 'U', 'L', 'D', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'D', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'D', 'D', 'R', 'R', 'U', 'L', 'U', 'U', 'U', 'R', 'U', 'L', 'D', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'L', 'D', 'R', 'L', 'U', 'U', 'L', 'L', 'D', 'R', 'U', 'R', 'D']
-Total time taken: 1.1770000457763672
+Total time taken: 0.4050419330596924
 Total steps: 71
-Total space taken: 34.078125
+Total space taken: 29.71484375
 Total state visited: 31594
 ******************************************
 Level 22
 Path: ['R', 'R', 'U', 'U', 'U', 'R', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'D', 'R', 'L', 'U', 'U', 'R', 'D', 'R', 'D', 'D', 'D', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'D', 'D', 'R', 'R', 'U', 'L', 'U', 'U', 'U', 'R', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'D', 'R', 'L', 'U', 'U', 'R', 'D', 'R', 'D', 'D', 'D', 'D', 'L', 'R', 'U', 'U', 'U', 'U', 'L', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'U', 'L', 'L', 'L', 'D', 'R', 'U', 'R', 'R', 'U', 'U', 'R', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'D', 'R', 'R', 'D', 'D', 'L', 'D', 'R', 'U', 'U', 'U', 'U', 'L']
-Total time taken: 38.45999789237976
+Total time taken: 9.797013521194458
 Total steps: 115
-Total space taken: 34.4453125
+Total space taken: 30.00390625
 Total state visited: 162189
 ******************************************
 Level 23
 Path: ['U', 'U', 'U', 'L', 'L', 'D', 'L', 'U', 'L', 'L', 'D', 'D', 'R', 'U', 'L', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'D', 'D', 'L', 'L', 'U', 'L', 'U', 'L', 'L', 'U', 'U', 'L', 'U', 'R', 'R', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'L', 'R', 'U', 'U', 'U', 'L', 'L', 'D', 'D', 'D', 'D', 'U', 'U', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'D', 'R', 'U', 'U']
-Total time taken: 5.658994674682617
+Total time taken: 2.31699275970459
 Total steps: 99
-Total space taken: 34.2265625
+Total space taken: 30.02734375
 Total state visited: 91366
 ******************************************
 Level 24
 Path: ['U', 'U', 'U', 'L', 'L', 'D', 'L', 'R', 'U', 'R', 'R', 'D', 'D', 'D', 'L', 'L', 'L', 'U', 'D', 'R', 'R', 'R', 'U', 'U', 'U', 'L', 'L', 'L', 'L', 'L', 'D', 'D', 'R', 'U', 'L', 'U', 'R', 'R', 'R', 'D', 'L', 'R', 'U', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'L', 'U', 'L', 'L', 'U', 'L', 'U', 'L', 'U', 'R', 'R', 'R', 'R', 'L', 'D', 'L', 'D', 'L', 'U', 'R', 'R', 'U', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'U', 'U', 'U', 'L', 'L', 'L', 'L', 'D', 'L', 'L', 'L', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'U', 'U', 'U', 'L', 'L', 'D', 'D', 'D', 'D', 'U', 'U', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'D', 'R', 'U', 'L', 'L', 'L', 'U', 'U', 'R', 'U', 'R', 'R', 'R', 'R', 'D', 'D', 'D', 'L', 'L', 'U', 'D', 'L']
-Total time taken: 2007.9717621803284
+Total time taken: 659.9322848320007
 Total steps: 197
-Total space taken: 51.1640625
+Total space taken: 54.2734375
 Total state visited: 1417450
 ******************************************
 Level 25
 Path: ['U', 'U', 'L', 'L', 'D', 'D', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'U', 'U', 'R', 'L', 'D', 'D', 'R', 'R', 'R', 'D', 'R', 'U', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'L', 'L', 'D', 'D', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'U', 'U', 'R', 'U', 'L', 'D', 'D', 'D', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'R', 'R', 'D', 'R', 'U', 'U', 'U']
-Total time taken: 1.8520119190216064
+Total time taken: 0.5079824924468994
 Total steps: 81
-Total space taken: 43.0234375
+Total space taken: 42.8671875
 Total state visited: 33331
 ******************************************
 Level 26
 Path: ['D', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'R', 'R', 'D', 'R', 'U', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'L', 'L', 'D', 'D', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'R', 'D', 'D', 'L', 'U', 'U', 'U', 'U', 'R', 'U', 'L', 'D', 'D', 'D', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'R', 'R', 'D', 'R', 'U', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'D', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'R', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'D', 'U', 'L', 'L', 'D', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'L', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'L', 'L', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'U', 'R', 'U', 'L', 'D', 'D', 'D', 'R', 'D', 'D', 'L', 'U', 'U', 'L', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'U', 'U', 'D', 'D', 'L', 'L']
-Total time taken: 148.01063513755798
+Total time taken: 51.16358137130737
 Total steps: 169
-Total space taken: 44.890625
+Total space taken: 44.375
 Total state visited: 256135
 ******************************************
 Level 27
 Path: ['R', 'U', 'U', 'D', 'L', 'L', 'L', 'U', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'U', 'L', 'L', 'D', 'D', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'D', 'L', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'R', 'U', 'U', 'U', 'R', 'U', 'L', 'L', 'L', 'U', 'L', 'D', 'D', 'D', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'D', 'L', 'L', 'U', 'R', 'D', 'R', 'U', 'U', 'D', 'D', 'L', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'L', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'D', 'L', 'U', 'L', 'L', 'U', 'L', 'D', 'D', 'D', 'D', 'R', 'R', 'D', 'R', 'U', 'U', 'U', 'R', 'U', 'L', 'L', 'L', 'U', 'L', 'D', 'D']
-Total time taken: 2.979001522064209
+Total time taken: 0.7760422229766846
 Total steps: 117
-Total space taken: 40.23046875
+Total space taken: 41.98828125
 Total state visited: 60261
 ******************************************
 Level 28
 Path: ['R', 'R', 'U', 'L', 'U', 'D', 'L', 'D', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'U', 'D', 'R', 'D', 'R', 'R', 'U', 'U', 'U', 'L', 'U', 'L', 'L', 'D', 'D', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'D', 'L', 'L', 'U', 'R', 'D', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'U', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'R', 'D', 'L', 'L', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'R', 'L', 'L', 'U', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'U', 'U', 'R', 'U', 'L', 'L', 'L', 'U', 'L', 'D', 'D', 'D', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'L', 'D', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'R', 'R', 'D', 'L', 'U', 'U', 'U', 'L', 'U', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'L', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'R', 'U', 'U', 'D', 'D', 'L', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'D', 'L', 'U', 'L', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'D', 'R', 'U', 'U', 'U', 'R', 'U', 'L', 'L', 'L', 'U', 'L', 'D', 'D', 'U', 'R', 'R', 'R', 'D', 'D', 'D', 'D', 'L', 'D', 'L', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'R']
-Total time taken: 134.14750123023987
+Total time taken: 54.02120399475098
 Total steps: 211
-Total space taken: 45.8671875
+Total space taken: 46.0390625
 Total state visited: 611097
 ******************************************
 Level 29
 Path: ['L', 'L', 'U', 'U', 'R', 'U', 'U', 'U', 'L', 'L', 'D', 'D', 'L', 'D', 'D', 'R', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'U', 'U', 'D', 'D', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'L', 'U', 'U', 'R', 'R', 'D', 'D', 'U', 'R', 'R', 'U', 'U', 'L', 'D', 'R', 'D', 'L']
-Total time taken: 0.27800512313842773
+Total time taken: 0.17994904518127441
 Total steps: 58
-Total space taken: 36.60546875
+Total space taken: 38.47265625
 Total state visited: 16706
 ******************************************
 Level 30
 Path: ['L', 'L', 'U', 'U', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'U', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'D', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'U', 'R', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'D', 'D', 'L', 'D', 'D', 'R', 'L', 'U', 'U', 'R', 'U', 'U', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'U', 'L', 'D', 'R', 'R', 'D', 'D', 'D', 'R', 'D', 'D', 'L', 'L', 'U', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'U', 'U', 'R', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'R', 'R', 'D', 'D', 'D', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'U', 'U', 'R', 'R', 'U', 'U', 'L', 'D', 'R', 'D', 'L', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'D', 'R', 'R', 'U', 'R', 'R', 'U', 'U', 'L', 'D', 'R', 'D', 'L', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'R', 'R', 'R', 'U', 'R', 'D']
-Total time taken: 27.085002422332764
+Total time taken: 12.70382809638977
 Total steps: 168
-Total space taken: 37.23828125
+Total space taken: 39.4296875
 Total state visited: 156466
 ******************************************
 Level 31
 Path: ['L', 'L', 'U', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'R', 'D', 'L', 'U', 'U', 'L', 'U', 'L', 'L', 'D', 'D', 'D', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'R', 'D', 'L', 'D', 'D', 'L', 'L', 'L', 'U', 'U', 'U', 'D', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'L', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'U', 'L', 'L', 'D']
-Total time taken: 0.07801508903503418
+Total time taken: 0.022989749908447266
 Total steps: 74
-Total space taken: 35.69140625
+Total space taken: 37.640625
 Total state visited: 3418
 ******************************************
 Level 32
 Path: ['L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'L', 'U', 'U', 'R', 'D', 'R', 'R', 'D', 'R', 'D', 'L', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'L', 'U', 'R', 'D', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'L', 'U', 'U', 'R', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'L', 'U', 'U', 'R', 'D']
-Total time taken: 0.13899827003479004
+Total time taken: 0.04405856132507324
 Total steps: 91
-Total space taken: 35.69921875
+Total space taken: 37.64453125
 Total state visited: 5512
 ******************************************
 Level 33
 Path: ['L', 'L', 'U', 'U', 'U', 'R', 'D', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'R', 'U', 'U', 'L', 'D', 'L', 'L', 'U', 'L', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'R', 'U', 'D', 'R', 'R', 'U', 'R', 'U', 'U', 'L', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'L', 'L', 'L', 'U', 'R', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'L', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'R', 'U', 'D', 'L', 'L', 'U', 'R', 'U', 'R', 'L', 'D', 'D', 'R', 'U']
-Total time taken: 15.044052124023438
+Total time taken: 5.927045106887817
 Total steps: 94
-Total space taken: 32.61328125
+Total space taken: 38.46875
 Total state visited: 110211
 ******************************************
 Level 34
 Path: ['R', 'R', 'U', 'U', 'U', 'L', 'D', 'R', 'D', 'D', 'L', 'L', 'L', 'U', 'L', 'U', 'U', 'R', 'D', 'R', 'R', 'U', 'R', 'D', 'D', 'R', 'D', 'D', 'L', 'U', 'L', 'U', 'D', 'L', 'L', 'U', 'L', 'U', 'U', 'R', 'D', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'D', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'L', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'U', 'R', 'D', 'D', 'U', 'L', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'D', 'R', 'R', 'D', 'D', 'L', 'U', 'L', 'L', 'L', 'U', 'L', 'L', 'U', 'R', 'D', 'R', 'D', 'R', 'R', 'R', 'U']
-Total time taken: 16.655033111572266
+Total time taken: 9.658821821212769
 Total steps: 109
-Total space taken: 30.66796875
+Total space taken: 37.296875
 Total state visited: 132696
 ******************************************
 Level 35
 Path: ['D', 'L', 'L', 'U', 'L', 'U', 'U', 'R', 'D', 'L', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'L', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'L', 'U', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'R', 'U', 'U', 'U', 'L', 'D', 'R', 'D', 'D', 'L', 'D', 'L', 'L', 'U', 'U', 'U', 'R', 'R', 'U', 'R', 'D', 'D', 'U', 'L', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'R', 'R']
-Total time taken: 0.7889828681945801
+Total time taken: 0.3390657901763916
 Total steps: 88
-Total space taken: 29.72265625
+Total space taken: 36.91015625
 Total state visited: 21805
 ******************************************
 Level 36
 Path: ['D', 'L', 'L', 'D', 'L', 'U', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'R', 'U', 'U', 'U', 'L', 'D', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'D', 'R', 'D', 'D', 'L', 'U', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'U', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R']
-Total time taken: 2.858002185821533
+Total time taken: 1.8719964027404785
 Total steps: 72
-Total space taken: 29.9296875
+Total space taken: 36.9921875
 Total state visited: 56934
 ******************************************
 Level 37
 Path: ['D', 'L', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'L', 'U', 'U', 'R', 'R', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'R', 'D', 'D', 'U', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'U', 'R', 'D', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'D', 'D', 'R', 'D', 'D', 'L', 'U', 'U', 'R', 'R', 'U', 'U', 'L', 'L', 'L', 'L', 'D', 'D', 'R', 'R', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'U', 'R', 'U', 'U', 'L', 'D']
-Total time taken: 2.1819961071014404
+Total time taken: 1.2022004127502441
 Total steps: 96
-Total space taken: 29.72265625
+Total space taken: 35.61328125
 Total state visited: 43258
 ******************************************
 Level 38
 Path: ['D', 'L', 'D', 'R', 'R', 'U', 'R', 'R', 'U', 'R', 'U', 'L', 'L', 'D', 'R', 'D', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'U', 'R', 'R', 'D', 'L', 'R', 'R', 'U', 'L', 'U', 'U', 'L', 'D', 'D', 'L', 'D', 'R', 'L', 'L', 'D', 'D', 'R', 'U', 'R', 'U', 'U', 'R', 'R', 'R', 'U', 'L']
-Total time taken: 9.26213526725769
+Total time taken: 3.401057481765747
 Total steps: 54
-Total space taken: 29.6328125
+Total space taken: 35.203125
 Total state visited: 93915
 ******************************************
 Level 39
 Path: ['U', 'U', 'R', 'R', 'D', 'D', 'U', 'U', 'L', 'L', 'D', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'L', 'U', 'R', 'R', 'U', 'R', 'R', 'D', 'L', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'R', 'D', 'L', 'L', 'D', 'D', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'L', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'L', 'L', 'U', 'U', 'U', 'L', 'U', 'R', 'R', 'U', 'R', 'R', 'D', 'L', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'R', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'L', 'D', 'L', 'U']
-Total time taken: 14.643288612365723
+Total time taken: 6.993977069854736
 Total steps: 122
-Total space taken: 30.078125
+Total space taken: 36.0078125
 Total state visited: 113313
 ******************************************
 Level 40
 Path: ['D', 'R', 'R', 'U', 'D', 'L', 'L', 'U', 'R', 'U', 'R', 'D', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'L', 'D', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'L', 'D', 'R', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'L', 'L', 'D', 'R', 'U', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'D', 'L', 'L', 'U']
-Total time taken: 1.1779906749725342
+Total time taken: 0.9250433444976807
 Total steps: 84
-Total space taken: 29.37890625
+Total space taken: 33.2421875
 Total state visited: 30730
 ******************************************

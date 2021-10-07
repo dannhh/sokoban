@@ -3,6 +3,8 @@ import time
 import heapq
 import psutil
 import os
+from collections import deque
+import gc
 
 #--------------------------------INITIAL--------------------------------#
 # use to take memory used
@@ -40,9 +42,13 @@ visited_Moves = {}
 
 # queue to put each state to check
 queue = []
+dequeue = deque()
 
 # variable to check when all boxes are in storages
 check = False
+
+# array to store path to pass to the game
+game_move = []
 
 #--------------------------------READ TESTCASE FILE, WRITE RESULT AND FUNCTION TO RUN--------------------------------#
 # function to read testcase file
@@ -69,8 +75,9 @@ def read_file(filename):
     return fulltest, level
 
 # function to write result
-def write_file(filename, cur_path, total_time, total_step, space_taken, total_state, level):
+def write_file(filename, cur_path, total_time, total_step, space_taken, total_state, level, algorithm):
     string_to_write = level
+    string_to_write += "Algorithm " + algorithm + "\n"
     string_to_write += "Path: " + str(cur_path) + "\n"
     string_to_write += "Total time taken: " + str(total_time) + "\n"
     string_to_write += "Total steps: " + str(total_step) + "\n"
@@ -85,40 +92,82 @@ def write_file(filename, cur_path, total_time, total_step, space_taken, total_st
 def run(fileread, filewrite):
     fulltest, list_level = read_file(fileread)
     count = 0
-    while count != 40:
-        print("Solving testcase " + str(count + 1) + "..........")
-        level = list_level.pop(0)
-        matrix = fulltest.pop(0)
+    while True:
+        global robot, walls, box, storage, visited_Moves, queue, dequeue, check, width
+        print("Choose testcase to run (1 -> 40), enter -1 to quit: ")
+        level_choose = input()
+
+        if level_choose == "-1":
+            break
+
+        print("Solving testcase " + level_choose + "..........")
+        level = list_level[int(level_choose) - 1]
+        matrix = fulltest[int(level_choose) - 1]
+        print_Map(matrix)   # Read level and add to state array
         global start_time
-        start_time = time.time()
-        cur_path, total_time, total_step, space_taken, total_state = A_star_heuristic(matrix)
-        if cur_path == []:
-            file = open(filewrite, 'a')
-            file.write("Testcase is fail\n")
-            file.close()
-            write_file(filewrite, cur_path, total_time, total_step, space_taken, total_state, level)
-        else:
-            write_file(filewrite, cur_path, total_time, total_step, space_taken, total_state, level)
+
+        print("Choose algorithm to run, enter 1 to run BFS, enter 2 to run A_star, enter 3 to run both: ")
+        algorithm_choose = input()
+
+        if algorithm_choose == "1":
+            start_time = time.time()
+            cur_path, total_time, total_step, space_taken, total_state = bfs()
+            if cur_path == []:
+                file = open(filewrite, 'a')
+                file.write("Testcase is fail\n")
+                file.close()
+                write_file(filewrite, cur_path, total_time, total_step, space_taken, total_state, level, "BFS")
+            else:
+                write_file(filewrite, cur_path, total_time, total_step, space_taken, total_state, level, "BFS")
+        elif algorithm_choose == "2":
+            start_time = time.time()
+            cur_path, total_time, total_step, space_taken, total_state = A_star_heuristic()
+            if cur_path == []:
+                file = open(filewrite, 'a')
+                file.write("Testcase is fail\n")
+                file.close()
+                write_file(filewrite, cur_path, total_time, total_step, space_taken, total_state, level, "A_star")
+            else:
+                write_file(filewrite, cur_path, total_time, total_step, space_taken, total_state, level, "A_star")
+        elif algorithm_choose == "3":
+            """###############-----------RUN BFS-----------###############"""
+            start_time = time.time()
+            cur_path, total_time, total_step, space_taken, total_state = bfs()
+            if cur_path == []:
+                file = open(filewrite, 'a')
+                file.write("Testcase is fail\n")
+                file.close()
+                write_file(filewrite, cur_path, total_time, total_step, space_taken, total_state, level, "BFS")
+            else:
+                write_file(filewrite, cur_path, total_time, total_step, space_taken, total_state, level, "BFS")
+
+            """###############-----------A_STAR-----------###############"""
+            visited_Moves = {}      #------------Reassign after----------#
+            check = False           #------------run BFS-----------------#
+            start_time = time.time()
+            cur_path, total_time, total_step, space_taken, total_state = A_star_heuristic()
+            if cur_path == []:
+                file = open(filewrite, 'a')
+                file.write("Testcase is fail\n")
+                file.close()
+                write_file(filewrite, cur_path, total_time, total_step, space_taken, total_state, level, "A_star")
+            else:
+                write_file(filewrite, cur_path, total_time, total_step, space_taken, total_state, level, "A_star")
         print("Done")
+
         count += 1
 
         # reassign the state of the game
-        global robot
         robot = []
-        global walls
         walls = []
-        global storage
         storage = []
-        global box
         box = []
-        global width
         width = 0
-        global visited_Moves
         visited_Moves = {}
-        global queue
         queue = []
-        global check
         check = False
+        dequeue = deque()
+    
     return count
 
 #function with own heuristic
@@ -139,7 +188,8 @@ def heuristic(box_ls,storage_ls,path):
     return distance
 
 # function to store the map to state variables
-def print_Map(matrix):				
+def print_Map(matrix):	
+    global width			
     i = 0										
     j = 0
     new = []
@@ -170,6 +220,8 @@ def print_Map(matrix):
                 new.append(0)
             if j == len(matrix[i]) - 1:
                 walls.append(new)
+                if len(new) > width:
+                    width = len(new)
                 new = []
                 i += 1
                 j = 0
@@ -336,7 +388,7 @@ def checkDeadLock (box_list, curr_box, dir):
 
 #--------------------------------MOVE FUNCTION--------------------------------#
 # function to move robot and boxes
-def move(point_robot_move, direction_move, path, temp_box_list):
+def move_a_star(point_robot_move, direction_move, path, temp_box_list):
     global check
     # list store position of boxes
     box_list = temp_box_list[:]
@@ -444,9 +496,8 @@ start_time = time.time()
 
 #--------------------------------A* ALGORITHM--------------------------------#
 # function for A* algorithm
-def A_star_heuristic(matrix):
+def A_star_heuristic():
 
-    print_Map(matrix)
     check_if_goal_in_side()
     # temp queue to store
     temp_queue = []
@@ -519,28 +570,175 @@ def A_star_heuristic(matrix):
 
 
         if walls[U[0]][U[1]] == 0:
-            cur_path, total_time, total_step, space_taken = move(U, 'U', temp_path, temp_box_list)
+            cur_path, total_time, total_step, space_taken = move_a_star(U, 'U', temp_path, temp_box_list)
             count=count+1
             if check == True:
                 break
         if walls[D[0]][D[1]] == 0:
-            cur_path, total_time, total_step, space_taken = move(D, 'D', temp_path, temp_box_list)
+            cur_path, total_time, total_step, space_taken = move_a_star(D, 'D', temp_path, temp_box_list)
             count=count+1
             if check == True:
                 break
         if walls[R[0]][R[1]] == 0:   
-            cur_path, total_time, total_step, space_taken = move(R, 'R', temp_path, temp_box_list)
+            cur_path, total_time, total_step, space_taken = move_a_star(R, 'R', temp_path, temp_box_list)
             count=count+1
             if check == True:
                 break
         if walls[L[0]][L[1]] == 0:
-            cur_path, total_time, total_step, space_taken = move(L, 'L', temp_path, temp_box_list)
+            cur_path, total_time, total_step, space_taken = move_a_star(L, 'L', temp_path, temp_box_list)
             count=count+1
             if check == True:
                 break
 
         
         
+    return cur_path, total_time, total_step, space_taken, count
+
+# function for movement of a box
+def move_bfs(point,dir,path,temp_box_list):
+    global check
+    # Store temp box list
+    box_list = temp_box_list[:] 
+    temp_append = []
+    cur_path = path[:]
+    # Store current path
+    cur_path.append(dir)
+
+    # Current robot position is a box, so push the box if possible
+    if point in box_list:
+        # Find index and move this box to new position
+        ind = box_list.index(point)
+        temp_box = [x + y for x, y in zip(point, directions[dir])]
+        # Check new possition of this box is valid
+        if temp_box not in box_list and walls[temp_box[0]][temp_box[1]] == 0:
+            box_list[ind]=[x + y for x, y in zip(point, directions[dir])]
+
+            if checkDeadLock(box_list, box_list[ind], dir) != True:
+                box_list.sort()                
+                # Sort to avoid duplicate. Ex: [1,3,2] -> [1,2,3] same as [1,2,3]
+                temp_append.append(point)
+                temp_append.append(box_list)
+                
+                # check if any status has passed
+                idx = point[0]*10 + point[1]
+                counter = 0
+                if idx in visited_Moves:
+                    for k in visited_Moves[idx]:
+                        if(k == temp_append):
+                            counter = counter + 1
+
+                # If this state havent passed, add (state + predicted distance) to queue
+                if counter == 0:
+                    temp_append.append(cur_path)
+                    dequeue.append(temp_append)
+
+            # check if goal
+            if set(map(tuple,box_list))==set(map(tuple,storage)):
+                check = True
+                stop = time.time()
+                total_time=stop-start_time
+
+                return cur_path, total_time, len(cur_path), ps.memory_info()[0]/(1024*1024)
+
+    else:
+        # Sort to avoid duplicate. Ex: [1,3,2] -> [1,2,3] same as [1,2,3]
+        box_list.sort()
+        temp_append.append(point)
+        temp_append.append(box_list)
+        
+        # check if any status has passed
+        idx = point[0]*10 + point[1]
+        counter = 0
+        if idx in visited_Moves:
+            for k in visited_Moves[idx]:
+                if(k == temp_append):
+                    counter = counter + 1
+        # If this state havent passed, add (state+predicted distance)to queue
+        if counter == 0:
+            temp_append.append(cur_path)
+            dequeue.append(temp_append)
+    return 0,0,0,0
+
+# ============================== BFS FUNCTION =================================
+# bfs function
+def bfs():
+    check_if_goal_in_side()
+    # State store current position of current player and box
+    node=[]
+    node.append(robot[0])
+    node.append(box)    
+    path=[]
+    node.append(path)
+    # Add current node = state+path to dequeue
+    dequeue.append(node)
+
+    count = 0
+    while True:
+        if len(dequeue) == 0:
+            print ("Can not find a solution")
+            return
+
+        # pop recent added node
+        node = dequeue.popleft()
+        state = node[:-1]
+        current_player = node[0]
+        
+        # Dictionary visited contain key: player position
+        # and value: corresponding [states] 
+        # state: [player, box1, box2]
+        idx = current_player[0]*10 + current_player[1] 
+
+        # check if there is a duplicate state
+        if idx in visited_Moves:   
+            cnt = 0   
+            for pos in visited_Moves[idx]:
+                if(state == pos):
+                    cnt = 1
+                    break       
+            if(cnt == 0):
+                visited_Moves[idx].append(state)            
+        else:
+            visited_Moves[idx] = []
+            visited_Moves[idx].append(state)            
+
+        # temp_path and current box list
+        temp_path = node[-1][:]
+        temp_box_list = node[1]
+
+        # determine position of player after each possible move
+        U = [x + y for x, y in zip(current_player, directions['U'])]
+        D = [x + y for x, y in zip(current_player, directions['D'])]
+        R = [x + y for x, y in zip(current_player, directions['R'])]
+        L = [x + y for x, y in zip(current_player, directions['L'])]
+        
+        # Check current player's position 
+        # Add a state to dequeue if satifies 
+        # 1. the player does not move into the wall 
+        # 2. the player does not push a box that is already close to the wall towards the wall
+        # 3. the player does not push 2 boxes at a time
+        # 4. Check deadlock
+        # 5. Visited list does not contain this state
+        # Final, check if the goal status is reached or not
+        if walls[U[0]][U[1]] == 0:
+            cur_path, total_time, total_step, space_taken = move_bfs(U, 'U', temp_path, temp_box_list)
+            count=count+1
+            if check == True:
+                break
+        if walls[D[0]][D[1]] == 0:
+            cur_path, total_time, total_step, space_taken = move_bfs(D, 'D', temp_path, temp_box_list)
+            count=count+1
+            if check == True:
+                break
+        if walls[R[0]][R[1]] == 0:   
+            cur_path, total_time, total_step, space_taken = move_bfs(R, 'R', temp_path, temp_box_list)
+            count=count+1
+            if check == True:
+                break
+        if walls[L[0]][L[1]] == 0:
+            cur_path, total_time, total_step, space_taken = move_bfs(L, 'L', temp_path, temp_box_list)
+            count=count+1
+            if check == True:
+                break
     return cur_path, total_time, total_step, space_taken, count
 
 #--------------------------------RUN THE GAME WITH TWO INPUT FILES--------------------------------#
