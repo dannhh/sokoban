@@ -39,6 +39,9 @@ valid_side = {
 # Starting time of game
 start_time = 0
 
+# time to check time run
+out_time = 1800
+
 # array store the moves that have been met
 visited_Moves = {}
 
@@ -572,6 +575,12 @@ def A_star_heuristic():
     heapq.heappush(queue, (temp_queue[-1][:], temp_queue[:-1]))
     count = 0
     while queue:    # if queue is empty, algorithm done
+
+        if count % 100 == 0:
+            current_time = time.time()
+            time_run = current_time - start_time
+            if time_run > out_time:
+                return [], time_run, 0, 0, count
         
         # create the temp box list
         temp_box_list = []
@@ -824,7 +833,7 @@ def drawLevel(matrix_to_draw):
 		player = pygame.transform.scale(player, (new_image_size,new_image_size))	
 		
 	# Just a Dictionary (associative array in pyhton's lingua) to map images to characters used in level design 
-	images = {'#': wall, ' ': space, '$': box, '.': target, '@': player, '*': box_on_target}
+	images = {'#': wall, ' ': space, '$': box, '.': target, '@': player, '*': box_on_target, '+': player and target}
 	
 	# Get image size. Images are always squares so it doesn't care if you get width or height
 	box_size = wall.get_width()
