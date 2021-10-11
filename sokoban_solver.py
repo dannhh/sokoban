@@ -574,9 +574,10 @@ def A_star_heuristic():
     # put all items of temp queue to queue
     heapq.heappush(queue, (temp_queue[-1][:], temp_queue[:-1]))
     count = 0
+    count_to_check = 0
     while queue:    # if queue is empty, algorithm done
-
-        if count % 100 == 0:
+        count_to_check += 1
+        if count_to_check % 100 == 0:
             current_time = time.time()
             time_run = current_time - start_time
             if time_run > out_time:
@@ -735,10 +736,18 @@ def bfs():
     dequeue.append(node)
 
     count = 0
+    count_to_check = 0
     while True:
         if len(dequeue) == 0:
             print ("Can not find a solution")
             return
+
+        count_to_check += 1
+        if count_to_check % 100 == 0:
+            current_time = time.time()
+            time_run = current_time - start_time
+            if time_run > out_time:
+                return [], time_run, 0, 0, count
 
         # pop recent added node
         node = dequeue.popleft()
