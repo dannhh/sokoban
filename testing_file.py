@@ -4,10 +4,18 @@ import heapq
 import psutil
 import os
 from collections import deque
-import pygame
+
+#--------------------------------FROM THUONG WITH LOVE-------------------------------#
+# This is the file to test the Mini and Micro testcase. It will run automatically    #
+# from test 1 to test 40. Just type in terminal:                                     #
+# python3 testing_file.py <filename1> <filename2>                                    #
+# <filename1> is the test: MiniCosmos.txt or MicroCosmos.txt                         #
+# <filename2> is the file to write result                                            #
+# Then choose the algorithm: 1 to run BFS or 2 to run A_star. Run both algorithm not #
+# provided anymore.                                                                  #
+#------------------------------------------------------------------------------------#
 
 #--------------------------------INITIAL--------------------------------#
-
 # use to take memory used
 pid = os.getpid()
 ps = psutil.Process(pid)
@@ -52,7 +60,6 @@ dequeue = deque()
 check = False
 
 #--------------------------------READ TESTCASE FILE, WRITE RESULT AND FUNCTION TO RUN--------------------------------#
-
 # function to read testcase file
 def read_file(filename):
     fulltest = []
@@ -91,55 +98,26 @@ def write_file(filename, cur_path, total_time, total_step, space_taken, total_st
     f.close()
 #-----------------------------------------------------------------------------------------#
 
-# function to print solution
-def print_solution(cur_path, total_time, total_step, space_taken, total_state, level, algorithm):
-    string_to_print = level
-    string_to_print += "Algorithm " + algorithm + "\n"
-    string_to_print += "Path: " + str(cur_path) + "\n"
-    string_to_print += "Total time taken: " + str(total_time) + "\n"
-    string_to_print += "Total steps: " + str(total_step) + "\n"
-    string_to_print += "Total space taken: " + str(space_taken) + "\n"
-    string_to_print += "Total state created: " + str(total_state) + "\n"
-
-    return string_to_print
-#-----------------------------------------------------------------------------------------#
-
 # main function to run
 def run(fileread, filewrite):
-    wall = pygame.image.load('images/wall.png')
-    floor = pygame.image.load('images/floor.png')
-    boxes = pygame.image.load('images/box.png')
-    box_docked = pygame.image.load('images/box_docked.png')
-    worker = pygame.image.load('images/worker.png')
-    worker_docked = pygame.image.load('images/worker_dock.png')
-    docker = pygame.image.load('images/dock.png')
-    background = 255, 226, 191
-    pygame.init()      
     fulltest, list_level = read_file(fileread)
     count = 0
-    
+
+    algorithm_choose = 0
     while True:
-        global robot, walls, box, storage, visited_Moves, queue, dequeue, check, width
-        print("Choose testcase to run (1 -> 40), enter -1 to quit: ")
-        level_choose = input()
-
-        if level_choose == "-1":
+        print("Choose algorithm to run, enter 1 to run BFS, enter 2 to run A_star: ")
+        algorithm_choose = input()
+        if algorithm_choose == "1" or algorithm_choose == "2":
             break
+    
+    while count != 40:
+        global robot, walls, box, storage, visited_Moves, queue, dequeue, check, width
 
-        if level_choose < "1" or level_choose > "40":
-            continue
-
-        print("Solving testcase " + level_choose + "..........")
-        level = list_level[int(level_choose) - 1]
-        matrix = fulltest[int(level_choose) - 1]
+        print("Solving testcase " + str(count + 1) + "..........")
+        level = list_level[count]
+        matrix = fulltest[count]
         print_Map(matrix)   # Read level and add to state array
         global start_time
-
-        while True:
-            print("Choose algorithm to run, enter 1 to run BFS, enter 2 to run A_star: ")
-            algorithm_choose = input()
-            if algorithm_choose == "1" or algorithm_choose == "2":
-                break
         
         if algorithm_choose == "1":
             start_time = time.time()
@@ -151,7 +129,7 @@ def run(fileread, filewrite):
                 write_file(filewrite, cur_path, total_time, total_step, space_taken, total_state, level, "BFS")
             else:
                 write_file(filewrite, cur_path, total_time, total_step, space_taken, total_state, level, "BFS")
-                print(print_solution(cur_path, total_time, total_step, space_taken, total_state, level, "BFS"))
+
         elif algorithm_choose == "2":
             start_time = time.time()
             cur_path, total_time, total_step, space_taken, total_state = A_star_heuristic()
@@ -162,7 +140,6 @@ def run(fileread, filewrite):
                 write_file(filewrite, cur_path, total_time, total_step, space_taken, total_state, level, "A_star")
             else:
                 write_file(filewrite, cur_path, total_time, total_step, space_taken, total_state, level, "A_star")
-                print(print_solution(cur_path, total_time, total_step, space_taken, total_state, level, "A_star"))
         
         print("Done algorithm")
 
@@ -178,31 +155,6 @@ def run(fileread, filewrite):
         queue = []
         check = False
         dequeue = deque()
-
-        sokoban = game(matrix)
-        size = sokoban.load_size()
-        screen = pygame.display.set_mode(size)
-        pygame.display.init()
-
-        print_game(sokoban.get_matrix(),screen, background, floor, wall, worker, docker, box_docked, boxes, worker_docked)
-        pygame.display.update()
-        time.sleep(0.5)
-
-        cur_path = move_string(cur_path)
-
-        for i in cur_path:
-            pygame.event.pump()
-            sokoban.move(i[0],i[1])
-            print_game(sokoban.get_matrix(),screen, background, floor, wall, worker, docker, box_docked, boxes, worker_docked)
-            pygame.display.update()
-            if (sokoban.is_completed()): 
-                time.sleep(0.5)
-            else: 
-                time.sleep(0.3)
-        
-        pygame.display.flip ()
-        pygame.quit()
-        print("Game runs successfully")
     
     return count
 #-----------------------------------------------------------------------------------------#
@@ -275,6 +227,11 @@ def print_Map(matrix):
 if len(sys.argv) < 3:
     print("Please provide textfile name as system argument \n python3 Astar_heuristic.py <filename> <filename>")
     exit(0)
+
+# textfile doesn't follow the format
+#if len(robot) == 0 or len(box) == 0 or len(storage) == 0 or len(walls) == 0:
+#    print("please provide the textfile in write format Walls : # \n storage : . \n box : $ \n robot : @ \n box on storage : * \n robot on storage : + \n should include walls,storage,box,robot")
+#    exit(0)
 
 #--------------------------------DEADLOCK DETECTION--------------------------------#
 """ CHECK FOR DEADLOCK
@@ -421,7 +378,6 @@ def checkDeadLock (box_list, curr_box, dir):
     return False
 
 #--------------------------------MOVE FUNCTION--------------------------------#
-
 # function to move robot and boxes
 def move_a_star(point_robot_move, direction_move, path, temp_box_list):
     global check
@@ -518,7 +474,6 @@ def move_a_star(point_robot_move, direction_move, path, temp_box_list):
 start_time = time.time()
 
 #--------------------------------A* ALGORITHM--------------------------------#
-
 # function for A* algorithm
 def A_star_heuristic():
 
@@ -693,7 +648,6 @@ def move_bfs(point,dir,path,temp_box_list):
 #-----------------------------------------------------------------------------------------#
 
 #--------------------------------BFS ALGORITHM--------------------------------#
-
 # bfs function
 def bfs():
     check_if_goal_in_side()
@@ -784,182 +738,6 @@ def bfs():
     return cur_path, total_time, total_step, space_taken, count
 #-----------------------------------------------------------------------------------------#
 
-# demo game
-class game:
-
-    def is_valid_value(self,char):
-        if ( char == ' ' or #floor
-            char == '#' or #wall
-            char == '@' or #worker on floor
-            char == '.' or #dock
-            char == '*' or #box on dock
-            char == '$' or #box
-            char == '+' ): #worker on dock
-            return True
-        else:
-            return False
-
-    def __init__(self,matrix):
-        self.matrix = matrix
-
-    def load_size(self):
-        x = 0
-        y = len(self.matrix)
-        for row in self.matrix:
-            if len(row) > x:
-                x = len(row)
-        return (x * 32, y * 32)
-
-    def get_matrix(self):
-        return self.matrix
-
-    def get_content(self,x,y):
-        return self.matrix[y][x]
-
-    def set_content(self,x,y,content):
-        if self.is_valid_value(content):
-            self.matrix[y][x] = content
-        else:
-            print ("ERROR: Value '"+content+"' to be added is not valid")
-
-    def worker(self):
-        x = 0
-        y = 0
-        for row in self.matrix:
-            for pos in row:
-                if pos == '@' or pos == '+': # worker on floor or worker on dock
-                    return (x, y, pos)
-                else:
-                    x = x + 1
-            y = y + 1
-            x = 0
-
-    def can_move(self,x,y):
-        return self.get_content(self.worker()[0]+x,self.worker()[1]+y) not in ['#','*','$']
-
-    def next(self,x,y):
-        return self.get_content(self.worker()[0]+x,self.worker()[1]+y)
-
-    def can_push(self,x,y):
-        return (self.next(x,y) in ['*','$'] and self.next(x+x,y+y) in [' ','.'])
-
-    def is_completed(self):
-        for row in self.matrix:
-            for cell in row:
-                if cell == '$':
-                    return False
-        return True
-
-    def move_box(self,x,y,a,b):
-        #        (x,y) -> move to do
-        #        (a,b) -> box to move
-        current_box = self.get_content(x,y)
-        future_box = self.get_content(x+a,y+b)
-        if current_box == '$' and future_box == ' ':
-            self.set_content(x+a,y+b,'$')
-            self.set_content(x,y,' ')
-        elif current_box == '$' and future_box == '.':
-            self.set_content(x+a,y+b,'*')
-            self.set_content(x,y,' ')
-        elif current_box == '*' and future_box == ' ':
-            self.set_content(x+a,y+b,'$')
-            self.set_content(x,y,'.')
-        elif current_box == '*' and future_box == '.':
-            self.set_content(x+a,y+b,'*')
-            self.set_content(x,y,'.')
-
-    def move(self,x,y):
-        if self.can_move(x,y):
-            current = self.worker()
-            future = self.next(x,y)
-            if current[2] == '@' and future == ' ':
-                self.set_content(current[0]+x,current[1]+y,'@')
-                self.set_content(current[0],current[1],' ')
-            elif current[2] == '@' and future == '.':
-                self.set_content(current[0]+x,current[1]+y,'+')
-                self.set_content(current[0],current[1],' ')
-            elif current[2] == '+' and future == ' ':
-                self.set_content(current[0]+x,current[1]+y,'@')
-                self.set_content(current[0],current[1],'.')
-            elif current[2] == '+' and future == '.':
-                self.set_content(current[0]+x,current[1]+y,'+')
-                self.set_content(current[0],current[1],'.')
-        elif self.can_push(x,y):
-            current = self.worker()
-            future = self.next(x,y)
-            future_box = self.next(x+x,y+y)
-            if current[2] == '@' and future == '$' and future_box == ' ':
-                self.move_box(current[0]+x,current[1]+y,x,y)
-                self.set_content(current[0],current[1],' ')
-                self.set_content(current[0]+x,current[1]+y,'@')
-            elif current[2] == '@' and future == '$' and future_box == '.':
-                self.move_box(current[0]+x,current[1]+y,x,y)
-                self.set_content(current[0],current[1],' ')
-                self.set_content(current[0]+x,current[1]+y,'@')
-            elif current[2] == '@' and future == '*' and future_box == ' ':
-                self.move_box(current[0]+x,current[1]+y,x,y)
-                self.set_content(current[0],current[1],' ')
-                self.set_content(current[0]+x,current[1]+y,'+')
-            elif current[2] == '@' and future == '*' and future_box == '.':
-                self.move_box(current[0]+x,current[1]+y,x,y)
-                self.set_content(current[0],current[1],' ')
-                self.set_content(current[0]+x,current[1]+y,'+')
-            elif current[2] == '+' and future == '$' and future_box == ' ':
-                self.move_box(current[0]+x,current[1]+y,x,y)
-                self.set_content(current[0],current[1],'.')
-                self.set_content(current[0]+x,current[1]+y,'@')
-            elif current[2] == '+' and future == '$' and future_box == '.':
-                self.move_box(current[0]+x,current[1]+y,x,y)
-                self.set_content(current[0],current[1],'.')
-                self.set_content(current[0]+x,current[1]+y,'@') # + => @
-            elif current[2] == '+' and future == '*' and future_box == ' ':
-                self.move_box(current[0]+x,current[1]+y,x,y)
-                self.set_content(current[0],current[1],'.')
-                self.set_content(current[0]+x,current[1]+y,'+')
-            elif current[2] == '+' and future == '*' and future_box == '.':
-                self.move_box(current[0]+x,current[1]+y,x,y)
-                self.set_content(current[0],current[1],'.')
-                self.set_content(current[0]+x,current[1]+y,'+')
-#-----------------------------------------------------------------------------------------#
-
-def print_game(matrix, screen, background, floor, wall, worker, docker, box_docked, box, worker_docked):
-        screen.fill(background)
-        x = 0
-        y = 0
-        for row in matrix:
-           for char in row:
-                if char == ' ': #floor
-                    screen.blit(floor,(x,y))
-                elif char == '#': #wall
-                    screen.blit(wall,(x,y))
-                elif char == '@': #worker on floor
-                    screen.blit(worker,(x,y))
-                elif char == '.': #dock
-                    screen.blit(docker,(x,y))
-                elif char == '*': #box on dock
-                    screen.blit(box_docked,(x,y))
-                elif char == '$': #box
-                    screen.blit(box,(x,y))
-                elif char == '+': #worker on dock
-                    screen.blit(worker_docked,(x,y))
-                x = x + 32
-           x = 0
-           y = y + 32
-#-----------------------------------------------------------------------------------------#
-
-def move_string(moves):
-    movesssss = []
-    for i in moves: 
-        if i == "L":
-            movesssss.append([-1, 0])
-        elif i == "R":
-            movesssss.append([1, 0])
-        elif i == "U":
-            movesssss.append([0, -1])
-        else:
-            movesssss.append([0, 1])
-    return movesssss
-#-----------------------------------------------------------------------------------------#
 
 #--------------------------------RUN THE GAME WITH TWO INPUT FILES--------------------------------#
 run(sys.argv[1], sys.argv[2])
