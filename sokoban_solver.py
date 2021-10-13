@@ -121,27 +121,27 @@ def run(fileread, filewrite):
     while True:
         global robot, walls, box, storage, visited_Moves, queue, dequeue, check, width
         print("Choose testcase to run (1 -> 40), enter -1 to quit: ")
-        level_choose = input()
+        level_choose = int(input())
 
-        if level_choose == "-1":
+        if level_choose == -1:
             break
 
-        if level_choose < "1" or level_choose > "40":
+        if level_choose < 1 or level_choose > 40:
             continue
 
-        print("Solving testcase " + level_choose + "..........")
-        level = list_level[int(level_choose) - 1]
-        matrix = fulltest[int(level_choose) - 1]
+        print("Solving testcase " + str(level_choose) + "..........")
+        level = list_level[level_choose - 1]
+        matrix = fulltest[level_choose - 1]
         print_Map(matrix)   # Read level and add to state array
         global start_time
 
         while True:
             print("Choose algorithm to run, enter 1 to run BFS, enter 2 to run A_star: ")
-            algorithm_choose = input()
-            if algorithm_choose == "1" or algorithm_choose == "2":
+            algorithm_choose = int(input())
+            if algorithm_choose == 1 or algorithm_choose == 2:
                 break
         
-        if algorithm_choose == "1":
+        if algorithm_choose == 1:
             start_time = time.time()
             cur_path, total_time, total_step, space_taken, total_state = bfs()
             if cur_path == []:
@@ -152,7 +152,7 @@ def run(fileread, filewrite):
             else:
                 write_file(filewrite, cur_path, total_time, total_step, space_taken, total_state, level, "BFS")
                 print(print_solution(cur_path, total_time, total_step, space_taken, total_state, level, "BFS"))
-        elif algorithm_choose == "2":
+        elif algorithm_choose == 2:
             start_time = time.time()
             cur_path, total_time, total_step, space_taken, total_state = A_star_heuristic()
             if cur_path == []:
@@ -273,7 +273,7 @@ def print_Map(matrix):
 
 # User run file but don't provide textfile as system argument
 if len(sys.argv) < 3:
-    print("Please provide textfile name as system argument \n python3 Astar_heuristic.py <filename> <filename>")
+    print("Please provide textfile name as system argument \n python3 sokoban_solver.py <filename> <filename>")
     exit(0)
 
 #--------------------------------DEADLOCK DETECTION--------------------------------#
