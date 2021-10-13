@@ -110,12 +110,18 @@ def run(fileread, filewrite):
         if algorithm_choose == "1" or algorithm_choose == "2":
             break
     
-    while count != 40:
+    while True:
         global robot, walls, box, storage, visited_Moves, queue, dequeue, check, width
 
-        print("Solving testcase " + str(count + 1) + "..........")
-        level = list_level[count]
-        matrix = fulltest[count]
+        print("Choose testcase to run (1 -> 40), enter -1 to quit: ")
+        level_choose = int(input())
+
+        if level_choose == -1:
+            break
+
+        print("Solving testcase " + str(level_choose) + "..........")
+        level = list_level[level_choose - 1]
+        matrix = fulltest[level_choose -1]
         print_Map(matrix)   # Read level and add to state array
         global start_time
         
