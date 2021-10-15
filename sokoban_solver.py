@@ -203,6 +203,8 @@ def run(fileread, filewrite):
         pygame.display.flip ()
         pygame.quit()
         print("Game runs successfully")
+
+        break
     
     return count
 #-----------------------------------------------------------------------------------------#
