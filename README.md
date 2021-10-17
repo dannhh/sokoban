@@ -9,7 +9,7 @@ Members:
 
 First, open file in VSCode, run in terminal
 
-Second, input the command python3 sokoban_solver "filename1" "filename2"
+Second, input the command python3 sokoban_solver.py "filename1" "filename2"
 - "filename1" is the testcase you want to run, we provide two types: MiniCosmos.txt or MicroCosmos.txt
 - "filename2" is the result file name you want to save the result of the program. It should be test.txt
 
