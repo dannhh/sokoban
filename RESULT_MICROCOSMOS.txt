@@ -179,6 +179,15 @@ Total steps: 125
 Total space taken: 62.5078125
 Total state created: 2013802
 ******************************************
+Testcase is fail
+Level 12
+Algorithm A_star
+Path: []
+Total time taken: 1800.5842475891113
+Total steps: 0
+Total space taken: 0
+Total state created: 1830024
+******************************************
 Level 12
 Algorithm BFS
 Path: ['U', 'L', 'U', 'U', 'R', 'D', 'D', 'U', 'U', 'L', 'U', 'L', 'U', 'U', 'R', 'D', 'U', 'R', 'R', 'D', 'L', 'D', 'D', 'D', 'U', 'U', 'U', 'R', 'R', 'D', 'L', 'U', 'L', 'D', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'D', 'U', 'R', 'R', 'U', 'L', 'U', 'L', 'D', 'D', 'U', 'U', 'L', 'L', 'D', 'R', 'L', 'D', 'R']
