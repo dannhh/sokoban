@@ -47,7 +47,7 @@ valid_side = {
 start_time = 0
 
 # time to check time run
-out_time = 1800
+out_time = 2500
 
 # array store the moves that have been met
 visited_Moves = {}

@@ -101,7 +101,7 @@ Total state created: 1294292
 Level 7
 Algorithm A_star
 Path: ['L', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'R', 'R', 'U', 'R', 'U', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'D', 'L', 'D', 'R', 'U', 'U', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'U', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'L', 'U', 'U', 'R', 'D', 'U', 'U', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'D', 'U', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'R', 'U', 'U', 'L', 'L', 'D', 'D']
-Total time taken: 0.14480900764465332
+Total time taken: 0.11914324760437012
 Total steps: 125
 Total space taken: 14.48828125
 Total state created: 10108
@@ -117,9 +117,9 @@ Total state created: 9806
 Level 8
 Algorithm A_star
 Path: ['U', 'U', 'R', 'R', 'D', 'D', 'D', 'L', 'D', 'L', 'U', 'U', 'U', 'L', 'U', 'R', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'L', 'U', 'L', 'L', 'D', 'R', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'U', 'L', 'D', 'R', 'R', 'R', 'R', 'D', 'D', 'L', 'D', 'L', 'U', 'U', 'D', 'R', 'R', 'U', 'U', 'L', 'L', 'L', 'U', 'U', 'R', 'D', 'D', 'R', 'R', 'U', 'L', 'D', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'R', 'R', 'R', 'U', 'R', 'D']
-Total time taken: 43.45363211631775
+Total time taken: 40.52152395248413
 Total steps: 89
-Total space taken: 28.15625
+Total space taken: 28.046875
 Total state created: 329979
 ******************************************
 Level 8
@@ -172,30 +172,28 @@ Total steps: 0
 Total space taken: 0
 Total state created: 1462213
 ******************************************
-Testcase is fail
+Level 11
+Algorithm A_star
+Path: ['R', 'R', 'D', 'D', 'L', 'D', 'D', 'L', 'D', 'L', 'L', 'U', 'R', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'R', 'U', 'U', 'L', 'L', 'D', 'R', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'D', 'L', 'U', 'D', 'D', 'D', 'L', 'L', 'U', 'R', 'D', 'R', 'U', 'R', 'U', 'U', 'L', 'D', 'R', 'U', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'L', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'U', 'L', 'L', 'D', 'D', 'R', 'D', 'D', 'L', 'U', 'U', 'U', 'D', 'D', 'D', 'D', 'L', 'L', 'U', 'R', 'D', 'R', 'U', 'U', 'U', 'L', 'D', 'R', 'D', 'D', 'L', 'L', 'U', 'R', 'D', 'R', 'U', 'R', 'U', 'U', 'R', 'U', 'R', 'R', 'D', 'L', 'L', 'L', 'R', 'R', 'D', 'D', 'L', 'L']
+Total time taken: 1381.288984298706
+Total steps: 143
+Total space taken: 84.453125
+Total state created: 1559903
+******************************************
 Level 11
 Algorithm BFS
-Path: []
-Total time taken: 1800.097332239151
-Total steps: 0
-Total space taken: 0
-Total state created: 1657608
-******************************************
-Testcase is fail
-Level 12
-Algorithm A_star
-Path: []
-Total time taken: 1800.5842475891113
-Total steps: 0
-Total space taken: 0
-Total state created: 1830024
+Path: ['R', 'R', 'D', 'D', 'L', 'D', 'D', 'L', 'D', 'L', 'L', 'U', 'R', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'R', 'U', 'U', 'L', 'L', 'D', 'R', 'D', 'D', 'L', 'U', 'R', 'R', 'R', 'R', 'U', 'U', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'D', 'U', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'L', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'D', 'L', 'L', 'L', 'U', 'U', 'U', 'D', 'D', 'D', 'D', 'L', 'L', 'U', 'R', 'D', 'R', 'U', 'U', 'U', 'L', 'D', 'R', 'D', 'D', 'L', 'L', 'U', 'R', 'D', 'R', 'U', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'U', 'R', 'R', 'D', 'D', 'L', 'L']
+Total time taken: 1798.1522369384766
+Total steps: 125
+Total space taken: 62.5078125
+Total state created: 2013802
 ******************************************
 Level 12
 Algorithm BFS
 Path: ['U', 'L', 'U', 'U', 'R', 'D', 'D', 'U', 'U', 'L', 'U', 'L', 'U', 'U', 'R', 'D', 'U', 'R', 'R', 'D', 'L', 'D', 'D', 'D', 'U', 'U', 'U', 'R', 'R', 'D', 'L', 'U', 'L', 'D', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'D', 'U', 'R', 'R', 'U', 'L', 'U', 'L', 'D', 'D', 'U', 'U', 'L', 'L', 'D', 'R', 'L', 'D', 'R']
-Total time taken: 1195.8966853618622
+Total time taken: 662.1156134605408
 Total steps: 67
-Total space taken: 64.2578125
+Total space taken: 64.12109375
 Total state created: 1439777
 ******************************************
 Level 13
@@ -209,9 +207,9 @@ Total state created: 70879
 Level 13
 Algorithm BFS
 Path: ['D', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'L', 'D', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'D', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'L', 'D', 'D', 'R', 'R', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'U', 'U', 'L', 'L', 'D', 'R', 'U', 'R', 'D', 'R', 'R', 'D', 'D', 'L', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'R', 'L', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'R', 'R', 'D', 'L', 'D', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'U', 'D', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U']
-Total time taken: 0.34947872161865234
+Total time taken: 0.32784271240234375
 Total steps: 128
-Total space taken: 15.5
+Total space taken: 26.58203125
 Total state created: 20152
 ******************************************
 Level 14
@@ -233,17 +231,17 @@ Total state created: 435571
 Level 15
 Algorithm A_star
 Path: ['L', 'L', 'D', 'L', 'L', 'U', 'R', 'U', 'U', 'U', 'L', 'U', 'R', 'R', 'U', 'R', 'D', 'D', 'R', 'D', 'D', 'D', 'L', 'L', 'D', 'L', 'U', 'R', 'R', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'U', 'U', 'L', 'R', 'R', 'R', 'D', 'U', 'L', 'L', 'D', 'D', 'R', 'D', 'R', 'R', 'U', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'U', 'U', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'D', 'L', 'U', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'L', 'U', 'L', 'U', 'R', 'R', 'U', 'R', 'D', 'D', 'R', 'D', 'D', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'L', 'L', 'U', 'L', 'U', 'R', 'R', 'U', 'R', 'D', 'D', 'R', 'D', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'D', 'D', 'R', 'R', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'R', 'R', 'R', 'D', 'R', 'U', 'U']
-Total time taken: 869.6432898044586
+Total time taken: 268.93819069862366
 Total steps: 163
-Total space taken: 69.0
+Total space taken: 69.140625
 Total state created: 796211
 ******************************************
 Level 15
 Algorithm BFS
 Path: ['L', 'L', 'D', 'L', 'L', 'U', 'R', 'U', 'U', 'U', 'L', 'U', 'R', 'R', 'U', 'R', 'D', 'D', 'R', 'D', 'D', 'D', 'L', 'L', 'D', 'L', 'U', 'R', 'R', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'U', 'L', 'L', 'D', 'D', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'U', 'U', 'R', 'R', 'R', 'L', 'L', 'L', 'U', 'L', 'U', 'R', 'R', 'U', 'R', 'D', 'D', 'R', 'D', 'D', 'D', 'L', 'L', 'D', 'L', 'U', 'U', 'U', 'R', 'R', 'L', 'L', 'U', 'L', 'U', 'R', 'R', 'U', 'R', 'D', 'D', 'R', 'D', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'D', 'D', 'R', 'R', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'R', 'R', 'R', 'D', 'R', 'U', 'U']
-Total time taken: 785.0038678646088
+Total time taken: 429.82979226112366
 Total steps: 139
-Total space taken: 54.171875
+Total space taken: 53.625
 Total state created: 744033
 ******************************************
 Level 16
@@ -262,14 +260,13 @@ Total steps: 119
 Total space taken: 60.3125
 Total state created: 995076
 ******************************************
-Testcase is fail
 Level 17
 Algorithm A_star
-Path: []
-Total time taken: 1800.2729134559631
-Total steps: 0
-Total space taken: 0
-Total state created: 1315251
+Path: ['R', 'U', 'R', 'R', 'D', 'R', 'D', 'L', 'L', 'R', 'U', 'U', 'L', 'L', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'U', 'U', 'U', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'R', 'D', 'L', 'L', 'R', 'U', 'U', 'L', 'L', 'D', 'L', 'L', 'L', 'U', 'U', 'L', 'U', 'U', 'R', 'D', 'R', 'R', 'D', 'D', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'U', 'L', 'D', 'R', 'U', 'U', 'U', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'U', 'U', 'L', 'L', 'L', 'L', 'L', 'D', 'U', 'R', 'R', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'U', 'L', 'U', 'R', 'R', 'R', 'D', 'D', 'D', 'R', 'D', 'D', 'L', 'L', 'U', 'D', 'R', 'R', 'U', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'L', 'L', 'R', 'U', 'U', 'L', 'L', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'D', 'R', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'U', 'U', 'U', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'R', 'D', 'L', 'L', 'R', 'U', 'U', 'L', 'L', 'R', 'R', 'U', 'U', 'L', 'L', 'L', 'L', 'L', 'D', 'D', 'D', 'R', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'R', 'R', 'U', 'U', 'U', 'U', 'L', 'L', 'L', 'D', 'D', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'D', 'R', 'U', 'L', 'L', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'R', 'R', 'D', 'D', 'L', 'L', 'D', 'L', 'L', 'U']
+Total time taken: 1766.0540926456451
+Total steps: 240
+Total space taken: 116.8828125
+Total state created: 2133978
 ******************************************
 Testcase is fail
 Level 17
