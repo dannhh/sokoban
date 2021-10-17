@@ -1,0 +1,640 @@
+Level 1
+Algorithm BFS
+Path: ['U', 'U', 'L', 'U', 'U', 'R', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'L', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'U', 'R']
+Total time taken: 0.006186962127685547
+Total steps: 37
+Total space taken: 13.81640625
+Total state created: 835
+******************************************
+Level 2
+Algorithm BFS
+Path: ['R', 'R', 'U', 'U', 'L', 'L', 'L', 'U', 'U', 'R', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'D', 'L', 'L', 'U', 'D', 'R', 'R', 'U', 'U', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'D']
+Total time taken: 0.012338399887084961
+Total steps: 60
+Total space taken: 13.9375
+Total state created: 2441
+******************************************
+Level 3
+Algorithm BFS
+Path: ['R', 'R', 'U', 'U', 'L', 'L', 'L', 'U', 'U', 'R', 'L', 'D', 'D', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'D', 'R', 'R', 'U', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'R', 'U', 'U', 'L', 'U', 'U', 'L', 'L', 'D', 'L', 'L', 'D', 'D', 'R', 'D', 'D', 'R', 'R', 'U', 'U', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'L']
+Total time taken: 0.016201019287109375
+Total steps: 69
+Total space taken: 13.96875
+Total state created: 2970
+******************************************
+Level 4
+Algorithm BFS
+Path: ['U', 'U', 'U', 'U', 'R', 'R', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'D', 'D', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'R', 'R', 'U', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'U', 'U', 'D', 'R', 'R', 'R', 'U', 'U', 'U', 'L', 'L', 'L', 'L', 'D', 'R']
+Total time taken: 0.06715679168701172
+Total steps: 71
+Total space taken: 14.10546875
+Total state created: 10668
+******************************************
+Level 5
+Algorithm BFS
+Path: ['U', 'U', 'U', 'R', 'U', 'R', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'D', 'D', 'U', 'U', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'R', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'R', 'R', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'D', 'D', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'U', 'U', 'D', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'R', 'R', 'U', 'U', 'U', 'L', 'L', 'L', 'L', 'D', 'R', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'U', 'U']
+Total time taken: 0.3184778690338135
+Total steps: 104
+Total space taken: 14.99609375
+Total state created: 34257
+******************************************
+Level 6
+Algorithm BFS
+Path: ['L', 'U', 'R', 'U', 'U', 'R', 'U', 'R', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'R', 'R', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'D', 'D', 'U', 'U', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'R', 'L', 'D', 'L', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'U', 'U', 'D', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'R', 'R', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'L', 'L', 'L', 'L', 'D', 'R', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'U', 'U', 'D', 'R', 'R', 'R', 'U', 'U', 'R', 'U', 'L']
+Total time taken: 3.4496710300445557
+Total steps: 99
+Total space taken: 18.60546875
+Total state created: 114493
+******************************************
+Level 7
+Algorithm BFS
+Path: ['L', 'U', 'L', 'L', 'U', 'R', 'R', 'R', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'L', 'L', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'L', 'L', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'D', 'L', 'R', 'D', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'U']
+Total time taken: 0.10205674171447754
+Total steps: 61
+Total space taken: 14.46875
+Total state created: 9336
+******************************************
+Level 8
+Algorithm BFS
+Path: ['L', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'L', 'L', 'U', 'R', 'R', 'R', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'L', 'D', 'R', 'U', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'U', 'U', 'R', 'U', 'L', 'L', 'L', 'D', 'L', 'U', 'D', 'R', 'D', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'U']
+Total time taken: 0.9657435417175293
+Total steps: 93
+Total space taken: 16.22265625
+Total state created: 42770
+******************************************
+Level 9
+Algorithm BFS
+Path: ['R', 'D', 'D', 'L', 'L', 'U', 'L', 'U', 'R', 'U', 'U', 'L', 'L', 'D', 'U', 'R', 'R', 'D', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'U', 'U', 'R', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'U', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'L', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'U', 'L', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'U', 'L', 'D']
+Total time taken: 0.044947147369384766
+Total steps: 85
+Total space taken: 13.96484375
+Total state created: 7847
+******************************************
+Level 10
+Algorithm BFS
+Path: ['R', 'D', 'D', 'L', 'L', 'U', 'L', 'U', 'R', 'L', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'U', 'U', 'U', 'L', 'L', 'D', 'U', 'R', 'R', 'D', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'U', 'U', 'R', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'U', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'R', 'U', 'U', 'R', 'R', 'D', 'D', 'R', 'R', 'D', 'D', 'L', 'L', 'R', 'R', 'U', 'U', 'L', 'L', 'D']
+Total time taken: 0.07275247573852539
+Total steps: 102
+Total space taken: 14.4921875
+Total state created: 9610
+******************************************
+Level 11
+Algorithm BFS
+Path: ['D', 'L', 'U', 'L', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'R', 'R', 'D', 'R', 'R', 'D', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'R', 'L', 'D', 'D', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'R', 'R', 'D', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'L']
+Total time taken: 0.11394429206848145
+Total steps: 74
+Total space taken: 14.35546875
+Total state created: 9727
+******************************************
+Level 12
+Algorithm BFS
+Path: ['D', 'L', 'U', 'L', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'D', 'L', 'L', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'L', 'U', 'U', 'R', 'R', 'R', 'L', 'D', 'D', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'R', 'R', 'D', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'R', 'D', 'L', 'U', 'L', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'U', 'U']
+Total time taken: 1.0497708320617676
+Total steps: 112
+Total space taken: 16.46875
+Total state created: 40842
+******************************************
+Level 13
+Algorithm BFS
+Path: ['R', 'R', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'R', 'D', 'L', 'L', 'L', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'D', 'L', 'D', 'L', 'U', 'U', 'U', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'R', 'R', 'R', 'U', 'U', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'R', 'D', 'L', 'L', 'L', 'L', 'D', 'L', 'U', 'U', 'D', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'R', 'R', 'R', 'D', 'D', 'L', 'L']
+Total time taken: 0.662930965423584
+Total steps: 80
+Total space taken: 15.640625
+Total state created: 37861
+******************************************
+Level 14
+Algorithm BFS
+Path: ['R', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'D', 'L', 'D', 'L', 'U', 'U', 'U', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'R', 'U', 'U', 'R', 'R', 'D', 'D', 'R', 'R', 'D', 'R', 'D', 'L', 'L', 'L', 'L', 'D', 'L', 'U', 'U', 'U', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'R', 'R', 'L', 'U', 'U', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'R', 'D', 'L', 'L', 'L', 'L', 'D', 'L', 'U', 'U', 'D', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'R', 'R', 'U', 'U', 'L', 'L', 'D']
+Total time taken: 17.76155686378479
+Total steps: 121
+Total space taken: 23.890625
+Total state created: 206900
+******************************************
+Level 15
+Algorithm BFS
+Path: ['U', 'U', 'L', 'U', 'R', 'R', 'D', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'R', 'D', 'L', 'L', 'L', 'D', 'L', 'U', 'U', 'U', 'R', 'U', 'R', 'U', 'R', 'D', 'D', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'L', 'U', 'U', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'R', 'D', 'L', 'L', 'L', 'D', 'L', 'U', 'U', 'D', 'R', 'R', 'R', 'U', 'U', 'U', 'L', 'L', 'L', 'L', 'D', 'R']
+Total time taken: 0.13546299934387207
+Total steps: 82
+Total space taken: 14.40234375
+Total state created: 17979
+******************************************
+Level 16
+Algorithm BFS
+Path: ['R', 'R', 'U', 'R', 'R', 'D', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'U', 'U', 'R', 'U', 'R', 'U', 'R', 'D', 'D', 'D', 'L', 'D', 'L', 'R', 'U', 'R', 'R', 'D', 'L', 'L', 'U', 'R', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'U', 'U', 'L', 'U', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'L', 'D', 'L', 'D', 'L', 'U', 'U', 'D', 'R', 'R', 'U', 'R', 'U', 'U', 'L', 'L', 'L', 'L', 'D', 'R', 'U', 'R', 'R', 'R', 'D', 'D', 'R', 'D', 'L', 'L', 'L', 'D', 'L', 'U', 'U', 'U', 'L', 'U', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'U', 'L', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'L']
+Total time taken: 1.9047648906707764
+Total steps: 114
+Total space taken: 16.546875
+Total state created: 65308
+******************************************
+Level 17
+Algorithm BFS
+Path: ['L', 'D', 'L', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'U', 'R', 'U', 'D', 'L', 'L', 'U', 'R', 'U', 'R', 'L', 'D', 'D', 'R', 'U', 'R', 'U', 'D', 'L', 'L', 'U', 'R', 'U', 'R', 'R', 'D', 'L', 'U', 'L', 'D', 'U', 'R', 'U', 'R', 'U', 'R', 'R', 'D', 'D', 'L', 'L', 'D', 'L', 'D', 'L', 'U', 'L', 'D', 'U', 'R', 'U', 'R', 'D', 'R', 'U']
+Total time taken: 1.4826998710632324
+Total steps: 65
+Total space taken: 17.57421875
+Total state created: 128325
+******************************************
+Level 18
+Algorithm BFS
+Path: ['L', 'L', 'L', 'D', 'L', 'D', 'L', 'D', 'D', 'R', 'U', 'R', 'U', 'R', 'U', 'D', 'L', 'D', 'L', 'L', 'U', 'R', 'U', 'R', 'U', 'R', 'R', 'R', 'L', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'U', 'R', 'U', 'D', 'L', 'L', 'U', 'R', 'U', 'R', 'R', 'D', 'L', 'U', 'L', 'D', 'R', 'D', 'L', 'U', 'L', 'D', 'U', 'R', 'U', 'R', 'U', 'R', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'L', 'U', 'L', 'L', 'U', 'L', 'D', 'R', 'D', 'L', 'U', 'U', 'R', 'U', 'R', 'R', 'D', 'R', 'D', 'L', 'L', 'R', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'U', 'D', 'L', 'D', 'L', 'L', 'U', 'R']
+Total time taken: 25.349612712860107
+Total steps: 110
+Total space taken: 22.34765625
+Total state created: 376141
+******************************************
+Level 19
+Algorithm BFS
+Path: ['L', 'L', 'U', 'U', 'U', 'R', 'U', 'L', 'D', 'D', 'D', 'D', 'L', 'L', 'U', 'R', 'D', 'R', 'U', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'D', 'L', 'D', 'R', 'R', 'U', 'L', 'U', 'U', 'R', 'R', 'U', 'L', 'L', 'D', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'D', 'R', 'D', 'L', 'R', 'D', 'R', 'R', 'U', 'L']
+Total time taken: 0.1992189884185791
+Total steps: 72
+Total space taken: 14.734375
+Total state created: 21740
+******************************************
+Level 20
+Algorithm BFS
+Path: ['L', 'L', 'U', 'U', 'U', 'R', 'U', 'L', 'D', 'D', 'D', 'D', 'L', 'L', 'U', 'R', 'D', 'R', 'U', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'D', 'D', 'D', 'L', 'D', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'U', 'L', 'L', 'D', 'R', 'L', 'L', 'L', 'U', 'R', 'D', 'R', 'U', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'D', 'R', 'D', 'L', 'U', 'U', 'U', 'R', 'R', 'U', 'L', 'L', 'D', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'D', 'R', 'D', 'D', 'R', 'R', 'U', 'L']
+Total time taken: 4.42277979850769
+Total steps: 112
+Total space taken: 17.71484375
+Total state created: 140157
+******************************************
+Level 21
+Algorithm BFS
+Path: ['R', 'R', 'U', 'U', 'U', 'R', 'U', 'L', 'D', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'D', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'D', 'D', 'R', 'R', 'U', 'L', 'U', 'U', 'U', 'R', 'U', 'L', 'D', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'L', 'D', 'R', 'U', 'U', 'L', 'L', 'L', 'D', 'R', 'U', 'R', 'D']
+Total time taken: 0.23250794410705566
+Total steps: 71
+Total space taken: 14.7265625
+Total state created: 21607
+******************************************
+Level 22
+Algorithm BFS
+Path: ['R', 'R', 'U', 'U', 'U', 'R', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'D', 'R', 'L', 'U', 'U', 'R', 'D', 'R', 'D', 'D', 'D', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'D', 'D', 'R', 'R', 'U', 'L', 'U', 'U', 'U', 'R', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'D', 'R', 'L', 'U', 'U', 'R', 'D', 'R', 'D', 'D', 'D', 'D', 'L', 'U', 'R', 'U', 'U', 'U', 'L', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'U', 'L', 'L', 'L', 'D', 'R', 'U', 'R', 'D', 'U', 'R', 'U', 'U', 'R', 'U', 'L', 'L']
+Total time taken: 4.164273023605347
+Total steps: 99
+Total space taken: 17.71484375
+Total state created: 112447
+******************************************
+Level 23
+Algorithm BFS
+Path: ['U', 'U', 'U', 'L', 'L', 'D', 'L', 'U', 'L', 'L', 'D', 'D', 'R', 'U', 'L', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'D', 'D', 'L', 'L', 'U', 'U', 'L', 'L', 'L', 'U', 'U', 'L', 'U', 'R', 'R', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'L', 'R', 'U', 'U', 'U', 'L', 'L', 'D', 'D', 'D', 'D', 'U', 'U', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'D', 'R', 'U', 'U']
+Total time taken: 1.7658777236938477
+Total steps: 99
+Total space taken: 17.05859375
+Total state created: 76718
+******************************************
+Level 24
+Algorithm BFS
+Path: ['U', 'U', 'U', 'L', 'L', 'D', 'L', 'U', 'R', 'R', 'R', 'D', 'D', 'D', 'L', 'L', 'L', 'U', 'D', 'R', 'R', 'R', 'U', 'U', 'U', 'L', 'L', 'L', 'L', 'L', 'D', 'D', 'R', 'U', 'L', 'U', 'R', 'R', 'R', 'D', 'L', 'U', 'R', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'L', 'L', 'L', 'U', 'L', 'U', 'L', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'D', 'D', 'L', 'L', 'U', 'U', 'L', 'L', 'L', 'U', 'U', 'L', 'U', 'R', 'R', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'U', 'U', 'U', 'L', 'L', 'D', 'D', 'D', 'D', 'U', 'U', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'D', 'R', 'U', 'U', 'D', 'L', 'L', 'L', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'D', 'D', 'D', 'L', 'L', 'L']
+Total time taken: 886.9321043491364
+Total steps: 177
+Total space taken: 62.34765625
+Total state created: 3083342
+******************************************
+Level 25
+Algorithm BFS
+Path: ['U', 'U', 'L', 'L', 'D', 'D', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'U', 'U', 'R', 'L', 'D', 'D', 'R', 'R', 'R', 'D', 'R', 'U', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'L', 'L', 'D', 'D', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'R', 'D', 'D', 'L', 'U', 'U', 'U', 'U', 'R', 'U', 'L', 'D', 'D', 'D', 'L', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'D', 'R', 'U', 'U', 'U']
+Total time taken: 0.21110224723815918
+Total steps: 81
+Total space taken: 14.98828125
+Total state created: 19180
+******************************************
+Level 26
+Algorithm BFS
+Path: ['D', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'R', 'R', 'D', 'R', 'U', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'L', 'L', 'D', 'D', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'R', 'D', 'D', 'L', 'U', 'U', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'U', 'U', 'R', 'L', 'D', 'D', 'R', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'L', 'L', 'D', 'U', 'R', 'R', 'D', 'D', 'D', 'R', 'D', 'D', 'L', 'U', 'U', 'U', 'U', 'R', 'U', 'L', 'D', 'D', 'D', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'R', 'R', 'D', 'R', 'U', 'U', 'U', 'D', 'D', 'L', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L']
+Total time taken: 4.280954122543335
+Total steps: 133
+Total space taken: 19.90234375
+Total state created: 103827
+******************************************
+Level 27
+Algorithm BFS
+Path: ['U', 'R', 'U', 'U', 'L', 'U', 'L', 'L', 'D', 'D', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'D', 'L', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'R', 'U', 'U', 'U', 'R', 'U', 'L', 'L', 'L', 'U', 'L', 'D', 'D', 'D', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'D', 'L', 'L', 'U', 'R', 'D', 'R', 'U', 'U', 'D', 'D', 'L', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'D', 'L', 'U', 'L', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'D', 'R', 'U', 'U', 'U', 'R', 'U', 'L', 'L', 'L', 'U', 'L', 'D', 'D']
+Total time taken: 3.4641716480255127
+Total steps: 103
+Total space taken: 19.63671875
+Total state created: 337125
+******************************************
+Level 28
+Algorithm BFS
+Path: ['R', 'R', 'U', 'L', 'U', 'U', 'L', 'U', 'L', 'L', 'D', 'D', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'D', 'L', 'L', 'U', 'R', 'D', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'U', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'R', 'D', 'L', 'L', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'R', 'L', 'L', 'U', 'U', 'U', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'U', 'L', 'D', 'D', 'D', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'L', 'D', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'U', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'R', 'D', 'L', 'U', 'U', 'U', 'U', 'L', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'L', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'R', 'U', 'U', 'D', 'D', 'L', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'D', 'L', 'U', 'L', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'D', 'R', 'U', 'U', 'U', 'R', 'U', 'L', 'L', 'L', 'U', 'L', 'D', 'D', 'U', 'R', 'R', 'R', 'D', 'D', 'D', 'D', 'L', 'D', 'L', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'R']
+Total time taken: 26.896377325057983
+Total steps: 189
+Total space taken: 36.2578125
+Total state created: 779220
+******************************************
+Level 29
+Algorithm BFS
+Path: ['L', 'L', 'U', 'U', 'R', 'U', 'U', 'U', 'L', 'L', 'D', 'D', 'L', 'D', 'D', 'R', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'U', 'U', 'D', 'D', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'L', 'U', 'U', 'R', 'R', 'D', 'D', 'U', 'R', 'R', 'U', 'U', 'L', 'D', 'R', 'D', 'L']
+Total time taken: 0.06821393966674805
+Total steps: 58
+Total space taken: 14.46875
+Total state created: 8458
+******************************************
+Level 30
+Algorithm BFS
+Path: ['L', 'L', 'U', 'U', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'U', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'D', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'U', 'R', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'D', 'D', 'L', 'D', 'D', 'R', 'L', 'U', 'U', 'R', 'U', 'U', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'U', 'L', 'D', 'R', 'R', 'D', 'D', 'D', 'R', 'D', 'D', 'L', 'L', 'U', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'U', 'U', 'R', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'R', 'R', 'D', 'D', 'D', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'U', 'U', 'R', 'R', 'U', 'U', 'L', 'D', 'R', 'D', 'L', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'D', 'R', 'R', 'U', 'R', 'R', 'U', 'U', 'L', 'D', 'R', 'D', 'L', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'R', 'R', 'R', 'U', 'R', 'D']
+Total time taken: 3.0330419540405273
+Total steps: 168
+Total space taken: 18.3515625
+Total state created: 79753
+******************************************
+Level 31
+Algorithm BFS
+Path: ['L', 'U', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'R', 'D', 'L', 'U', 'U', 'L', 'U', 'L', 'L', 'D', 'D', 'D', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'R', 'D', 'L', 'D', 'D', 'L', 'L', 'L', 'U', 'U', 'U', 'D', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'L', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'U', 'L', 'L', 'D']
+Total time taken: 0.016201496124267578
+Total steps: 74
+Total space taken: 13.96875
+Total state created: 3740
+******************************************
+Level 32
+Algorithm BFS
+Path: ['L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'L', 'U', 'U', 'R', 'D', 'R', 'R', 'D', 'R', 'D', 'L', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'L', 'U', 'R', 'D', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'L', 'U', 'U', 'R', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'L', 'U', 'U', 'R', 'D']
+Total time taken: 0.030630111694335938
+Total steps: 91
+Total space taken: 13.83984375
+Total state created: 2021
+******************************************
+Level 33
+Algorithm BFS
+Path: ['L', 'U', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'R', 'U', 'U', 'L', 'D', 'L', 'L', 'U', 'L', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'R', 'U', 'D', 'R', 'R', 'U', 'R', 'U', 'U', 'L', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'L', 'L', 'L', 'U', 'R', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'L', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'R', 'U', 'D', 'L', 'L', 'U', 'R', 'U', 'R', 'L', 'D', 'D', 'R', 'U']
+Total time taken: 0.6222736835479736
+Total steps: 94
+Total space taken: 16.26171875
+Total state created: 47556
+******************************************
+Level 34
+Algorithm BFS
+Path: ['R', 'U', 'R', 'U', 'U', 'L', 'D', 'R', 'D', 'D', 'L', 'L', 'L', 'U', 'L', 'U', 'U', 'R', 'D', 'R', 'R', 'U', 'R', 'D', 'D', 'R', 'D', 'D', 'L', 'U', 'L', 'U', 'D', 'L', 'L', 'U', 'L', 'U', 'U', 'R', 'D', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'D', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'L', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'U', 'R', 'D', 'D', 'U', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'D', 'R', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'D', 'R', 'R', 'D', 'D', 'L', 'U', 'U']
+Total time taken: 0.9749112129211426
+Total steps: 101
+Total space taken: 16.54296875
+Total state created: 66077
+******************************************
+Level 35
+Algorithm BFS
+Path: ['D', 'L', 'L', 'U', 'L', 'U', 'U', 'R', 'D', 'L', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'L', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'L', 'U', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'R', 'U', 'U', 'U', 'L', 'D', 'R', 'D', 'D', 'L', 'D', 'L', 'L', 'U', 'U', 'U', 'R', 'R', 'U', 'R', 'D', 'D', 'U', 'L', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'R', 'R']
+Total time taken: 0.04271268844604492
+Total steps: 88
+Total space taken: 13.96484375
+Total state created: 3005
+******************************************
+Level 36
+Algorithm BFS
+Path: ['D', 'L', 'L', 'D', 'L', 'U', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'R', 'U', 'U', 'U', 'L', 'D', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'D', 'R', 'D', 'D', 'L', 'U', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'U', 'U', 'L', 'U', 'L', 'L', 'D', 'D', 'R', 'R']
+Total time taken: 0.10109472274780273
+Total steps: 72
+Total space taken: 14.35546875
+Total state created: 10951
+******************************************
+Level 37
+Algorithm BFS
+Path: ['D', 'L', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'L', 'U', 'U', 'R', 'R', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'R', 'D', 'D', 'U', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'U', 'R', 'D', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'D', 'D', 'R', 'D', 'D', 'L', 'U', 'U', 'R', 'R', 'U', 'U', 'L', 'L', 'L', 'L', 'D', 'D', 'R', 'R', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'U', 'R', 'U', 'U', 'L', 'D']
+Total time taken: 0.07167553901672363
+Total steps: 96
+Total space taken: 14.359375
+Total state created: 8216
+******************************************
+Level 38
+Algorithm BFS
+Path: ['D', 'R', 'R', 'R', 'U', 'R', 'U', 'L', 'L', 'D', 'R', 'D', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'U', 'R', 'R', 'D', 'L', 'U', 'R', 'U', 'U', 'L', 'D', 'D', 'U', 'R', 'R', 'R', 'D', 'L', 'D', 'L', 'U', 'L', 'L', 'D', 'R', 'L', 'L', 'D', 'D', 'R', 'U']
+Total time taken: 0.9779148101806641
+Total steps: 50
+Total space taken: 16.26171875
+Total state created: 52799
+******************************************
+Level 39
+Algorithm BFS
+Path: ['D', 'D', 'R', 'R', 'U', 'U', 'U', 'D', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'L', 'U', 'U', 'R', 'U', 'R', 'R', 'D', 'L', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'R', 'D', 'L', 'L', 'D', 'D', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'L', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'U', 'R', 'R', 'D', 'D', 'L', 'L', 'L', 'D', 'L', 'U', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'L', 'U', 'R', 'R', 'U', 'R', 'R', 'D', 'L', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'R', 'D']
+Total time taken: 0.820732831954956
+Total steps: 100
+Total space taken: 15.6953125
+Total state created: 43414
+******************************************
+Level 40
+Algorithm BFS
+Path: ['D', 'R', 'R', 'U', 'D', 'L', 'L', 'U', 'R', 'U', 'R', 'D', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'L', 'D', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'L', 'R', 'D', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'L', 'D', 'R', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'L', 'L', 'D', 'R', 'U', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'D', 'L', 'L', 'U']
+Total time taken: 0.7497916221618652
+Total steps: 84
+Total space taken: 15.50390625
+Total state created: 53799
+******************************************
+Level 1
+Algorithm A_star
+Path: ['U', 'U', 'L', 'U', 'U', 'R', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'L', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'U', 'R']
+Total time taken: 0.006884098052978516
+Total steps: 37
+Total space taken: 13.58203125
+Total state created: 727
+******************************************
+Level 2
+Algorithm A_star
+Path: ['R', 'R', 'U', 'U', 'L', 'L', 'L', 'U', 'U', 'R', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'D', 'L', 'L', 'U', 'D', 'R', 'R', 'U', 'U', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'D']
+Total time taken: 0.015279054641723633
+Total steps: 60
+Total space taken: 13.93359375
+Total state created: 2066
+******************************************
+Level 3
+Algorithm A_star
+Path: ['R', 'R', 'U', 'U', 'L', 'L', 'L', 'U', 'U', 'R', 'L', 'D', 'D', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'D', 'R', 'R', 'U', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'R', 'U', 'U', 'L', 'U', 'U', 'L', 'L', 'D', 'L', 'L', 'D', 'D', 'R', 'D', 'D', 'R', 'R', 'U', 'U', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'L']
+Total time taken: 0.06461119651794434
+Total steps: 69
+Total space taken: 13.9609375
+Total state created: 4196
+******************************************
+Level 4
+Algorithm A_star
+Path: ['U', 'U', 'U', 'R', 'U', 'R', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'D', 'D', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'R', 'R', 'U', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'U', 'U', 'D', 'R', 'R', 'R', 'U', 'U', 'U', 'L', 'L', 'L', 'L', 'D', 'R']
+Total time taken: 0.029482603073120117
+Total steps: 71
+Total space taken: 13.9609375
+Total state created: 2306
+******************************************
+Level 5
+Algorithm A_star
+Path: ['U', 'U', 'U', 'R', 'U', 'R', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'D', 'D', 'U', 'U', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'R', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'R', 'R', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'D', 'D', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'U', 'U', 'D', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'R', 'R', 'U', 'U', 'U', 'L', 'L', 'L', 'L', 'D', 'R', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'U', 'U']
+Total time taken: 0.17200446128845215
+Total steps: 104
+Total space taken: 14.36328125
+Total state created: 15105
+******************************************
+Level 6
+Algorithm A_star
+Path: ['L', 'U', 'R', 'U', 'U', 'R', 'U', 'R', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'R', 'R', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'D', 'D', 'U', 'U', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'R', 'L', 'D', 'L', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'U', 'U', 'D', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'R', 'R', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'L', 'L', 'L', 'L', 'D', 'R', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'R', 'U', 'L', 'L', 'L', 'R', 'R', 'D', 'D', 'D', 'L', 'L', 'L', 'U', 'U', 'L', 'U', 'R', 'R', 'L', 'D', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'U', 'U']
+Total time taken: 1.2107713222503662
+Total steps: 118
+Total space taken: 16.546875
+Total state created: 50127
+******************************************
+Level 7
+Algorithm A_star
+Path: ['L', 'U', 'L', 'L', 'U', 'R', 'R', 'R', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'L', 'L', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'L', 'L', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'D', 'L', 'R', 'D', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'U']
+Total time taken: 0.10520052909851074
+Total steps: 61
+Total space taken: 14.05078125
+Total state created: 8589
+******************************************
+Level 8
+Algorithm A_star
+Path: ['L', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'L', 'L', 'U', 'R', 'R', 'R', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'L', 'D', 'R', 'U', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'U', 'U', 'R', 'U', 'L', 'L', 'L', 'D', 'L', 'U', 'R', 'R', 'R', 'D', 'D', 'D', 'D', 'L', 'L', 'U', 'U']
+Total time taken: 0.5659644603729248
+Total steps: 93
+Total space taken: 15.7734375
+Total state created: 28358
+******************************************
+Level 9
+Algorithm A_star
+Path: ['L', 'D', 'D', 'L', 'D', 'L', 'L', 'U', 'U', 'U', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'U', 'R', 'R', 'D', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'U', 'U', 'R', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'U', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'L', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'L', 'U', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'U', 'L', 'D']
+Total time taken: 0.0730438232421875
+Total steps: 89
+Total space taken: 14.203125
+Total state created: 11561
+******************************************
+Level 10
+Algorithm A_star
+Path: ['R', 'D', 'D', 'L', 'L', 'U', 'L', 'U', 'R', 'L', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'U', 'U', 'U', 'L', 'L', 'D', 'U', 'R', 'R', 'D', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'U', 'U', 'R', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'U', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'R', 'U', 'U', 'R', 'R', 'D', 'D', 'R', 'R', 'D', 'D', 'L', 'L', 'R', 'R', 'U', 'U', 'L', 'L', 'D']
+Total time taken: 0.10290360450744629
+Total steps: 102
+Total space taken: 14.46484375
+Total state created: 11157
+******************************************
+Level 11
+Algorithm A_star
+Path: ['D', 'L', 'U', 'L', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'R', 'R', 'D', 'R', 'R', 'D', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'R', 'L', 'D', 'D', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'R', 'R', 'D', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'L']
+Total time taken: 0.0991506576538086
+Total steps: 74
+Total space taken: 14.3515625
+Total state created: 10005
+******************************************
+Level 12
+Algorithm A_star
+Path: ['D', 'L', 'U', 'L', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'D', 'L', 'L', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'R', 'R', 'D', 'L', 'U', 'L', 'L', 'L', 'U', 'D', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'R', 'L', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'L', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'R', 'R', 'D', 'L', 'D', 'D', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'U', 'U', 'L', 'R', 'D', 'D', 'D', 'L', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'U', 'U']
+Total time taken: 1.8242664337158203
+Total steps: 122
+Total space taken: 17.578125
+Total state created: 55665
+******************************************
+Level 13
+Algorithm A_star
+Path: ['R', 'R', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'R', 'D', 'L', 'L', 'L', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'D', 'L', 'D', 'L', 'U', 'U', 'U', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'R', 'R', 'R', 'U', 'U', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'R', 'D', 'L', 'L', 'L', 'L', 'D', 'L', 'U', 'U', 'D', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'U', 'L', 'L']
+Total time taken: 0.30885744094848633
+Total steps: 80
+Total space taken: 15.2265625
+Total state created: 21689
+******************************************
+Level 14
+Algorithm A_star
+Path: ['R', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'D', 'L', 'D', 'L', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'D', 'R', 'D', 'L', 'L', 'L', 'U', 'U', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'R', 'R', 'R', 'D', 'D', 'L', 'D', 'L', 'U', 'U', 'U', 'R', 'R', 'U', 'U', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'R', 'D', 'L', 'L', 'L', 'R', 'R', 'U', 'U', 'L', 'R', 'U', 'U', 'L', 'L', 'L', 'L', 'D', 'L', 'D', 'R', 'U', 'U', 'R', 'R', 'D', 'D', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'D', 'L', 'U', 'U', 'D', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'R', 'R', 'U', 'U', 'L', 'L', 'D']
+Total time taken: 10.01191782951355
+Total steps: 149
+Total space taken: 22.1875
+Total state created: 148029
+******************************************
+Level 15
+Algorithm A_star
+Path: ['U', 'U', 'L', 'U', 'R', 'R', 'D', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'R', 'D', 'L', 'L', 'L', 'D', 'L', 'U', 'U', 'U', 'R', 'U', 'R', 'U', 'R', 'D', 'D', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'L', 'D', 'L', 'L', 'L', 'U', 'U', 'L', 'U', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'R', 'D', 'L', 'L', 'L', 'D', 'L', 'U', 'U', 'D', 'R', 'R', 'R', 'U', 'U', 'U', 'L', 'L', 'L', 'L', 'D', 'R']
+Total time taken: 0.07335448265075684
+Total steps: 82
+Total space taken: 14.2265625
+Total state created: 9218
+******************************************
+Level 16
+Algorithm A_star
+Path: ['R', 'R', 'U', 'R', 'R', 'D', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'U', 'U', 'R', 'U', 'R', 'U', 'R', 'D', 'D', 'D', 'L', 'D', 'L', 'R', 'U', 'R', 'R', 'D', 'L', 'L', 'R', 'U', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'U', 'U', 'L', 'U', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'L', 'D', 'L', 'D', 'L', 'U', 'U', 'D', 'R', 'R', 'U', 'R', 'U', 'U', 'L', 'L', 'L', 'L', 'D', 'R', 'D', 'D', 'R', 'R', 'U', 'R', 'R', 'D', 'L', 'L', 'L', 'D', 'L', 'U', 'U', 'U', 'L', 'U', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'U', 'L', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'L']
+Total time taken: 1.253056526184082
+Total steps: 114
+Total space taken: 16.02734375
+Total state created: 49974
+******************************************
+Level 17
+Algorithm A_star
+Path: ['L', 'D', 'L', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'U', 'R', 'U', 'D', 'L', 'L', 'U', 'R', 'U', 'R', 'L', 'D', 'D', 'R', 'U', 'R', 'U', 'D', 'L', 'L', 'U', 'R', 'U', 'R', 'R', 'D', 'L', 'U', 'L', 'D', 'R', 'R', 'U', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'L', 'D', 'L', 'D', 'L', 'U', 'L', 'D', 'R', 'U', 'U', 'R', 'D', 'R', 'U']
+Total time taken: 0.3065805435180664
+Total steps: 65
+Total space taken: 14.96875
+Total state created: 30276
+******************************************
+Level 18
+Algorithm A_star
+Path: ['L', 'L', 'L', 'D', 'L', 'D', 'L', 'D', 'D', 'R', 'U', 'R', 'U', 'R', 'U', 'D', 'L', 'D', 'L', 'L', 'U', 'R', 'U', 'R', 'U', 'R', 'R', 'R', 'L', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'U', 'R', 'U', 'D', 'L', 'L', 'U', 'R', 'U', 'R', 'R', 'D', 'L', 'U', 'L', 'D', 'R', 'D', 'L', 'U', 'L', 'D', 'R', 'R', 'U', 'R', 'U', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'L', 'U', 'L', 'L', 'U', 'L', 'D', 'R', 'D', 'L', 'R', 'U', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'L', 'L', 'R', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'U', 'D', 'L', 'D', 'L', 'L', 'U', 'R']
+Total time taken: 10.226383209228516
+Total steps: 110
+Total space taken: 19.89453125
+Total state created: 215869
+******************************************
+Level 19
+Algorithm A_star
+Path: ['L', 'L', 'U', 'U', 'U', 'R', 'U', 'L', 'D', 'D', 'D', 'D', 'L', 'L', 'U', 'R', 'D', 'R', 'U', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'D', 'L', 'D', 'R', 'R', 'L', 'U', 'U', 'U', 'R', 'R', 'U', 'L', 'L', 'D', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'D', 'R', 'D', 'L', 'R', 'D', 'R', 'R', 'U', 'L']
+Total time taken: 0.19128155708312988
+Total steps: 72
+Total space taken: 14.734375
+Total state created: 20080
+******************************************
+Level 20
+Algorithm A_star
+Path: ['L', 'L', 'U', 'U', 'U', 'R', 'U', 'L', 'D', 'D', 'D', 'D', 'L', 'L', 'U', 'R', 'D', 'R', 'U', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'D', 'D', 'D', 'L', 'D', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'U', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'D', 'R', 'R', 'L', 'U', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'U', 'R', 'R', 'U', 'L', 'L', 'D', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'R', 'R', 'D', 'D', 'R', 'D', 'L', 'U', 'U', 'U', 'U', 'R', 'R', 'D', 'L', 'U', 'L', 'D', 'D', 'D', 'R', 'D', 'D', 'R', 'R', 'U', 'L']
+Total time taken: 2.118891477584839
+Total steps: 120
+Total space taken: 16.74609375
+Total state created: 83072
+******************************************
+Level 21
+Algorithm A_star
+Path: ['R', 'R', 'U', 'U', 'U', 'R', 'U', 'L', 'D', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'D', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'D', 'D', 'R', 'R', 'U', 'L', 'U', 'U', 'U', 'R', 'U', 'L', 'D', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'L', 'D', 'R', 'L', 'U', 'U', 'L', 'L', 'D', 'R', 'U', 'R', 'D']
+Total time taken: 0.20812368392944336
+Total steps: 71
+Total space taken: 14.6015625
+Total state created: 19615
+******************************************
+Level 22
+Algorithm A_star
+Path: ['R', 'R', 'U', 'U', 'U', 'R', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'D', 'R', 'L', 'U', 'U', 'R', 'D', 'R', 'D', 'D', 'D', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'D', 'D', 'R', 'R', 'U', 'L', 'U', 'U', 'U', 'R', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'D', 'R', 'L', 'U', 'U', 'R', 'D', 'R', 'D', 'D', 'D', 'D', 'L', 'R', 'U', 'U', 'U', 'U', 'L', 'L', 'D', 'R', 'U', 'R', 'D', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'U', 'L', 'L', 'L', 'D', 'R', 'U', 'R', 'R', 'U', 'U', 'R', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'D', 'R', 'R', 'D', 'D', 'L', 'D', 'R', 'U', 'U', 'U', 'U', 'L']
+Total time taken: 2.6397764682769775
+Total steps: 115
+Total space taken: 16.6875
+Total state created: 83378
+******************************************
+Level 23
+Algorithm A_star
+Path: ['U', 'U', 'U', 'L', 'L', 'D', 'L', 'U', 'L', 'L', 'D', 'D', 'R', 'U', 'L', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'D', 'D', 'L', 'L', 'U', 'L', 'U', 'L', 'L', 'U', 'U', 'L', 'U', 'R', 'R', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'L', 'R', 'U', 'U', 'U', 'L', 'L', 'D', 'D', 'D', 'D', 'U', 'U', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'D', 'R', 'U', 'U']
+Total time taken: 1.090040922164917
+Total steps: 99
+Total space taken: 16.29296875
+Total state created: 57160
+******************************************
+Level 24
+Algorithm A_star
+Path: ['U', 'U', 'U', 'L', 'L', 'D', 'L', 'R', 'U', 'R', 'R', 'D', 'D', 'D', 'L', 'L', 'L', 'U', 'D', 'R', 'R', 'R', 'U', 'U', 'U', 'L', 'L', 'L', 'L', 'L', 'D', 'D', 'R', 'U', 'L', 'U', 'R', 'R', 'R', 'D', 'L', 'R', 'U', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'L', 'U', 'L', 'L', 'U', 'L', 'U', 'L', 'U', 'R', 'R', 'R', 'R', 'L', 'D', 'L', 'D', 'L', 'U', 'R', 'R', 'U', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'U', 'U', 'U', 'L', 'L', 'L', 'L', 'D', 'L', 'L', 'L', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'U', 'R', 'D', 'D', 'D', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'U', 'U', 'U', 'L', 'L', 'D', 'D', 'D', 'D', 'U', 'U', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'D', 'R', 'U', 'L', 'L', 'L', 'U', 'U', 'R', 'U', 'R', 'R', 'R', 'R', 'D', 'D', 'D', 'L', 'L', 'U', 'D', 'L']
+Total time taken: 127.94751167297363
+Total steps: 197
+Total space taken: 47.03125
+Total state created: 983707
+******************************************
+Level 25
+Algorithm A_star
+Path: ['U', 'U', 'L', 'L', 'D', 'D', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'U', 'U', 'R', 'L', 'D', 'D', 'R', 'R', 'R', 'D', 'R', 'U', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'L', 'L', 'D', 'D', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'U', 'U', 'R', 'U', 'L', 'D', 'D', 'D', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'R', 'R', 'D', 'R', 'U', 'U', 'U']
+Total time taken: 0.19256997108459473
+Total steps: 81
+Total space taken: 14.6171875
+Total state created: 15709
+******************************************
+Level 26
+Algorithm A_star
+Path: ['D', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'R', 'R', 'D', 'R', 'U', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'L', 'L', 'D', 'D', 'U', 'U', 'R', 'R', 'D', 'D', 'D', 'R', 'D', 'D', 'L', 'U', 'U', 'U', 'U', 'R', 'U', 'L', 'D', 'D', 'D', 'L', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'R', 'R', 'R', 'D', 'R', 'U', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'D', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'R', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'D', 'U', 'L', 'L', 'D', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'L', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'U', 'R', 'U', 'U', 'L', 'D', 'L', 'L', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'U', 'R', 'U', 'L', 'D', 'D', 'D', 'R', 'D', 'D', 'L', 'U', 'U', 'L', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'U', 'U', 'D', 'D', 'L', 'L']
+Total time taken: 2.0273513793945312
+Total steps: 169
+Total space taken: 17.83203125
+Total state created: 63693
+******************************************
+Level 27
+Algorithm A_star
+Path: ['R', 'U', 'U', 'D', 'L', 'L', 'L', 'U', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'U', 'L', 'L', 'D', 'D', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'D', 'L', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'R', 'U', 'U', 'U', 'R', 'U', 'L', 'L', 'L', 'U', 'L', 'D', 'D', 'D', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'D', 'L', 'L', 'U', 'R', 'D', 'R', 'U', 'U', 'D', 'D', 'L', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'L', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'D', 'L', 'U', 'L', 'L', 'U', 'L', 'D', 'D', 'D', 'D', 'R', 'R', 'D', 'R', 'U', 'U', 'U', 'R', 'U', 'L', 'L', 'L', 'U', 'L', 'D', 'D']
+Total time taken: 0.21785426139831543
+Total steps: 117
+Total space taken: 14.73046875
+Total state created: 25343
+******************************************
+Level 28
+Algorithm A_star
+Path: ['R', 'R', 'U', 'L', 'U', 'D', 'L', 'D', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'U', 'D', 'R', 'D', 'R', 'R', 'U', 'U', 'U', 'L', 'U', 'L', 'L', 'D', 'D', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'D', 'L', 'L', 'U', 'R', 'D', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'U', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'R', 'D', 'L', 'L', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'R', 'L', 'L', 'U', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'U', 'U', 'R', 'U', 'L', 'L', 'L', 'U', 'L', 'D', 'D', 'D', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'L', 'D', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'R', 'R', 'D', 'L', 'U', 'U', 'U', 'L', 'U', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'L', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'R', 'U', 'U', 'D', 'D', 'L', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'D', 'L', 'U', 'L', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'D', 'R', 'U', 'U', 'U', 'R', 'U', 'L', 'L', 'L', 'U', 'L', 'D', 'D', 'U', 'R', 'R', 'R', 'D', 'D', 'D', 'D', 'L', 'D', 'L', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'R']
+Total time taken: 4.244947195053101
+Total steps: 211
+Total space taken: 18.85546875
+Total state created: 161153
+******************************************
+Level 29
+Algorithm A_star
+Path: ['L', 'L', 'U', 'U', 'R', 'U', 'U', 'U', 'L', 'L', 'D', 'D', 'L', 'D', 'D', 'R', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'U', 'U', 'D', 'D', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'L', 'U', 'U', 'R', 'R', 'D', 'D', 'U', 'R', 'R', 'U', 'U', 'L', 'D', 'R', 'D', 'L']
+Total time taken: 0.08510375022888184
+Total steps: 58
+Total space taken: 14.21875
+Total state created: 7334
+******************************************
+Level 30
+Algorithm A_star
+Path: ['L', 'L', 'U', 'U', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'U', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'D', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'U', 'R', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'D', 'D', 'L', 'D', 'D', 'R', 'L', 'U', 'U', 'R', 'U', 'U', 'R', 'R', 'D', 'R', 'R', 'U', 'L', 'L', 'L', 'U', 'L', 'D', 'R', 'R', 'D', 'D', 'D', 'R', 'D', 'D', 'L', 'L', 'U', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'U', 'U', 'R', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'R', 'R', 'D', 'D', 'D', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'U', 'U', 'R', 'R', 'U', 'U', 'L', 'D', 'R', 'D', 'L', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'D', 'R', 'R', 'U', 'R', 'R', 'U', 'U', 'L', 'D', 'R', 'D', 'L', 'U', 'L', 'L', 'U', 'L', 'L', 'D', 'R', 'R', 'R', 'R', 'U', 'R', 'D']
+Total time taken: 2.597989320755005
+Total steps: 168
+Total space taken: 18.60546875
+Total state created: 75612
+******************************************
+Level 31
+Algorithm A_star
+Path: ['L', 'L', 'U', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'R', 'D', 'L', 'U', 'U', 'L', 'U', 'L', 'L', 'D', 'D', 'D', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'R', 'D', 'L', 'D', 'D', 'L', 'L', 'L', 'U', 'U', 'U', 'D', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'L', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'U', 'L', 'L', 'D']
+Total time taken: 0.014630794525146484
+Total steps: 74
+Total space taken: 13.90234375
+Total state created: 1901
+******************************************
+Level 32
+Algorithm A_star
+Path: ['L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'L', 'U', 'U', 'R', 'D', 'R', 'R', 'D', 'R', 'D', 'L', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'L', 'U', 'R', 'D', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'L', 'U', 'U', 'R', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'L', 'U', 'U', 'R', 'D']
+Total time taken: 0.014637231826782227
+Total steps: 91
+Total space taken: 13.9453125
+Total state created: 2072
+******************************************
+Level 33
+Algorithm A_star
+Path: ['L', 'L', 'U', 'U', 'U', 'R', 'D', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'R', 'U', 'U', 'L', 'D', 'L', 'L', 'U', 'L', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'R', 'U', 'D', 'R', 'R', 'U', 'R', 'U', 'U', 'L', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'D', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'L', 'L', 'L', 'U', 'R', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'L', 'D', 'D', 'L', 'D', 'D', 'R', 'U', 'R', 'U', 'D', 'L', 'L', 'U', 'R', 'U', 'R', 'L', 'D', 'D', 'R', 'U']
+Total time taken: 0.7162754535675049
+Total steps: 94
+Total space taken: 15.76171875
+Total state created: 33875
+******************************************
+Level 34
+Algorithm A_star
+Path: ['R', 'R', 'U', 'U', 'U', 'L', 'D', 'R', 'D', 'D', 'L', 'L', 'L', 'U', 'L', 'U', 'U', 'R', 'D', 'R', 'R', 'U', 'R', 'D', 'D', 'R', 'D', 'D', 'L', 'U', 'L', 'U', 'D', 'L', 'L', 'U', 'L', 'U', 'U', 'R', 'D', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'D', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'L', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'U', 'R', 'D', 'D', 'U', 'L', 'L', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'U', 'L', 'D', 'R', 'R', 'D', 'D', 'L', 'U', 'L', 'L', 'L', 'U', 'L', 'L', 'U', 'R', 'D', 'R', 'D', 'R', 'R', 'R', 'U']
+Total time taken: 0.8384387493133545
+Total steps: 109
+Total space taken: 15.765625
+Total state created: 39579
+******************************************
+Level 35
+Algorithm A_star
+Path: ['D', 'L', 'L', 'U', 'L', 'U', 'U', 'R', 'D', 'L', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'L', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'L', 'U', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'R', 'U', 'U', 'U', 'L', 'D', 'R', 'D', 'D', 'L', 'D', 'L', 'L', 'U', 'U', 'U', 'R', 'R', 'U', 'R', 'D', 'D', 'U', 'L', 'L', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'R', 'R']
+Total time taken: 0.04994082450866699
+Total steps: 88
+Total space taken: 14.22265625
+Total state created: 6003
+******************************************
+Level 36
+Algorithm A_star
+Path: ['D', 'L', 'L', 'D', 'L', 'U', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'L', 'D', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'L', 'D', 'R', 'U', 'U', 'U', 'L', 'D', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'D', 'R', 'D', 'D', 'L', 'U', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'R', 'D', 'D', 'U', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R']
+Total time taken: 0.19047093391418457
+Total steps: 72
+Total space taken: 14.71875
+Total state created: 15340
+******************************************
+Level 37
+Algorithm A_star
+Path: ['D', 'L', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'L', 'U', 'U', 'R', 'R', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'R', 'D', 'D', 'U', 'R', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'U', 'R', 'D', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'D', 'D', 'R', 'D', 'D', 'L', 'U', 'U', 'R', 'R', 'U', 'U', 'L', 'L', 'L', 'L', 'D', 'D', 'R', 'R', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'U', 'R', 'U', 'U', 'L', 'D']
+Total time taken: 0.1118476390838623
+Total steps: 96
+Total space taken: 14.34765625
+Total state created: 10395
+******************************************
+Level 38
+Algorithm A_star
+Path: ['D', 'L', 'D', 'R', 'R', 'U', 'R', 'R', 'U', 'R', 'U', 'L', 'L', 'D', 'R', 'D', 'L', 'L', 'D', 'L', 'L', 'U', 'R', 'U', 'R', 'R', 'D', 'L', 'R', 'R', 'U', 'L', 'U', 'U', 'L', 'D', 'D', 'L', 'D', 'R', 'L', 'L', 'D', 'D', 'R', 'U', 'R', 'U', 'U', 'R', 'R', 'R', 'U', 'L']
+Total time taken: 0.4456815719604492
+Total steps: 54
+Total space taken: 15.51171875
+Total state created: 30062
+******************************************
+Level 39
+Algorithm A_star
+Path: ['U', 'U', 'R', 'R', 'D', 'D', 'U', 'U', 'L', 'L', 'D', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'U', 'L', 'U', 'R', 'R', 'U', 'R', 'R', 'D', 'L', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'R', 'D', 'L', 'L', 'D', 'D', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'U', 'L', 'L', 'L', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'L', 'L', 'U', 'U', 'U', 'L', 'U', 'R', 'R', 'U', 'R', 'R', 'D', 'L', 'D', 'D', 'L', 'L', 'U', 'U', 'R', 'U', 'R', 'D', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'L', 'D', 'L', 'U']
+Total time taken: 1.1288278102874756
+Total steps: 122
+Total space taken: 16.23828125
+Total state created: 46364
+******************************************
+Level 40
+Algorithm A_star
+Path: ['D', 'R', 'R', 'U', 'D', 'L', 'L', 'U', 'R', 'U', 'R', 'D', 'L', 'D', 'L', 'D', 'D', 'R', 'R', 'U', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'L', 'D', 'L', 'D', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'R', 'R', 'U', 'U', 'L', 'L', 'U', 'U', 'R', 'D', 'L', 'L', 'D', 'R', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'R', 'D', 'D', 'L', 'L', 'U', 'U', 'L', 'L', 'D', 'R', 'U', 'R', 'R', 'R', 'D', 'D', 'L', 'L', 'D', 'L', 'L', 'U']
+Total time taken: 0.21690893173217773
+Total steps: 84
+Total space taken: 14.734375
+Total state created: 15547
+******************************************

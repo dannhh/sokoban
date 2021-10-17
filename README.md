@@ -17,7 +17,7 @@ Third, after run the command, it asks you to choose testcase number to run. Ente
 
 Then it asks you to choose algorithm to run, enter 1 to run BFS, 2 to run A_star.
 
-After the algorithm finished, the terminal print the solution of the test-case (include: list of move (U, D, L, R), total time taken to run algorithm, total steps, total space taken, total states created in the test) and show "Done algorithm".
+After the algorithm finished (when the test run over 1800s, we consider that it fails), the terminal print the solution of the test-case (include: list of move (U, D, L, R), total time taken to run algorithm, total steps, total space taken, total states created in the test) and show "Done algorithm".
 
 Then, the game window appears and demo the test.
 
