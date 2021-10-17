@@ -163,15 +163,6 @@ Total steps: 117
 Total space taken: 18.359375
 Total state created: 168651
 ******************************************
-Testcase is fail
-Level 11
-Algorithm A_star
-Path: []
-Total time taken: 1800.4482865333557
-Total steps: 0
-Total space taken: 0
-Total state created: 1462213
-******************************************
 Level 11
 Algorithm A_star
 Path: ['R', 'R', 'D', 'D', 'L', 'D', 'D', 'L', 'D', 'L', 'L', 'U', 'R', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'R', 'U', 'U', 'L', 'L', 'D', 'R', 'D', 'R', 'R', 'R', 'U', 'U', 'L', 'U', 'U', 'L', 'L', 'D', 'D', 'U', 'U', 'R', 'R', 'D', 'D', 'L', 'D', 'L', 'U', 'D', 'D', 'D', 'L', 'L', 'U', 'R', 'D', 'R', 'U', 'R', 'U', 'U', 'L', 'D', 'R', 'U', 'R', 'U', 'U', 'L', 'L', 'D', 'D', 'R', 'R', 'R', 'R', 'U', 'L', 'D', 'L', 'L', 'L', 'U', 'U', 'R', 'R', 'D', 'U', 'L', 'L', 'D', 'D', 'R', 'D', 'D', 'L', 'U', 'U', 'U', 'D', 'D', 'D', 'D', 'L', 'L', 'U', 'R', 'D', 'R', 'U', 'U', 'U', 'L', 'D', 'R', 'D', 'D', 'L', 'L', 'U', 'R', 'D', 'R', 'U', 'R', 'U', 'U', 'R', 'U', 'R', 'R', 'D', 'L', 'L', 'L', 'R', 'R', 'D', 'D', 'L', 'L']
